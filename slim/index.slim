@@ -3,11 +3,13 @@ html
   head
     title 8398a7's Profile
     meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"
+    meta http-equiv="X-FRAME-OPTIONS" content="SAMEORIGIN"
     link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"
     link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
     link href="http://fonts.googleapis.com/css?family=Exo:400,800" rel="stylesheet"
     link href="./stylesheets/docs.min.css" rel="stylesheet"
     link href="./stylesheets/main.css" rel="stylesheet"
+    link href="./stylesheets/colorbox.css" rel="stylesheet"
     link rel="icon" type="image/x-icon" href="./images/favicon.ico"
 
   body#top
@@ -86,7 +88,7 @@ html
                     th Sport
                     td
                       | Gymkhana&nbsp;
-                      a.btn.btn-danger.btn-xs href="https://www.youtube.com/watch?v=qADoP1pchX0"  target="_blank"
+                      a.youtube.btn.btn-danger.btn-xs href="https://www.youtube.com/embed/qADoP1pchX0"
                         i.fa.fa-external-link
                         | &nbsp;Youtube
                     td License -> JAGE C1, 四国 B, 近畿 B, 中国 B
@@ -94,7 +96,7 @@ html
                     th Game
                     td
                       | iidx, BMS&nbsp;
-                      a.btn.btn-danger.btn-xs href="https://www.youtube.com/watch?v=miL8CGMHHfs"  target="_blank"
+                      a.youtube.btn.btn-danger.btn-xs href="https://www.youtube.com/embed/miL8CGMHHfs"
                         i.fa.fa-external-link
                         | &nbsp;Youtube
 
@@ -265,10 +267,11 @@ html
 
     footer.footer
       p.bold &copy; 2014 Akihiko Horiuchi, All Rights Reserved.
-
-    script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
-    script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
-    script src="./javascripts/docs.min.js"
+      script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
+      script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+      script type="text/javascript" src="./javascripts/docs.min.js"
+      script type="text/javascript" src="./javascripts/jquery.colorbox.js"
+      script type="text/javascript" src="./javascripts/colorbox.js"
 
     javascript:
       $(function(){
