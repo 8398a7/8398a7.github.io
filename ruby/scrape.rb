@@ -18,3 +18,4 @@ fp = open('../slim/index.slim', 'w')
 fp.write(slim)
 
 system('slimrb ../slim/index.slim > ../index.html')
+system('git checkout master && git add -A && git commit -m \'update\' && git push origin master')
