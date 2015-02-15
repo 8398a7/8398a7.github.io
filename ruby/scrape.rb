@@ -16,7 +16,8 @@ person = current.split('現在の利用者は')[1].split('人')[0].to_i
 
 # ファイル書き換え
 slim = open('../slim/index.slim').read
-slim.gsub!(%(| -> rails, 上記拡張版, 公開開始，利用者500名), %(| -> rails, 上記拡張版, 公開開始，利用者#{ person }名))
+current = slim.split('| -> rails, 上記拡張版, 公開開始，利用者')[1].split('名')[0]
+slim.gsub!(%(| -> rails, 上記拡張版, 公開開始，利用者#{ current }名), %(| -> rails, 上記拡張版, 公開開始，利用者#{ person }名))
 fp = open('../slim/index.slim', 'w')
 fp.write(slim)
 
