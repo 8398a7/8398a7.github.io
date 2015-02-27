@@ -2,6 +2,8 @@ require 'nokogiri'
 require 'mechanize'
 require 'kconv'
 
+system('git pull origin master')
+
 # ページオープン
 url = %(http://iidxas.tk/abilitysheet/users/list)
 agent = Mechanize.new
