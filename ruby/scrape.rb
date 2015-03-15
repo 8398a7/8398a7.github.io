@@ -2,7 +2,9 @@ require 'nokogiri'
 require 'mechanize'
 require 'kconv'
 
-system('git pull origin master')
+dir = %(#{ ENV['HOME'] }/public_html/8398a7.github.io)
+
+system("cd #{ dir } && git pull origin master")
 
 # ページオープン
 url = %(http://iidxas.tk/abilitysheet/users/list)
@@ -17,12 +19,12 @@ current = html.xpath('//p').text
 person = current.split('現在の利用者は')[1].split('人')[0].to_i
 
 # ファイル書き換え
-slim = open('../slim/index.slim').read
+slim = open("#{ dir }/slim/index.slim").read
 current = slim.split('| -> rails, 上記拡張版, 公開開始，利用者')[1].split('名')[0]
 slim.gsub!(%(| -> rails, 上記拡張版, 公開開始，利用者#{ current }名), %(| -> rails, 上記拡張版, 公開開始，利用者#{ person }名))
-fp = open('../slim/index.slim', 'w')
+fp = open("#{ dir }/slim/index.slim", 'w')
 fp.write(slim)
 
 # git処理
-system('slimrb ../slim/index.slim > ../index.html')
-system('git checkout master && git add -A && git commit -m \'update\' && git push origin master')
+system("slimrb #{ dir }/slim/index.slim > #{ dir }/index.html")
+system("cd #{ dir } && git checkout master && git add -A && git commit -m \"update\" && git push origin master")
