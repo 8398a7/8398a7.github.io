@@ -192,7 +192,9 @@ html
                 a.btn.btn-default.btn-xs href="http://iidx12.tk/abilitysheet" target="_blank"
                   i.fa.fa-external-link
                   | &nbsp;Web site
-                | -> rails, 上記拡張版, 公開開始，利用者1501名
+                | -> rails, 上記拡張版, 公開開始，利用者
+                span#iidx12 1501
+                | 名
               li Seminar Life -> rails, ゼミ支援システム
             h3#projects_personal University
             ul
@@ -287,14 +289,27 @@ html
       script type="text/javascript" src="./javascripts/jquery.colorbox.js"
       script type="text/javascript" src="./javascripts/colorbox.js"
 
-    javascript:
-      $(function(){
-        $('a[href^=#]').click(function(){
-          var speed = 500;
-          var href= $(this).attr('href');
-          var target = $(href == '#' || href == '' ? 'html' : href);
-          var position = target.offset().top;
-          $('html, body').animate({scrollTop:position}, speed, 'swing');
-          return false;
-        });
-      });
+javascript:
+  $(function(){
+    $('a[href^=#]').click(function(){
+      var speed = 500;
+      var href= $(this).attr('href');
+      var target = $(href == '#' || href == '' ? 'html' : href);
+      var position = target.offset().top;
+      $('html, body').animate({scrollTop:position}, speed, 'swing');
+      return false;
+    });
+  });
+
+coffee:
+  $.ajax
+    url: 'http://iidx12.tk/abilitysheet/api/v22/developer/users'
+    type: 'POST'
+    dataType: 'json'
+    beforeSend: ->
+      $('#iidx12').html("loading now...")
+    success: (d) ->
+      $('#iidx12').empty()
+      $('#iidx12').text(d.users)
+    error: (d) ->
+      console.error(d)
