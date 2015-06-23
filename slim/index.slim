@@ -282,34 +282,12 @@ html
           | &nbsp;Top
 
     footer.footer
-      p.bold &copy; 2014 Akihiko Horiuchi, All Rights Reserved.
+      p.bold &copy; 2015 8398a7, All Rights Reserved.
       script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
       script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
       script type="text/javascript" src="./javascripts/docs.min.js"
       script type="text/javascript" src="./javascripts/jquery.colorbox.js"
       script type="text/javascript" src="./javascripts/colorbox.js"
-
-javascript:
-  $(function(){
-    $('a[href^=#]').click(function(){
-      var speed = 500;
-      var href= $(this).attr('href');
-      var target = $(href == '#' || href == '' ? 'html' : href);
-      var position = target.offset().top;
-      $('html, body').animate({scrollTop:position}, speed, 'swing');
-      return false;
-    });
-  });
-
-coffee:
-  $.ajax
-    url: 'http://iidx12.tk/abilitysheet/api/v22/developer/users'
-    type: 'POST'
-    dataType: 'json'
-    beforeSend: ->
-      $('#iidx12').html("loading now...")
-    success: (d) ->
-      $('#iidx12').empty()
-      $('#iidx12').text(d.users)
-    error: (d) ->
-      console.error(d)
+      script type="text/javascript" src="./javascripts/AbilitySheetApi.js"
+      script type="text/javascript" src="./javascripts/AbilitySheet.js"
+      script type="text/javascript" src="./javascripts/Utils.js"
