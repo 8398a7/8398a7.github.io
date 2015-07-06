@@ -1,6 +1,6 @@
 (function() {
   this.AbilitySheetApi = (function() {
-    AbilitySheetApi.server = document.domain === 'localhost' ? 'http://localhost:3000/' : 'http://iidx12.tk/abilitysheet/';
+    AbilitySheetApi.server = document.domain === 'localhost' ? 'http://localhost:3000/' : 'https://iidx12.tk/abilitysheet/';
 
     AbilitySheetApi.apiPath = 'api/v1/';
 
