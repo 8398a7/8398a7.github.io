@@ -1,5 +1,5 @@
 class @AbilitySheetApi
-  @server = 'https://iidx12.tk/'
+  @server = if document.domain == 'localhost' then 'http://localhost:8080/' else 'https://iidx12.tk/'
   @apiPath = 'api/v1/'
 
   constructor: ->
@@ -21,7 +21,7 @@ class @AbilitySheetApi
         console.error('Unknown API call error')
 
   getUserData: (before, callback) ->
-    AbilitySheetApi.AjaxCall 'users',
+    AbilitySheetApi.AjaxCall 'users/registered',
       type: 'GET'
       before: before
       callback: callback
