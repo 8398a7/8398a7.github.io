@@ -1,5 +1,5 @@
 class @AbilitySheetApi
-  @server = if document.domain == 'localhost' then 'http://localhost:8080/' else 'https://iidx12.tk/'
+  @server = if document.domain == 'localhost' then 'http://localhost:8080/' else 'http://iidx12.tk/'
   @apiPath = 'api/v1/'
 
   constructor: ->
