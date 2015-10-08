@@ -1,6 +1,6 @@
 (function() {
   this.AbilitySheetApi = (function() {
-    AbilitySheetApi.server = document.domain === 'localhost' ? 'http://localhost:8080/' : 'http://api.iidx12.tk/';
+    AbilitySheetApi.server = document.domain === 'localhost' ? 'http://localhost:3000/api/' : 'https://iidx12.tk/abilitysheet/api/';
 
     AbilitySheetApi.apiPath = 'v1/';
 
@@ -40,7 +40,7 @@
     };
 
     AbilitySheetApi.prototype.getUserData = function(before, callback) {
-      return AbilitySheetApi.AjaxCall('users/registered', {
+      return AbilitySheetApi.AjaxCall('users/count', {
         type: 'GET',
         before: before,
         callback: callback
