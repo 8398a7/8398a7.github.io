@@ -20,7 +20,10 @@ Abilitysheet = (function(_super) {
   };
 
   Abilitysheet.prototype.componentWillMount = function() {
-    AbilitysheetStore.addChangeListener(this.onChangeUsers);
+    return AbilitysheetStore.addChangeListener(this.onChangeUsers);
+  };
+
+  Abilitysheet.prototype.componentDidMount = function() {
     return AbilitysheetActionCreators.getCount();
   };
 

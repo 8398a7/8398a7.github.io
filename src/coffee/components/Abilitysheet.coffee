@@ -8,6 +8,8 @@ class Abilitysheet extends React.Component
 
   componentWillMount: ->
     AbilitysheetStore.addChangeListener(@onChangeUsers)
+
+  componentDidMount: ->
     AbilitysheetActionCreators.getCount()
 
   componentWillUnmount: ->
