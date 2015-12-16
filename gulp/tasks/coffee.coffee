@@ -4,7 +4,7 @@
 
 config      = require '../config.coffee'
 gulp        = require 'gulp'
-coffee      = require 'gulp-coffee'
+coffee      = require 'gulp-coffee-react'
 browserSync = require 'browser-sync'
 
 #==================================================
@@ -13,6 +13,6 @@ browserSync = require 'browser-sync'
 
 gulp.task 'coffee', ->
   gulp.src config.coffee.src
-    .pipe coffee()
+    .pipe coffee(bare: true)
     .pipe gulp.dest config.coffee.dest
     .pipe browserSync.stream()

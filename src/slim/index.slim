@@ -192,16 +192,7 @@ html
                 | [Ruby on Rails] manel -> 研究室内LDAPアカウント管理アプリ
               li
                 | [Ruby on Rails] calain -> 研究室紹介ページ
-              li
-                a href="https://github.com/8398a7/abilitysheet"
-                  i.fa.fa-github
-                | [Ruby on Rails] IIDX☆12参考表
-                a.btn.btn-default.btn-xs href="https://iidx12.tk/abilitysheet" target="_blank"
-                  i.fa.fa-external-link
-                  | &nbsp;Web site
-                | -> 上記拡張版，2014/11 公開開始，利用者
-                span#iidx12
-                | 名
+              #iidx12
               li
                 a href="https://github.com/8398a7/iidx-recommend"
                   i.fa.fa-github
@@ -312,14 +303,20 @@ html
         h1.bold
           i.fa.fa-chevron-up
           | &nbsp;Top
-
     footer.footer
       p.bold &copy; 2015 8398a7, All Rights Reserved.
-      script type="text/javascript" src="./vendor/assets/javascripts/jquery-2.1.4.min.js"
-      script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
-      script type="text/javascript" src="./vendor/assets/javascripts/docs.min.js"
-      script type="text/javascript" src="./vendor/assets/javascripts/jquery.colorbox.js"
-      script type="text/javascript" src="./vendor/assets/javascripts/colorbox.js"
-      script type="text/javascript" src="./assets/javascripts/AbilitySheetApi.js"
-      script type="text/javascript" src="./assets/javascripts/AbilitySheet.js"
-      script type="text/javascript" src="./assets/javascripts/Util.js"
+      script type='text/javascript' src='./vendor/assets/javascripts/jquery-2.1.4.min.js'
+      script type='text/javascript' src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'
+      script type='text/javascript' src='./vendor/assets/javascripts/docs.min.js'
+      script type='text/javascript' src='./vendor/assets/javascripts/jquery.colorbox.js'
+      script type='text/javascript' src='./vendor/assets/javascripts/colorbox.js'
+      script type='text/javascript' src='./assets/javascripts/Util.js'
+      script type='text/javascript' src='./bower_components/eventemitter2/lib/eventemitter2.js'
+      script type='text/javascript' src='./bower_components/flux/dist/Flux.min.js'
+      script type='text/javascript' src='./assets/javascripts/dispatcher/AppDispatcher.js'
+      script type='text/javascript' src='./assets/javascripts/constants/AppConstants.js'
+      script type='text/javascript' src='./assets/javascripts/stores/AbilitysheetStore.js'
+      script type='text/javascript' src='./assets/javascripts/actions/AbilitysheetActionCreators.js'
+      script type='text/javascript' src='./bower_components/react/react.js'
+      script type='text/javascript' src='./bower_components/react/react-dom.min.js'
+      script type='text/javascript' src='./assets/javascripts/components/Abilitysheet.js'
