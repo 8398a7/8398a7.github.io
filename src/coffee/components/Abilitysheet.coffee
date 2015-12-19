@@ -21,7 +21,7 @@ class Abilitysheet extends React.Component
         <i className='fa fa-github' />
       </a>
       [Ruby on Rails] IIDX☆12参考表
-      <a className='btn btn-default btn-xs' href='https://iidx12.tk/abilitysheet' target='_blank'>
+      <a className='btn btn-default btn-xs' href='https://iidx12.tk' target='_blank'>
         <i className='fa fa-external-link' />
         &nbsp;Web site
       </a>

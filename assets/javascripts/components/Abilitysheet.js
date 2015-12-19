@@ -38,7 +38,7 @@ Abilitysheet = (function(_super) {
       "className": 'fa fa-github'
     })), "[Ruby on Rails] IIDX\u260612\u53c2\u8003\u8868", React.createElement("a", {
       "className": 'btn btn-default btn-xs',
-      "href": 'https://iidx12.tk/abilitysheet',
+      "href": 'https://iidx12.tk',
       "target": '_blank'
     }, React.createElement("i", {
       "className": 'fa fa-external-link'
