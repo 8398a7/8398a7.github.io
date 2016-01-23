@@ -2,9 +2,12 @@ this.AbilitysheetActionCreators = (function() {
   function AbilitysheetActionCreators() {}
 
   AbilitysheetActionCreators.getCount = function() {
-    return fetch(AppConstants.API_SERVER + '/users/count').then(function(response) {
-      return response.json();
-    }).then(function(object) {
+    return $.ajax({
+      type: 'GET',
+      url: AppConstants.API_SERVER + '/users/count',
+      dataType: 'jsonp',
+      jsonpCallback: 'portfollio'
+    }).done(function(object) {
       return AppDispatcher.dispatch({
         action: AppConstants.RECEIVED_USER_COUNT,
         users: object.users
