@@ -3,8 +3,7 @@ class @AbilitysheetActionCreators
     $.ajax
       type: 'GET'
       url: AppConstants.API_SERVER + '/users/count'
-      dataType: 'jsonp'
-      jsonpCallback: 'portfollio'
+      dataType: 'json'
     .done (object) ->
       AppDispatcher.dispatch
         action: AppConstants.RECEIVED_USER_COUNT
