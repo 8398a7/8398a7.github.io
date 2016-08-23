@@ -4,6 +4,7 @@
   "description": "My portfolio.",
   "main": "index.html",
   "scripts": {
+    "start": "gulp",
     "test": "cake test"
   },
   "repository": {
