@@ -4,5 +4,51 @@
   "main": "index.js",
   "repository": "ssh://git@github.com/8398a7/8398a7.github.io.git",
   "author": "839 <8398a7@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
+    "lint": "eslint .",
+    "fix:lint": "eslint . --fix"
+  },
+  "babel": {
+    "presets": [
+      "es2017",
+      "react",
+      "stage-0"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "base64-font-loader": "^0.0.4",
+    "css-loader": "^0.27.3",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-loader": "^1.7.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.0",
+    "font-awesome": "^4.7.0",
+    "immutable": "^3.8.1",
+    "materialize-css": "^0.98.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.1",
+    "redux-logger": "^3.0.1",
+    "redux-saga": "^0.14.3"
+  }
 }
