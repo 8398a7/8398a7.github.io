@@ -1,7 +1,10 @@
+const webpack = require('webpack');
+
+const devBuild = process.env.NODE_ENV !== 'production';
+const nodeEnv = devBuild ? 'development' : 'production';
+
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
     'babel-polyfill',
     'materialize-css/dist/css/materialize.css',
     'font-awesome/css/font-awesome.css',
@@ -32,8 +35,21 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  devServer: {
+  plugins: [],
+};
+
+if (devBuild) {
+  module.exports.devtool = 'eval-source-map';
+  module.exports.devServer = {
     contentBase: './dist',
     hot: true,
-  },
-};
+  };
+  module.exports.entry.push(
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server'
+  );
+} else {
+  module.exports.plugins.push(
+    new webpack.optimize.DedupePlugin()
+  );
+}
