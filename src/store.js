@@ -13,16 +13,12 @@ export default (history) => {
   const sagaMiddleware = createSagaMiddleware();
   let middlewares = [];
   if (process.env.NODE_ENV !== 'production') {
-    middlewares = [createLogger()];
+    middlewares = [createLogger(), routerMiddleware(history)];
   }
   const store = createStore(
     combinedReducer,
     compose(
-      applyMiddleware(
-        sagaMiddleware,
-        ...middlewares,
-        routerMiddleware(history),
-      ),
+      applyMiddleware(sagaMiddleware, ...middlewares),
       (process.env.NODE_ENV !== 'production' && window.devToolsExtension) ?
       window.devToolsExtension() : f => f,
     ),
