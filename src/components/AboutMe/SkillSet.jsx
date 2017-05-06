@@ -19,12 +19,12 @@ const SkillSet = () => (
           <td>OSX, Ubuntu</td>
         </tr>
         <tr>
-          <th>Language</th>
-          <td>Ruby, JavaScript, Crystal, Java, Python, PHP</td>
-        </tr>
-        <tr>
           <th>Recently</th>
           <td>AWS, RonR, Chef, Docker, Redux, Spring Boot</td>
+        </tr>
+        <tr>
+          <th>Incumbent</th>
+          <td>Server side engineer in Kyoto</td>
         </tr>
       </tbody>
     </table>
