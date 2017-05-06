@@ -1,40 +1,63 @@
 {
   "name": "8398a7.github.io",
   "version": "1.0.0",
-  "description": "My portfolio.",
-  "main": "index.html",
-  "scripts": {
-    "start": "gulp",
-    "test": "cake test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/8398a7/8398a7.github.io.git"
-  },
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "8398a7",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/8398a7/8398a7.github.io.git",
+  "author": "839 <8398a7@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/8398a7/8398a7.github.io/issues"
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --config ./webpack.config.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "lint": "eslint .",
+    "fix:lint": "eslint . --fix"
   },
-  "homepage": "https://8398a7.github.io/",
+  "babel": {
+    "presets": [
+      "es2017",
+      "react",
+      "stage-0"
+    ]
+  },
   "devDependencies": {
-    "browser-sync": "^2.7.12",
-    "chai": "^3.0.0",
-    "coffee-script": "^1.9.3",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-coffee-react": "^1.0.0",
-    "gulp-compass": "^2.1.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.1",
-    "gulp-slim": "^0.1.0",
-    "mocha": "^2.2.5",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.1",
-    "sinon": "^1.15.3"
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2017": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "base64-font-loader": "^0.0.4",
+    "css-loader": "^0.27.3",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-loader": "^1.7.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.0",
+    "font-awesome": "^4.7.0",
+    "history": "^4.6.1",
+    "immutable": "^3.8.1",
+    "materialize-css": "^0.98.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-redux": "^5.0.3",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "next",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.1",
+    "redux-logger": "^3.0.1",
+    "redux-saga": "^0.14.3"
   }
 }
