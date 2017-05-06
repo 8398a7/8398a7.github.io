@@ -5,6 +5,7 @@ import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
 import createStore from './store';
+import './main.scss';
 import Header from './components/Header';
 import AboutMe from './containers/AboutMe';
 import Hobby from './containers/Hobby';

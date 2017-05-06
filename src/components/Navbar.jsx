@@ -6,8 +6,18 @@ const Navbar = () => (
   <nav className="blue lighten-4">
     <div className="navbar-wrapper">
       <ul>
-        <li><Link to='/aboutme'>about me</Link></li>
-        <li><Link to='/hobby'>hobby</Link></li>
+        <li>
+          <Link to='/aboutme'>
+            <i className="fa fa-bookmark" />
+            about me
+          </Link>
+        </li>
+        <li>
+          <Link to='/hobby'>
+            <i className="fa fa-heart" />
+            hobby
+          </Link>
+        </li>
       </ul>
     </div>
   </nav>

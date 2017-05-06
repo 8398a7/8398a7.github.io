@@ -11,8 +11,12 @@ const Header = () => (
     </Link>
     <h1 style={{paddingBottom: '10px'}}>
       <a href="https://twitter.com/8398a7" style={{color: 'white'}}>@8398a7</a>
+      <i className="fa fa-twitter" />
     </h1>
-    <p className="main">Web Developer</p>
+    <p className="main">
+      <i className="fa fa-beer" />
+      Web Developer
+    </p>
     <div />
     <p>aws</p>
     <p>rails</p>
