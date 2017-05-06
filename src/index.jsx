@@ -17,9 +17,13 @@ render(
     <ConnectedRouter {...{history}}>
       <div>
         <Header />
-        <Route exact path='/' component={AboutMe} />
-        <Route exact path='/aboutme' component={AboutMe} />
-        <Route exact path='/hobby' component={Hobby} />
+        <div className="container">
+          <div className="row center">
+            <Route exact path='/' component={AboutMe} />
+            <Route exact path='/aboutme' component={AboutMe} />
+            <Route exact path='/hobby' component={Hobby} />
+          </div>
+        </div>
       </div>
     </ConnectedRouter>
   </Provider>,

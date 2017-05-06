@@ -10,8 +10,7 @@ const Header = () => (
       <img className="circle responsive-img" src={profile} />
     </Link>
     <h1 style={{paddingBottom: '10px'}}>
-      <a href="https://twitter.com/8398a7" style={{color: 'white'}}>@8398a7</a>
-      <i className="fa fa-twitter" />
+      @8398a7
     </h1>
     <p className="main">
       <i className="fa fa-beer" />

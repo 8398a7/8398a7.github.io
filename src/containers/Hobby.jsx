@@ -6,7 +6,7 @@ class Hobby extends React.PureComponent {
   render() {
     return (
       <div>
-        hobby
+        501 Not Implemented
       </div>
     );
   }
