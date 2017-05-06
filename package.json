@@ -6,7 +6,7 @@
   "author": "839 <8398a7@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js",
+    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --config ./webpack.config.js",
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "lint": "eslint .",
     "fix:lint": "eslint . --fix"
