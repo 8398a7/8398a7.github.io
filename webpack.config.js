@@ -63,6 +63,5 @@ if (devBuild) {
   );
 } else {
   module.exports.plugins.push(
-    new webpack.optimize.DedupePlugin()
   );
 }
