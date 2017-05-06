@@ -1,13 +1,9 @@
 import React from 'react';
+import SectionTitle from '../SectionTitle';
 
 const SkillSet = () => (
   <div>
-    <h2 className="header indigo-text lighten-1 section-title">
-      <span>
-        <i className="fa fa-info" />
-        About Me
-      </span>
-    </h2>
+    <SectionTitle {...{ icon: 'info', title: 'AboutMe' }} />
     <table className="striped">
       <tbody>
         <tr>
