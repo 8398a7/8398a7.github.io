@@ -9,7 +9,9 @@ const Header = () => (
     <Link to='/'>
       <img className="circle responsive-img" src={profile} />
     </Link>
-    <h1><a href="https://twitter.com/8398a7" style={{color: 'white'}}>@8398a7</a></h1>
+    <h1 style={{paddingBottom: '10px'}}>
+      <a href="https://twitter.com/8398a7" style={{color: 'white'}}>@8398a7</a>
+    </h1>
     <p className="main">Web Developer</p>
     <div />
     <p>aws</p>
