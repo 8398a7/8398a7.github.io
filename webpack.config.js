@@ -7,6 +7,7 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'materialize-css/dist/css/materialize.css',
+    'materialize-css/dist/js/materialize.min',
     'font-awesome/css/font-awesome.css',
     './src/index.jsx',
   ],
@@ -22,9 +23,17 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.scss?$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.(otf|woff|svg|ttf|eot)([\?]?.*)$/,
         use: ['base64-font-loader'],
       },
+      {
+        test: /\.(jpg|png)$/,
+        use: ['url-loader'],
+      }
     ],
   },
   resolve: {
