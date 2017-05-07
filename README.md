@@ -1,6 +1,10 @@
-## My Portfollio
-[![Build Status](https://travis-ci.org/8398a7/8398a7.github.io.svg?branch=master)](https://travis-ci.org/8398a7/8398a7.github.io)
+# Portfollio
 
-## Spec
-gulpでslim, coffee, sassをビルド．  
-将来的にreact化してみたい．
+## Get Started
+
+```
+git clone git@github.com:8398a7/8398a7.github.io.git
+cd 8398a7.github.io
+yarn install
+yarn start # http://localhost:8080
+```
