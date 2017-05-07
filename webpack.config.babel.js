@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 const devBuild = process.env.NODE_ENV !== 'production';
 const nodeEnv = devBuild ? 'development' : 'production';
@@ -60,5 +61,9 @@ if (devBuild) {
   module.exports.entry.push(
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
+  );
+} else {
+  module.exports.plugins.push(
+    new UglifyJSPlugin(),
   );
 }
