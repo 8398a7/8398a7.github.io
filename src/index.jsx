@@ -1,27 +1,27 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { render } from 'react-dom';
-import { ConnectedRouter } from 'react-router-redux';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 import createHistory from 'history/createBrowserHistory';
 import createStore from './store';
-import './main.scss';
-import Header from './components/Header';
-import Routing from './routing';
+import App from './App';
 
 const history = createHistory();
 const store = createStore(history);
-render(
-  <Provider {...{ store }}>
-    <ConnectedRouter {...{ history }}>
-      <div>
-        <Header />
-        <div className="container">
-          <div className="row center">
-            <Routing />
-          </div>
-        </div>
-      </div>
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('app'),
-);
+
+const render = (Component, store, history) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component {...{ store, history }} />
+    </AppContainer>,
+    document.getElementById('app'),
+  );
+};
+
+render(App, store, history);
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default;
+    render(NextApp, store, history);
+  });
+}

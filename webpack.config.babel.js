@@ -7,6 +7,7 @@ const nodeEnv = devBuild ? 'development' : 'production';
 module.exports = {
   entry: [
     'babel-polyfill',
+    'react-hot-loader/patch',
     'materialize-css/dist/css/materialize.css',
     'materialize-css/dist/js/materialize.min',
     'font-awesome/css/font-awesome.css',
@@ -17,7 +18,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['react-hot-loader/webpack', 'babel-loader'],
       },
       {
         test: /\.css?$/,
@@ -53,7 +54,7 @@ module.exports = {
 };
 
 if (devBuild) {
-  module.exports.devtool = 'eval-source-map';
+  module.exports.devtool = 'eval';
   module.exports.devServer = {
     contentBase: './dist',
     hot: true,
