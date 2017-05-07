@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+import webpack from 'webpack';
 
 const devBuild = process.env.NODE_ENV !== 'production';
 const nodeEnv = devBuild ? 'development' : 'production';
@@ -60,8 +60,5 @@ if (devBuild) {
   module.exports.entry.push(
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-  );
-} else {
-  module.exports.plugins.push(
   );
 }
