@@ -5,6 +5,7 @@ import { Timeline } from 'react-twitter-widgets';
 import { actions } from '../ducks/iidx12';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
+import ActiveProjects from '../components/AboutMe/ActiveProjects';
 
 class AboutMe extends React.PureComponent {
   componentWillMount() {
@@ -12,6 +13,7 @@ class AboutMe extends React.PureComponent {
   }
 
   render() {
+    const { users } = this.props;
     return (
       <div>
         <div className="col s12">
@@ -22,6 +24,9 @@ class AboutMe extends React.PureComponent {
             <Links />
           </div>
           <div className="col s6">
+            <ActiveProjects {...{ users }} />
+          </div>
+          <div className="col s6">
             <Timeline
               dataSource={{
                 sourceType: 'profile',
@@ -29,7 +34,7 @@ class AboutMe extends React.PureComponent {
               }}
               options={{
                 username: '8398a7',
-                height: '400',
+                height: '800',
               }}
             />
           </div>
@@ -39,10 +44,17 @@ class AboutMe extends React.PureComponent {
   }
 }
 
+
+function mapStateToProps($$state) {
+  return {
+    users: $$state.$$iidx12State.users,
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     ...bindActionCreators(actions, dispatch),
   };
 }
 
-export default connect(null, mapDispatchToProps)(AboutMe);
+export default connect(mapStateToProps, mapDispatchToProps)(AboutMe);
