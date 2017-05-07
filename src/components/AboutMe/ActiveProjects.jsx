@@ -12,7 +12,7 @@ const ActiveProjects = ({ users }) => (
     />
     <Card
       title="lgtm_creator"
-      body={['gif動画にLGTMをつけるcli', 'ruby']}
+      body={['gif動画にLGTMをつけるcli', 'ruby gem']}
       link="https://github.com/8398a7/lgtm_creator"
     />
     <Card
