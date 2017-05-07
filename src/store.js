@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
+import { routerReducer, routerMiddleware } from 'react-router-redux';
 import rootSaga from './sagas';
 import * as reducers from './ducks';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
 
 export default (history) => {
   const combinedReducer = combineReducers({

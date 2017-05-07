@@ -33,7 +33,7 @@ module.exports = {
       {
         test: /\.(jpg|png)$/,
         use: ['url-loader'],
-      }
+      },
     ],
   },
   resolve: {
@@ -46,8 +46,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
+      'process.env.NODE_ENV': JSON.stringify(nodeEnv),
+    }),
   ],
 };
 
@@ -59,7 +59,7 @@ if (devBuild) {
   };
   module.exports.entry.push(
     'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server'
+    'webpack/hot/only-dev-server',
   );
 } else {
   module.exports.plugins.push(
