@@ -14,7 +14,7 @@ const Gymkhana = () => (
       />
     </div>
     <div className="col s6">
-      <table className="striped" style={{marginBottom: '5px'}}>
+      <table className="striped" style={{ marginBottom: '5px' }}>
         <tbody>
           <tr>
             <td>2010 愛媛DUNLOP杯#スペシャルN</td>

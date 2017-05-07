@@ -48,6 +48,6 @@ const Links = () => (
       </li>
     </ul>
   </div>
-)
+);
 
 export default Links;
