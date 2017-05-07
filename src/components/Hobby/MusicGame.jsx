@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from '../SectionTitle';
 
 const MusicGame = () => (
-  <div>
+  <div className="col s12">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="col s6">
       <iframe
@@ -12,7 +12,6 @@ const MusicGame = () => (
         frameBorder="0"
         allowFullScreen
       />
-      <a target="_blank" rel="noopener" href="https://www.youtube.com/embed/t4FFqzzdYfw">https://www.youtube.com/embed/t4FFqzzdYfw</a>
     </div>
     <div className="col s6">
       <table className="striped">

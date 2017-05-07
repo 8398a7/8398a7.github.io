@@ -2,7 +2,7 @@ import React from 'react';
 import SectionTitle from '../SectionTitle';
 
 const Gymkhana = () => (
-  <div>
+  <div className="col s12">
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
     <div className="col s6">
       <iframe
@@ -12,7 +12,6 @@ const Gymkhana = () => (
         frameBorder="0"
         allowFullScreen
       />
-      <a target="_blank" rel="noopener" href="https://www.youtube.com/embed/6_EtxOKU63U">https://www.youtube.com/embed/6_EtxOKU63U</a>
     </div>
     <div className="col s6">
       <table className="striped" style={{marginBottom: '5px'}}>
@@ -91,7 +90,6 @@ const Gymkhana = () => (
         frameBorder="0"
         allowFullScreen
       />
-      <a target="_blank" rel="noopener" href="https://www.youtube.com/embed/qADoP1pchX0">https://www.youtube.com/embed/qADoP1pchX0</a>
     </div>
   </div>
 );
