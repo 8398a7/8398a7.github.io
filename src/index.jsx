@@ -15,15 +15,15 @@ const history = createHistory();
 const store = createStore(history);
 render(
   <Provider {...{ store }}>
-    <ConnectedRouter {...{history}}>
+    <ConnectedRouter {...{ history }}>
       <div>
         <Header />
         <div className="container">
           <div className="row center">
             <Switch>
-              <Route exact path='/' component={AboutMe} />
-              <Route exact path='/aboutme' component={AboutMe} />
-              <Route exact path='/hobby' component={Hobby} />
+              <Route exact path="/" component={AboutMe} />
+              <Route exact path="/aboutme" component={AboutMe} />
+              <Route exact path="/hobby" component={Hobby} />
               <Route component={NoMatch} />
             </Switch>
           </div>

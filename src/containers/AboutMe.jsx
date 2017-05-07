@@ -2,10 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Timeline } from 'react-twitter-widgets';
+import { actions } from '../ducks/iidx12';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 
 class AboutMe extends React.PureComponent {
+  componentWillMount() {
+    this.props.fetchIidx12Users();
+  }
+
   render() {
     return (
       <div>
@@ -26,7 +31,6 @@ class AboutMe extends React.PureComponent {
                 username: '8398a7',
                 height: '400',
               }}
-              onLoad={() => console.log('Timeline is loaded!')}
             />
           </div>
         </div>
@@ -35,4 +39,10 @@ class AboutMe extends React.PureComponent {
   }
 }
 
-export default connect(null, null)(AboutMe);
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(actions, dispatch),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(AboutMe);

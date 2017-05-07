@@ -6,11 +6,9 @@ axios.interceptors.request.use(
 );
 
 function sendGet(url) {
-  return axios.get(url, config).then(response => response.data);
+  return axios.get(url).then(response => response.data);
 }
 
 export default class API {
-  static fetchIidx12Users = (opts) => {
-    return sendGet('https://api.iidx12.tk/users/count');
-  }
+  static fetchIidx12Users = () => sendGet('https://api.iidx12.tk/users/count')
 }
