@@ -1,6 +1,6 @@
 import { Record } from 'immutable';
 import { recordOf } from 'react-immutable-proptypes';
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
 const Iidx12Record = new Record({
   users: 0,
