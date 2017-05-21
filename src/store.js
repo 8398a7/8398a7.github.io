@@ -26,7 +26,7 @@ export default (history) => {
   if (process.env.NODE_ENV === 'production') {
     middlewares = [
       RavenMiddleware(
-        'https://9239e0e77f8841ef8328aa48a7c33321@sentry.husq.tk/10',
+        'https://f6b6f48a3202490b87056bd987375bd3@sentry.husq.tk/11',
         { release: process.env.GIT_SHA },
       ),
     ];
