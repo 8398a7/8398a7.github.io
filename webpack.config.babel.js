@@ -1,8 +1,14 @@
 import webpack from 'webpack';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
+import SentryPlugin from 'webpack-sentry-plugin';
+import { execSync } from 'child_process';
+import env from 'node-env-file';
 
 const devBuild = process.env.NODE_ENV !== 'production';
 const nodeEnv = devBuild ? 'development' : 'production';
+
+env(`${__dirname}/.env`);
+const revision = execSync('git rev-parse HEAD').toString().trim();
 
 module.exports = {
   entry: [
@@ -45,10 +51,12 @@ module.exports = {
     path: `${__dirname}/dist`,
     publicPath: '/',
     filename: 'bundle.js',
+    sourceMapFilename: 'bundle.js.map',
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(nodeEnv),
+      'process.env.NODE_ENV': nodeEnv,
+      'process.env.GIT_SHA': revision,
     }),
   ],
 };
@@ -64,7 +72,20 @@ if (devBuild) {
     'webpack/hot/only-dev-server',
   );
 } else {
+  module.exports.devtool = 'source-map';
   module.exports.plugins.push(
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({
+      sourceMap: true,
+    }),
+    new SentryPlugin({
+      // Sentry options are required
+      baseSentryURL: 'https://sentry.husq.tk/api/0/projects',
+      organisation: 'sentry',
+      project: 'production',
+      apiKey: process.env.SENTRY_API_KEY,
+
+      // Release version name/hash is required
+      release: () => revision,
+    }),
   );
 }

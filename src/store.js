@@ -25,7 +25,10 @@ export default (history) => {
   }
   if (process.env.NODE_ENV === 'production') {
     middlewares = [
-      RavenMiddleware('https://9239e0e77f8841ef8328aa48a7c33321@sentry.husq.tk/10'),
+      RavenMiddleware(
+        'https://9239e0e77f8841ef8328aa48a7c33321@sentry.husq.tk/10',
+        { release: process.env.GIT_SHA },
+      ),
     ];
   }
   const store = createStore(
