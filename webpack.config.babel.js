@@ -45,6 +45,7 @@ module.exports = {
     path: `${__dirname}/dist`,
     publicPath: '/',
     filename: 'bundle.js',
+    sourceMapFilename: 'bundle.js.map',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -64,7 +65,10 @@ if (devBuild) {
     'webpack/hot/only-dev-server',
   );
 } else {
+  module.exports.devtool = 'source-map';
   module.exports.plugins.push(
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({
+      sourceMap: true,
+    }),
   );
 }
