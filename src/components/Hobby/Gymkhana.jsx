@@ -5,13 +5,15 @@ const Gymkhana = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
     <div className="col s6">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/6_EtxOKU63U"
-        frameBorder="0"
-        allowFullScreen
-      />
+      <div className="video-container video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/6_EtxOKU63U"
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     </div>
     <div className="col s6">
       <table className="striped" style={{ marginBottom: '5px' }}>
@@ -83,13 +85,15 @@ const Gymkhana = () => (
       </table>
     </div>
     <div className="col s6">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/qADoP1pchX0"
-        frameBorder="0"
-        allowFullScreen
-      />
+      <div className="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/qADoP1pchX0"
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     </div>
   </div>
 );

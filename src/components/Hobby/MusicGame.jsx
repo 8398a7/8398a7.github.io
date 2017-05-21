@@ -5,13 +5,15 @@ const MusicGame = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="col s6">
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/t4FFqzzdYfw"
-        frameBorder="0"
-        allowFullScreen
-      />
+      <div className="video-container video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/t4FFqzzdYfw"
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     </div>
     <div className="col s6">
       <table className="striped">
