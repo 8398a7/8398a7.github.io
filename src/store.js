@@ -3,6 +3,7 @@ import { combineReducers } from 'redux-immutable';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
+import RavenMiddleware from 'redux-raven-middleware';
 import rootSaga from './sagas';
 import * as reducers from './ducks';
 
@@ -20,6 +21,11 @@ export default (history) => {
         stateTransformer: state => state.toJS(),
       }),
       routerMiddleware(history),
+    ];
+  }
+  if (process.env.NODE_ENV === 'production') {
+    middlewares = [
+      RavenMiddleware('https://9239e0e77f8841ef8328aa48a7c33321@sentry.husq.tk/10'),
     ];
   }
   const store = createStore(
