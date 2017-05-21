@@ -47,7 +47,7 @@ class AboutMe extends React.PureComponent {
 
 function mapStateToProps($$state) {
   return {
-    users: $$state.$$iidx12State.users,
+    users: $$state.get('$$iidx12State').users,
   };
 }
 

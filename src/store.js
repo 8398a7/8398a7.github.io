@@ -1,4 +1,5 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
@@ -13,7 +14,13 @@ export default (history) => {
   const sagaMiddleware = createSagaMiddleware();
   let middlewares = [];
   if (process.env.NODE_ENV !== 'production') {
-    middlewares = [createLogger(), routerMiddleware(history)];
+    middlewares = [
+      createLogger({
+        collapsed: true,
+        stateTransformer: state => state.toJS(),
+      }),
+      routerMiddleware(history),
+    ];
   }
   const store = createStore(
     combinedReducer,
