@@ -81,7 +81,7 @@ if (devBuild) {
       // Sentry options are required
       baseSentryURL: 'https://sentry.husq.tk/api/0/projects',
       organisation: 'sentry',
-      project: 'production',
+      project: 'io-production',
       apiKey: process.env.SENTRY_API_KEY,
 
       // Release version name/hash is required
