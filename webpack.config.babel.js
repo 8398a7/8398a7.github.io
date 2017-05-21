@@ -55,8 +55,8 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': nodeEnv,
-      'process.env.GIT_SHA': revision,
+      'process.env.NODE_ENV': JSON.stringify(nodeEnv),
+      'process.env.GIT_SHA': JSON.stringify(revision),
     }),
   ],
 };
