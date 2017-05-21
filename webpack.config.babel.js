@@ -1,8 +1,8 @@
-import webpack from 'webpack';
-import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
-import SentryPlugin from 'webpack-sentry-plugin';
-import { execSync } from 'child_process';
-import env from 'node-env-file';
+const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const SentryPlugin = require('webpack-sentry-plugin');
+const execSync = require('child_process').execSync;
+const env = require('node-env-file');
 
 const devBuild = process.env.NODE_ENV !== 'production';
 const nodeEnv = devBuild ? 'development' : 'production';
