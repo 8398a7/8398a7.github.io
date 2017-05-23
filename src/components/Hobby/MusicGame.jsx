@@ -22,7 +22,7 @@ const MusicGame = () => (
           </tr>
           <tr>
             <td>recommend</td>
-            <td>★18.16</td>
+            <td>★18.21</td>
           </tr>
           <tr>
             <td>style</td>
