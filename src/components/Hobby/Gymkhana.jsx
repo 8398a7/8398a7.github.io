@@ -1,19 +1,13 @@
 import React from 'react';
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
 import SectionTitle from '../SectionTitle';
 
 const Gymkhana = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
     <div className="col s6">
-      <div className="video-container video">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/6_EtxOKU63U"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </div>
+      <Player><source src="https://husq.tk/videos/gymkhana1.mp4" /></Player>
     </div>
     <div className="col s6">
       <table className="striped" style={{ marginBottom: '5px' }}>
@@ -85,15 +79,7 @@ const Gymkhana = () => (
       </table>
     </div>
     <div className="col s6">
-      <div className="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/qADoP1pchX0"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </div>
+      <Player><source src="https://husq.tk/videos/gymkhana2.mp4" /></Player>
     </div>
   </div>
 );

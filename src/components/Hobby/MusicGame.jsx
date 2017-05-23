@@ -1,19 +1,13 @@
 import React from 'react';
+import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
 import SectionTitle from '../SectionTitle';
 
 const MusicGame = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="col s6">
-      <div className="video-container video">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/t4FFqzzdYfw"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </div>
+      <Player><source src="https://husq.tk/videos/bms1.mp4" /></Player>
     </div>
     <div className="col s6">
       <table className="striped">
@@ -28,7 +22,7 @@ const MusicGame = () => (
           </tr>
           <tr>
             <td>recommend</td>
-            <td>★18.16</td>
+            <td>★18.21</td>
           </tr>
           <tr>
             <td>style</td>
