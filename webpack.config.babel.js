@@ -50,8 +50,8 @@ module.exports = {
   output: {
     path: `${__dirname}/dist`,
     publicPath: '/',
-    filename: 'bundle.js',
-    sourceMapFilename: 'bundle.js.map',
+    filename: 'app.js',
+    sourceMapFilename: 'app.js.map',
   },
   plugins: [
     new webpack.DefinePlugin({
