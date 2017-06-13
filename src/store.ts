@@ -1,19 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { combineReducers } from 'redux-immutable';
 import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
-import { routerReducer, routerMiddleware } from 'react-router-redux';
-import RavenMiddleware from 'redux-raven-middleware';
+import { routerMiddleware } from 'react-router-redux';
 import rootSaga from './sagas';
-import * as reducers from './ducks';
+import combinedReducer from './ducks';
+const RavenMiddleware: any  = require('redux-raven-middleware');
 
-export default (history) => {
-  const combinedReducer = combineReducers({
-    ...reducers,
-    router: routerReducer,
-  });
+export default (history: any) => {
   const sagaMiddleware = createSagaMiddleware();
-  let middlewares = [];
+  let middlewares: any[] = [];
   if (process.env.NODE_ENV !== 'production') {
     middlewares = [
       createLogger({
@@ -31,12 +26,12 @@ export default (history) => {
       ),
     ];
   }
+  let devtools: any = process.env.NODE_ENV !== 'production' && (<any>window).devToolsExtension ? (<any>window).devToolsExtension() : (f: any) => f;
   const store = createStore(
     combinedReducer,
     compose(
       applyMiddleware(sagaMiddleware, ...middlewares),
-      (process.env.NODE_ENV !== 'production' && window.devToolsExtension) ?
-      window.devToolsExtension() : f => f,
+      devtools,
     ),
   );
   sagaMiddleware.run(rootSaga);
