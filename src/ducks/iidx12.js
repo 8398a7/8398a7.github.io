@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
-import { Iidx12 } from '../models';
+import Iidx12 from '../models/iidx12';
 
 const FETCH_IIDX12_USERS = 'iidx12/fetchIidx12Users';
 const fetchIidx12Users = createAction(FETCH_IIDX12_USERS);
