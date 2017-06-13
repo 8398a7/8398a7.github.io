@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import createHistory from 'history/createBrowserHistory';
-import ReactGA from 'react-ga';
+import * as ReactGA from 'react-ga';
 import createStore from './store';
 import App from './App';
 
@@ -16,7 +16,7 @@ history.listen((location) => {
   ReactGA.pageview(location.pathname + location.search);
 });
 
-const render = (Component, store, history) => {
+const render = (Component: any, store: any, history: any) => {
   ReactDOM.render(
     <AppContainer>
       <Component {...{ store, history }} />
