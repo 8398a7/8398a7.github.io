@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Route, Switch } from 'react-router';
 import AboutMe from './containers/AboutMe';
 import Hobby from './containers/Hobby';
