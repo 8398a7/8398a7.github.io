@@ -40,7 +40,7 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(otf|woff|svg|ttf|eot)([\?]?.*)$/,
+        test: /\.(otf|woff|woff2|svg|ttf|eot)?$/,
         use: ['base64-font-loader'],
       },
       {
