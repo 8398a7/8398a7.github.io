@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss';
-import profile from '../images/profile.jpg';
 import Navbar from './Navbar';
+const profile: string = require('../images/profile.jpg');
 
-const Header = () => (
+const Header: React.StatelessComponent<{}> = () => (
   <header>
     <Link to='/'>
       <img className="circle responsive-img" src={profile} />
