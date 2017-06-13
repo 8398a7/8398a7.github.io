@@ -6,8 +6,8 @@ import NoMatch from './components/NoMatch';
 
 const Routing = () => (
   <Switch>
-    <Route exact path="/" component={AboutMe} />
-    <Route exact path="/aboutme" component={AboutMe} />
+    <Route exact path="/" component={AboutMe as any} />
+    <Route exact path="/aboutme" component={AboutMe as any} />
     <Route exact path="/hobby" component={Hobby as any} />
     <Route component={NoMatch} />
   </Switch>
