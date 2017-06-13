@@ -18,7 +18,7 @@ function* fetchIidx12Users() {
 }
 
 function* watchFetchIidx12Users() {
-  while (typeof x === 'undefined') {
+  while (true) {
     yield take(FETCH_IIDX12_USERS);
     yield fork(fetchIidx12Users);
   }
