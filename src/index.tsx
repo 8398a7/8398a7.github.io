@@ -16,7 +16,7 @@ history.listen((location) => {
   ReactGA.pageview(location.pathname + location.search);
 });
 
-const render = (Component: any, store: any, history: any) => {
+const render = (Component: typeof App, store: any, history: any) => {
   ReactDOM.render(
     <AppContainer>
       <Component {...{ store, history }} />
@@ -29,7 +29,7 @@ render(App, store, history);
 
 if (module.hot) {
   module.hot.accept('./App', () => {
-    const NextApp = require('./App').default;
+    const NextApp: typeof App = require('./App').default;
     render(NextApp, store, history);
   });
 }
