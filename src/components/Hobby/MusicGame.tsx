@@ -1,9 +1,9 @@
-import React from 'react';
-import { Player } from 'video-react';
+import * as React from 'react';
 import 'video-react/dist/video-react.css';
 import SectionTitle from '../SectionTitle';
+const Player: any = require('video-react').Player;
 
-const MusicGame = () => (
+const MusicGame: React.StatelessComponent<{}> = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="flexbox-main">

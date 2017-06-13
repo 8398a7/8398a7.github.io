@@ -1,9 +1,9 @@
-import React from 'react';
-import { Player } from 'video-react';
+import * as React from 'react';
 import 'video-react/dist/video-react.css';
 import SectionTitle from '../SectionTitle';
+const Player: any = require('video-react').Player;
 
-const Gymkhana = () => (
+const Gymkhana: React.StatelessComponent<{}> = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
     <div className="flexbox-main">
