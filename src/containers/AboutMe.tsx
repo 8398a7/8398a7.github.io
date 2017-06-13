@@ -1,13 +1,24 @@
-import React from 'react';
+import * as React from 'react';
+import { returntypeof } from 'react-redux-typescript';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Timeline } from 'react-twitter-widgets';
-import { actions } from '../ducks/iidx12';
+import { actionCreators } from '../ducks/iidx12';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
+const Timeline: any = require('react-twitter-widgets').Timeline;
 
-class AboutMe extends React.PureComponent {
+const mapStateToProps = ($$state: any) => ({
+  users: $$state.get('$$iidx12State').users,
+});
+
+const dispatchToProps = {
+  fetchIidx12Users: actionCreators.fetchIidx12Users,
+};
+
+const stateProps = returntypeof(mapStateToProps);
+type Props = typeof stateProps & typeof dispatchToProps;
+
+class AboutMe extends React.PureComponent<Props, {}> {
   componentWillMount() {
     this.props.fetchIidx12Users();
   }
@@ -44,17 +55,4 @@ class AboutMe extends React.PureComponent {
   }
 }
 
-
-function mapStateToProps($$state) {
-  return {
-    users: $$state.get('$$iidx12State').users,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    ...bindActionCreators(actions, dispatch),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AboutMe);
+export default connect(mapStateToProps, dispatchToProps)(AboutMe);

@@ -17,7 +17,7 @@ module.exports = {
     'materialize-css/dist/css/materialize.css',
     'materialize-css/dist/js/materialize.min',
     'font-awesome/css/font-awesome.css',
-    './src/index.jsx',
+    './src/index.tsx',
   ],
   module: {
     rules: [
@@ -25,6 +25,11 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ['react-hot-loader/webpack', 'babel-loader'],
+      },
+      {
+        test: /\.(ts|tsx)?$/,
+        exclude: /node_modules/,
+        use: ['react-hot-loader/webpack', 'ts-loader'],
       },
       {
         test: /\.css?$/,
@@ -45,7 +50,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
   },
   output: {
     path: `${__dirname}/dist`,

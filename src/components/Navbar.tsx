@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
-const Navbar = () => (
+const Navbar: React.StatelessComponent<{}> = () => (
   <nav className="blue lighten-4">
     <div className="navbar-wrapper">
       <ul>

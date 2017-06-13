@@ -1,8 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import SectionTitle from '../SectionTitle';
 import Card from '../Card';
 
-const ActiveProjects = ({ users }) => (
+type Props = {
+  users: number,
+}
+
+const ActiveProjects: React.StatelessComponent<Props> = ({ users }) => (
   <div>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card

@@ -1,11 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import './main.scss';
 import Header from './components/Header';
 import Routing from './routing';
 
-const App = ({ store, history }) => (
+type Props = {
+  store: any,
+  history: any,
+};
+
+const App: React.StatelessComponent<Props> = ({ store, history }) => (
   <Provider {...{ store }}>
     <ConnectedRouter {...{ history }}>
       <div>

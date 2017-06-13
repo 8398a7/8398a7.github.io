@@ -5,7 +5,7 @@ axios.interceptors.request.use(
   error => Promise.reject(error),
 );
 
-function sendGet(url) {
+function sendGet(url: string) {
   return axios.get(url).then(response => response.data);
 }
 

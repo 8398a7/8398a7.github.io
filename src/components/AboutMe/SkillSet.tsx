@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import SectionTitle from '../SectionTitle';
 
-const SkillSet = () => (
+const SkillSet: React.StatelessComponent<{}> = () => (
   <div>
     <SectionTitle {...{ icon: 'info', title: 'AboutMe' }} />
     <table className="striped">
