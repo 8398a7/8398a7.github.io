@@ -5,5 +5,5 @@ const Iidx12Record = Record({
 });
 
 export default class Iidx12 extends Iidx12Record {
-  users: number;
+  static users: number;
 }

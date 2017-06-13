@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Timeline } from 'react-twitter-widgets';
-import { actions } from '../ducks/iidx12';
+import { actionCreators } from '../ducks/iidx12';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
@@ -53,7 +53,7 @@ function mapStateToProps($$state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    ...bindActionCreators(actions, dispatch),
+    ...bindActionCreators(actionCreators, dispatch),
   };
 }
 
