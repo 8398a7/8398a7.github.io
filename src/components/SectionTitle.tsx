@@ -1,7 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import './SectionTitle.scss';
 
-const SectionTitle = ({ icon, title }) => (
+type Props = {
+  icon: string,
+  title: string,
+}
+
+const SectionTitle: React.StatelessComponent<Props> = ({ icon, title }) => (
   <h2 className="header indigo-text lighten-1 section-title">
     <span>
       <i className={`fa fa-${icon}`} />
