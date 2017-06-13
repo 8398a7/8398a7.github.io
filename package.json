@@ -80,6 +80,7 @@
     "react-ga": "^2.2.0",
     "react-hot-loader": "next",
     "react-redux": "^5.0.3",
+    "react-redux-typescript": "^2.3.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",

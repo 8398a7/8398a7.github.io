@@ -8,7 +8,7 @@ const Routing = () => (
   <Switch>
     <Route exact path="/" component={AboutMe} />
     <Route exact path="/aboutme" component={AboutMe} />
-    <Route exact path="/hobby" component={Hobby} />
+    <Route exact path="/hobby" component={Hobby as any} />
     <Route component={NoMatch} />
   </Switch>
 );
