@@ -8,3 +8,11 @@ cd 8398a7.github.io
 yarn install
 yarn start # http://localhost:8080
 ```
+
+## Requirements
+
+- typings
+
+```
+npm i -g typings
+```
