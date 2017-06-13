@@ -1,13 +1,24 @@
-import React from 'react';
+import * as React from 'react';
 
-const bodyRender = (title, line) => <p key={`${title}-${line}`}>{line}</p>;
+type bodyRenderProps = {
+  title: string,
+  line: string,
+}
 
-const Card = ({ title, body, link }) => (
+const bodyRender: React.StatelessComponent<bodyRenderProps> = ({ title, line }) => <p key={`${title}-${line}`}>{line}</p>;
+
+type cardProps = {
+  title: string,
+  body: string[],
+  link: string,
+}
+
+const Card: React.StatelessComponent<cardProps> = ({ title, body, link }) => (
   <div className="row">
     <div className="card light-blue accent-2">
       <div className="card-content white-text">
         <span className="card-title">{title}</span>
-        {body.map(line => bodyRender(title, line))}
+        {body.map(line => bodyRender({ title, line }))}
       </div>
       <div className="card-action">
         <a style={{ color: 'white' }} href={link} target="_blank" rel="noopener">
