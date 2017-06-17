@@ -8,7 +8,7 @@ const SkillSet: React.StatelessComponent<{}> = () => (
       <tbody>
         <tr>
           <th>Editor</th>
-          <td>neovim</td>
+          <td>vscode, vim</td>
         </tr>
         <tr>
           <th>Environment</th>
@@ -16,7 +16,7 @@ const SkillSet: React.StatelessComponent<{}> = () => (
         </tr>
         <tr>
           <th>Recently</th>
-          <td>AWS, RonR, Chef, Docker, Redux, Spring Boot</td>
+          <td>AWS, RonR, Chef, Docker, TypeScript, Redux, Spring Boot</td>
         </tr>
         <tr>
           <th>Incumbent</th>
