@@ -34,7 +34,8 @@ export const actionCreators = {
 export default function reducer(state: Iidx12 = new Iidx12(), action: Iidx12Action): Iidx12 {
   switch(action.type) {
     case FETCHED_IIDX12_USERS:
-      return state.set('users', action.payload.users);
+      const { users } = action.payload;
+      return state.with({ users });
     case FAILED_FETCH:
       return state;
     default: return state;
