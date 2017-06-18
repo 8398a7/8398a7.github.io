@@ -5,6 +5,7 @@ import { History } from 'history';
 import './main.scss';
 import Header from './components/Header';
 import Routing from './routing';
+import Footer from './components/Footer';
 
 type Props = {
   store: any,
@@ -21,6 +22,7 @@ const App: React.StatelessComponent<Props> = ({ store, history }) => (
             <Routing />
           </div>
         </div>
+        <Footer revision={process.env.GIT_SHA} />
       </div>
     </ConnectedRouter>
   </Provider>
