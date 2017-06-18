@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --history-api-fallback",
-    "staging:build": "rm -rf dist/* && NODE_ENV=staging webpack",
-    "build": "rm -rf dist/* && NODE_ENV=production webpack"
+    "staging:build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=staging webpack",
+    "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack"
   },
   "babel": {
     "presets": [

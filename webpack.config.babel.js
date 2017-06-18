@@ -4,7 +4,7 @@ const SentryPlugin = require('webpack-sentry-plugin');
 const execSync = require('child_process').execSync;
 const env = require('node-env-file');
 
-const devBuild = process.env.NODE_ENV !== 'production';
+const devBuild = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging';
 const stagingBuild = process.env.NODE_ENV === 'staging';
 const nodeEnv = devBuild ? 'development' : 'production';
 
@@ -42,11 +42,11 @@ module.exports = {
       },
       {
         test: /\.(otf|woff|woff2|svg|ttf|eot)?$/,
-        use: ['file-loader'],
+        use: [`file-loader${devBuild ? '' : '?publicPath=dist/&outputPath=fonts/'}`],
       },
       {
         test: /\.(jpg|png)$/,
-        use: ['file-loader'],
+        use: [`file-loader${devBuild ? '' : '?publicPath=dist/&outputPath=images/'}`],
       },
     ],
   },
