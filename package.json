@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@types/history": "^4.5.1",
+    "@types/immutable": "^3.8.7",
     "@types/react": "^15.0.24",
     "@types/react-dom": "^15.5.0",
     "@types/react-hot-loader": "^3.0.1",
