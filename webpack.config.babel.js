@@ -4,7 +4,8 @@ const SentryPlugin = require('webpack-sentry-plugin');
 const execSync = require('child_process').execSync;
 const env = require('node-env-file');
 
-const devBuild = process.env.NODE_ENV !== 'production';
+const devBuild = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging';
+const stagingBuild = process.env.NODE_ENV === 'staging';
 const nodeEnv = devBuild ? 'development' : 'production';
 
 env(`${__dirname}/.env`);
@@ -41,11 +42,11 @@ module.exports = {
       },
       {
         test: /\.(otf|woff|woff2|svg|ttf|eot)?$/,
-        use: ['base64-font-loader'],
+        use: [`file-loader${devBuild ? '' : '?publicPath=dist/&outputPath=fonts/'}`],
       },
       {
         test: /\.(jpg|png)$/,
-        use: ['url-loader'],
+        use: [`file-loader${devBuild ? '' : '?publicPath=dist/&outputPath=images/'}`],
       },
     ],
   },
@@ -75,6 +76,13 @@ if (devBuild) {
   module.exports.entry.push(
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
+  );
+} else if (stagingBuild) {
+  module.exports.devtool = 'source-map';
+  module.exports.plugins.push(
+    new UglifyJSPlugin({
+      sourceMap: true,
+    }),
   );
 } else {
   module.exports.devtool = 'source-map';
