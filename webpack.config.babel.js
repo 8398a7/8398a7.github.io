@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.(otf|woff|woff2|svg|ttf|eot)?$/,
-        use: ['base64-font-loader'],
+        use: ['file-loader'],
       },
       {
         test: /\.(jpg|png)$/,
