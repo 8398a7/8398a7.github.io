@@ -1,9 +1,17 @@
 import { Record } from 'immutable';
 
-const Iidx12Record = Record({
-  users: 0,
-});
+type TIidx12 = {
+  users?: number,
+}
 
-export default class Iidx12 extends Iidx12Record {
-  static users: number;
+export default class Iidx12 extends Record({ users: 0 }) {
+  users: number;
+
+  constructor(params?: TIidx12) {
+    params ? super(params) : super();
+  }
+
+  with(values: TIidx12) {
+    return this.merge(values) as this;
+  }
 }
