@@ -12,11 +12,11 @@ const SkillSet: React.StatelessComponent<{}> = () => (
         </tr>
         <tr>
           <th>Environment</th>
-          <td>OSX, Ubuntu</td>
+          <td>OSX, Ubuntu Desktop</td>
         </tr>
         <tr>
           <th>Recently</th>
-          <td>AWS, RonR, Chef, Docker, TypeScript, Redux, Spring Boot</td>
+          <td>AWS, Rails, Chef, Docker, TypeScript, Redux, Spring Boot</td>
         </tr>
         <tr>
           <th>Incumbent</th>
