@@ -59,7 +59,7 @@
     "webpack-sentry-plugin": "^1.9.2"
   },
   "dependencies": {
-    "axios": "^0.16.0",
+    "axios": "^0.16.2",
     "font-awesome": "^4.7.0",
     "history": "^4.6.1",
     "immutable": "^3.8.1",
