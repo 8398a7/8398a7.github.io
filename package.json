@@ -53,9 +53,9 @@
     "style-loader": "^0.18.2",
     "ts-loader": "^2.1.0",
     "typescript": "^2.3.4",
-    "uglifyjs-webpack-plugin": "^0.4.3",
+    "uglifyjs-webpack-plugin": "^0.4.4",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.2",
+    "webpack-dev-server": "^2.4.5",
     "webpack-sentry-plugin": "^1.9.2"
   },
   "dependencies": {
