@@ -13,7 +13,6 @@ const revision = execSync('git rev-parse HEAD').toString().trim();
 
 module.exports = {
   entry: [
-    'babel-polyfill',
     'react-hot-loader/patch',
     'materialize-css/dist/css/materialize.css',
     'materialize-css/dist/js/materialize.min',
