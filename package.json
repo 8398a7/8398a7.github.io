@@ -77,6 +77,6 @@
     "redux-logger": "^3.0.6",
     "redux-raven-middleware": "^1.2.0",
     "redux-saga": "^0.15.3",
-    "video-react": "^0.8.3"
+    "video-react": "^0.8.5"
   }
 }
