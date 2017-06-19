@@ -7,7 +7,11 @@ import SkillSet from '../components/AboutMe/SkillSet';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 const Timeline: any = require('react-twitter-widgets').Timeline;
 
-const mapStateToProps = ($$state: any) => ({
+type TmapStateToProps = {
+  users: number,
+}
+
+const mapStateToProps = ($$state: any): TmapStateToProps => ({
   users: $$state.get('$$iidx12State').users,
 });
 
