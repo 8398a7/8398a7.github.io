@@ -22,11 +22,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: ['react-hot-loader/webpack', 'babel-loader'],
-      },
-      {
         test: /\.(ts|tsx)?$/,
         exclude: /node_modules/,
         use: ['react-hot-loader/webpack', 'ts-loader'],
@@ -50,7 +45,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['*', '.js', '.ts', '.tsx'],
   },
   output: {
     path: `${__dirname}/dist`,
