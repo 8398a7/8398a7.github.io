@@ -22,7 +22,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@^4.4.40":
+"@types/react-redux@^4.4.44":
   version "4.4.44"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-4.4.44.tgz#821c99b0eac22c3e32621bc0eba08062f1c07b63"
   dependencies:
@@ -3521,7 +3521,7 @@ react-redux-typescript@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-redux-typescript/-/react-redux-typescript-2.3.0.tgz#6bc4a974352095d3901bc42c5480c63ed343f3ec"
 
-react-redux@^5.0.3:
+react-redux@^5.0.5:
   version "5.0.5"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.5.tgz#f8e8c7b239422576e52d6b7db06439469be9846a"
   dependencies:
