@@ -31,13 +31,13 @@ export const actionCreators = {
   failedFetch: (payload: string): failedFetchAction => ({ type: FAILED_FETCH, payload }),
 }
 
-export default function reducer(state: Iidx12 = new Iidx12(), action: Iidx12Action): Iidx12 {
+export default function reducer($$state: Iidx12 = new Iidx12(), action: Iidx12Action): Iidx12 {
   switch(action.type) {
     case FETCHED_IIDX12_USERS:
       const { users } = action.payload;
-      return state.with({ users });
+      return $$state.with({ users });
     case FAILED_FETCH:
-      return state;
-    default: return state;
+      return $$state;
+    default: return $$state;
   }
 }
