@@ -71,18 +71,26 @@ if (devBuild) {
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
   );
+  module.exports.plugins.push(
+    new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+  );
 } else if (stagingBuild) {
   module.exports.devtool = 'source-map';
   module.exports.plugins.push(
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJSPlugin({
       sourceMap: true,
+      comments: false,
     }),
   );
 } else {
   module.exports.devtool = 'source-map';
   module.exports.plugins.push(
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJSPlugin({
       sourceMap: true,
+      comments: false,
     }),
     new SentryPlugin({
       // Sentry options are required
