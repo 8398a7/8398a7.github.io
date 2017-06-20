@@ -81,6 +81,7 @@ if (devBuild) {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJSPlugin({
       sourceMap: true,
+      comments: false,
     }),
   );
 } else {
@@ -89,6 +90,7 @@ if (devBuild) {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJSPlugin({
       sourceMap: true,
+      comments: false,
     }),
     new SentryPlugin({
       // Sentry options are required
