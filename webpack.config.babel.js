@@ -73,6 +73,7 @@ if (devBuild) {
   );
   module.exports.plugins.push(
     new webpack.NamedModulesPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   );
 } else if (stagingBuild) {
   module.exports.devtool = 'source-map';
