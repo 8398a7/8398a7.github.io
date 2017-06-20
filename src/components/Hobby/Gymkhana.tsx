@@ -1,5 +1,4 @@
 import * as React from 'react';
-import 'video-react/dist/video-react.css';
 import SectionTitle from '../SectionTitle';
 const Player: any = require('video-react').Player;
 

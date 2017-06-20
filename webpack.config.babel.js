@@ -3,6 +3,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const SentryPlugin = require('webpack-sentry-plugin');
 const execSync = require('child_process').execSync;
 const env = require('node-env-file');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const devBuild = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging';
 const stagingBuild = process.env.NODE_ENV === 'staging';
@@ -14,9 +15,7 @@ const revision = execSync('git rev-parse HEAD').toString().trim();
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    'materialize-css/dist/css/materialize.css',
     'materialize-css/dist/js/materialize.min',
-    'font-awesome/css/font-awesome.css',
     './src/index.tsx',
   ],
   module: {
@@ -28,7 +27,10 @@ module.exports = {
       },
       {
         test: /\.css?$/,
-        use: ['style-loader', 'css-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        })
       },
       {
         test: /\.scss?$/,
@@ -36,7 +38,7 @@ module.exports = {
       },
       {
         test: /\.(otf|woff|woff2|svg|ttf|eot)?$/,
-        use: [`file-loader${devBuild ? '' : '?publicPath=dist/&outputPath=fonts/'}`],
+        use: [`file-loader${devBuild ? '' : '?publicPath=../dist/&outputPath=fonts/'}`],
       },
       {
         test: /\.(jpg|png)$/,
@@ -45,7 +47,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.ts', '.tsx'],
+    extensions: ['.css', '.js', '.ts', '.tsx'],
   },
   output: {
     path: `${__dirname}/dist`,
@@ -58,6 +60,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(nodeEnv),
       'process.env.GIT_SHA': JSON.stringify(revision),
     }),
+    new ExtractTextPlugin('style.css'),
   ],
 };
 

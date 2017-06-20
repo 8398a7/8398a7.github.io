@@ -6,6 +6,9 @@ import './main.scss';
 import Header from './components/Header';
 import Routing from './routing';
 import Footer from './components/Footer';
+import 'materialize-css/dist/css/materialize';
+import 'font-awesome/css/font-awesome';
+import 'video-react/dist/video-react';
 
 type Props = {
   store: any,
