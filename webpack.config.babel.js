@@ -74,6 +74,7 @@ if (devBuild) {
 } else if (stagingBuild) {
   module.exports.devtool = 'source-map';
   module.exports.plugins.push(
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJSPlugin({
       sourceMap: true,
     }),
@@ -81,6 +82,7 @@ if (devBuild) {
 } else {
   module.exports.devtool = 'source-map';
   module.exports.plugins.push(
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJSPlugin({
       sourceMap: true,
     }),
