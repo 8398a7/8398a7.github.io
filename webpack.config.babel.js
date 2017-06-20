@@ -71,6 +71,9 @@ if (devBuild) {
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
   );
+  module.exports.plugins.push(
+    new webpack.NamedModulesPlugin(),
+  );
 } else if (stagingBuild) {
   module.exports.devtool = 'source-map';
   module.exports.plugins.push(
