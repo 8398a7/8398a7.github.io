@@ -4,6 +4,7 @@ const SentryPlugin = require('webpack-sentry-plugin');
 const execSync = require('child_process').execSync;
 const env = require('node-env-file');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const devBuild = process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging';
 const stagingBuild = process.env.NODE_ENV === 'staging';
@@ -86,6 +87,9 @@ if (devBuild) {
       sourceMap: true,
       comments: false,
     }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+    }),
   );
 } else {
   module.exports.devtool = 'source-map';
@@ -94,6 +98,9 @@ if (devBuild) {
     new UglifyJSPlugin({
       sourceMap: true,
       comments: false,
+    }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: { discardComments: { removeAll: true } },
     }),
     new SentryPlugin({
       // Sentry options are required
