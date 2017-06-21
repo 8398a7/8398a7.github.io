@@ -27,10 +27,4 @@ const render = (Component: typeof App, store: any, history: History) => {
 };
 
 render(App, store, history);
-
-if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp: typeof App = require('./App').default;
-    render(NextApp, store, history);
-  });
-}
+if (module.hot) module.hot.accept('./App', () => render(App, store, history));
