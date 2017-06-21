@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { returntypeof } from 'react-redux-typescript';
 import { connect } from 'react-redux';
 import { actionCreators } from '../ducks/iidx12';
 import Links from '../components/AboutMe/Links';
@@ -15,12 +14,15 @@ const mapStateToProps = ($$state: any): TmapStateToProps => ({
   users: $$state.get('$$iidx12State').users,
 });
 
+type TdispatchToProps = {
+  fetchIidx12Users: Function,
+}
+
 const dispatchToProps = {
   fetchIidx12Users: actionCreators.fetchIidx12Users,
 };
 
-const stateProps = returntypeof(mapStateToProps);
-type Props = typeof stateProps & typeof dispatchToProps;
+type Props = TmapStateToProps & TdispatchToProps;
 
 class AboutMe extends React.PureComponent<Props, {}> {
   componentWillMount() {
@@ -59,4 +61,4 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect<TmapStateToProps, any, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);
+export default connect<TmapStateToProps, TdispatchToProps, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);

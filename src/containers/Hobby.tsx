@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { returntypeof } from 'react-redux-typescript';
 import { connect } from 'react-redux';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
 
 const mapStateToProps = () => ({});
 const dispatchToProps = {};
-const stateProps = returntypeof(mapStateToProps);
-type Props = typeof stateProps & typeof dispatchToProps;
 
-class Hobby extends React.PureComponent<Props, {}> {
+class Hobby extends React.PureComponent<{}, {}> {
   render() {
     return (
       <div>
@@ -22,4 +19,4 @@ class Hobby extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect<Props, void, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(Hobby);
+export default connect<{}, {}, React.ComponentClass<{}>>(mapStateToProps, dispatchToProps)(Hobby);
