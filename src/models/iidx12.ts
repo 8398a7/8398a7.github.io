@@ -5,7 +5,7 @@ type TIidx12 = {
 }
 
 export default class Iidx12 extends Record({ users: 0 }) {
-  users: number;
+  readonly users: number;
 
   constructor(params?: TIidx12) {
     params ? super(params) : super();
