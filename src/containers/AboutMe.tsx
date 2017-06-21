@@ -4,13 +4,14 @@ import { actionCreators } from '../ducks/iidx12';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
+import { RootState } from '../ducks/index';
 const Timeline: any = require('react-twitter-widgets').Timeline;
 
 type TmapStateToProps = {
   users: number,
 }
 
-const mapStateToProps = ($$state: any): TmapStateToProps => ({
+const mapStateToProps = ($$state: RootState): TmapStateToProps => ({
   users: $$state.get('$$iidx12State').users,
 });
 
