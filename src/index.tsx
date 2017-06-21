@@ -5,19 +5,20 @@ import { History } from 'history';
 import createHistory from 'history/createBrowserHistory';
 import * as ReactGA from 'react-ga';
 import createStore from './store';
-import App from './App';
+import App, { TAppProps } from './App';
+import { Store } from 'redux';
 
 const history: History = createHistory();
-const store = createStore(history);
+const store: Store<{}> = createStore(history);
 
 ReactGA.initialize('UA-99954359-1');
 
-history.listen((location) => {
+history.listen((location): void => {
   ReactGA.set({ page: location.pathname + location.search });
   ReactGA.pageview(location.pathname + location.search);
 });
 
-const render = (Component: typeof App, store: any, history: History) => {
+const render = (Component: React.StatelessComponent<TAppProps>, store: Store<{}>, history: History): void => {
   ReactDOM.render(
     <AppContainer>
       <Component {...{ store, history }} />
@@ -27,4 +28,4 @@ const render = (Component: typeof App, store: any, history: History) => {
 };
 
 render(App, store, history);
-if (module.hot) module.hot.accept('./App', () => render(App, store, history));
+if (module.hot) module.hot.accept('./App', (): void => render(App, store, history));

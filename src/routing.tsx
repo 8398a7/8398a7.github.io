@@ -4,11 +4,11 @@ import AboutMe from './containers/AboutMe';
 import Hobby from './containers/Hobby';
 import NoMatch from './components/NoMatch';
 
-const Routing = () => (
+const Routing = (): JSX.Element => (
   <Switch>
-    <Route exact path="/" component={AboutMe as any} />
-    <Route exact path="/aboutme" component={AboutMe as any} />
-    <Route exact path="/hobby" component={Hobby as any} />
+    <Route exact path="/" component={AboutMe as React.ComponentClass<any>} />
+    <Route exact path="/aboutme" component={AboutMe as React.ComponentClass<any>} />
+    <Route exact path="/hobby" component={Hobby as React.ComponentClass<any>} />
     <Route component={NoMatch} />
   </Switch>
 );
