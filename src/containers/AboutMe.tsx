@@ -59,4 +59,4 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect(mapStateToProps, dispatchToProps)(AboutMe);
+export default connect<TmapStateToProps, any, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);

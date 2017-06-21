@@ -22,4 +22,4 @@ class Hobby extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect(mapStateToProps, dispatchToProps)(Hobby);
+export default connect<Props, void, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(Hobby);
