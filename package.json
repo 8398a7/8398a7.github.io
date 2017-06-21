@@ -10,21 +10,6 @@
     "staging:build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=staging webpack",
     "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack"
   },
-  "babel": {
-    "presets": [
-      [
-        "es2015",
-        {
-          "modules": false
-        }
-      ],
-      "react",
-      "stage-0"
-    ],
-    "plugins": [
-      "react-hot-loader/babel"
-    ]
-  },
   "devDependencies": {
     "@types/history": "^4.5.1",
     "@types/react": "^15.0.29",
