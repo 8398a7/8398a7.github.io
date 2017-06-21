@@ -1,7 +1,7 @@
 import { Record } from 'immutable';
 
 type TIidx12 = {
-  users?: number,
+  users: number,
 }
 
 export default class Iidx12 extends Record({ users: 0 }) {
