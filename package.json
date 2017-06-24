@@ -6,7 +6,7 @@
   "author": "839 <8398a7@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --hot --history-api-fallback --host 0.0.0.0",
+    "start": "webpack-dev-server --progress --colors --hot",
     "staging:build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=staging webpack",
     "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'",
