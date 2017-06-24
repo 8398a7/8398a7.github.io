@@ -17,3 +17,12 @@ yarn start # http://localhost:8080
 ```
 npm i -g typings
 ```
+
+## Optional
+
+- docker
+
+```
+yarn run docker:start
+# run webpack-dev-server => localhost:8080
+```
