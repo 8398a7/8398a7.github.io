@@ -8,7 +8,9 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --history-api-fallback",
     "staging:build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=staging webpack",
-    "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack"
+    "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack",
+    "lint": "tslint -c tslint.json 'src/**/*.ts*'",
+    "lint:fix": "tslint --fix -c tslint.json 'src/**/*.ts*'"
   },
   "devDependencies": {
     "@types/history": "^4.5.1",
