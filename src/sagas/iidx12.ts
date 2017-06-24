@@ -10,13 +10,13 @@ const {
   failedFetch,
  } = actionCreators;
 
-interface fetchIidx12UsersResponse {
+interface IfetchIidx12Users {
   users: number;
 }
 
 function* fetchIidx12Users() {
   try {
-    const { users }: fetchIidx12UsersResponse = yield call(API.fetchIidx12Users);
+    const { users }: IfetchIidx12Users = yield call(API.fetchIidx12Users);
     yield put(fetchedIidx12Users(users));
   } catch (e) {
     yield put(failedFetch(e));

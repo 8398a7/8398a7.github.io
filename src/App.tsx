@@ -11,12 +11,12 @@ import Header from './components/Header';
 import './main.scss';
 import Routing from './routing';
 
-export interface TAppProps {
+export interface IAppProps {
   store: Store<{}>;
   history: History;
 }
 
-const App: React.StatelessComponent<TAppProps> = ({ store, history }) => (
+const App: React.StatelessComponent<IAppProps> = ({ store, history }) => (
   <Provider {...{ store }}>
     <ConnectedRouter {...{ history }}>
       <div>

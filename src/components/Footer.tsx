@@ -1,11 +1,11 @@
 
 import * as React from 'react';
 
-interface Props {
+interface IProps {
   revision: string;
 }
 
-const Footer: React.StatelessComponent<Props> = ({ revision }) => (
+const Footer: React.StatelessComponent<IProps> = ({ revision }) => (
   <footer className="center">
     <i className="fa fa-code-fork" />revision: {revision}
   </footer>

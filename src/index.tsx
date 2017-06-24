@@ -5,7 +5,7 @@ import * as ReactDOM from 'react-dom';
 import * as ReactGA from 'react-ga';
 import { AppContainer } from 'react-hot-loader';
 import { Store } from 'redux';
-import App, { TAppProps } from './App';
+import App, { IAppProps } from './App';
 import createStore from './store';
 
 const history: History = createHistory();
@@ -18,7 +18,7 @@ history.listen((location): void => {
   ReactGA.pageview(location.pathname + location.search);
 });
 
-const render = (Component: React.StatelessComponent<TAppProps>, store: Store<{}>, history: History): void => {
+const render = (Component: React.StatelessComponent<IAppProps>, store: Store<{}>, history: History): void => {
   ReactDOM.render(
     <AppContainer>
       <Component {...{ store, history }} />

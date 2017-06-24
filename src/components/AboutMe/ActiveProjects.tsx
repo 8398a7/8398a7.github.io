@@ -2,11 +2,11 @@ import * as React from 'react';
 import Card from '../Card';
 import SectionTitle from '../SectionTitle';
 
-interface Props {
+interface IProps {
   users: number;
 }
 
-const ActiveProjects: React.StatelessComponent<Props> = ({ users }) => (
+const ActiveProjects: React.StatelessComponent<IProps> = ({ users }) => (
   <div>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card

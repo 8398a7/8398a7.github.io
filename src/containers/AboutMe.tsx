@@ -7,15 +7,15 @@ import { actionCreators } from '../ducks/iidx12';
 import { RootState } from '../ducks/index';
 const Timeline: any = require('react-twitter-widgets').Timeline;
 
-interface TmapStateToProps {
+interface ImapStateToProps {
   users: number;
 }
 
-const mapStateToProps = ($$state: RootState): TmapStateToProps => ({
+const mapStateToProps = ($$state: RootState): ImapStateToProps => ({
   users: $$state.get('$$iidx12State').users,
 });
 
-interface TdispatchToProps {
+interface IdispatchToProps {
   fetchIidx12Users: Function;
 }
 
@@ -23,7 +23,7 @@ const dispatchToProps = {
   fetchIidx12Users: actionCreators.fetchIidx12Users,
 };
 
-type Props = TmapStateToProps & TdispatchToProps;
+type Props = ImapStateToProps & IdispatchToProps;
 
 class AboutMe extends React.PureComponent<Props, {}> {
   componentWillMount() {
@@ -62,4 +62,4 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect<TmapStateToProps, TdispatchToProps, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);
+export default connect<ImapStateToProps, IdispatchToProps, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);
