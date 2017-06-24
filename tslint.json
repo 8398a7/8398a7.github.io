@@ -8,6 +8,7 @@
     "jsRules": {},
     "rules": {
       "import-name": false,
+      "no-var-requires": false,
       "variable-name": false
     },
     "rulesDirectory": []
