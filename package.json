@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot",
+    "docker:start": "docker build . -t 8398a7/8398a7.github.io:latest && docker run -it -v `pwd`/src:/usr/src/app/src -p 8080:8080 8398a7/8398a7.github.io:latest",
     "staging:build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=staging webpack",
     "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'",
