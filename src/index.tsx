@@ -1,12 +1,12 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { History } from 'history';
 import createHistory from 'history/createBrowserHistory';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import * as ReactGA from 'react-ga';
-import createStore from './store';
-import App, { TAppProps } from './App';
+import { AppContainer } from 'react-hot-loader';
 import { Store } from 'redux';
+import App, { TAppProps } from './App';
+import createStore from './store';
 
 const history: History = createHistory();
 const store: Store<{}> = createStore(history);

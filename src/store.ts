@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware, compose, Store } from 'redux';
-import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
-import { createLogger } from 'redux-logger';
-import { routerMiddleware } from 'react-router-redux';
 import { History } from 'history';
-import rootSaga from './sagas';
+import { routerMiddleware } from 'react-router-redux';
+import { applyMiddleware, compose, createStore, Store } from 'redux';
+import { createLogger } from 'redux-logger';
+import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
 import combinedReducer from './ducks';
+import rootSaga from './sagas';
 const RavenMiddleware: any  = require('redux-raven-middleware');
 
 export default (history: History) => {
@@ -27,7 +27,7 @@ export default (history: History) => {
       ),
     ];
   }
-  let devtools: any = process.env.NODE_ENV !== 'production' && (<any>window).devToolsExtension ? (<any>window).devToolsExtension() : (f: any) => f;
+  const devtools: any = process.env.NODE_ENV !== 'production' && (window as any).devToolsExtension ? (window as any).devToolsExtension() : (f: any) => f;
   const store: Store<{}> = createStore(
     combinedReducer,
     compose(

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router';
+import NoMatch from './components/NoMatch';
 import AboutMe from './containers/AboutMe';
 import Hobby from './containers/Hobby';
-import NoMatch from './components/NoMatch';
 
 const Routing = (): JSX.Element => (
   <Switch>

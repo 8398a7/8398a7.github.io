@@ -6,10 +6,10 @@ const profile: string = require('../images/profile.jpg');
 
 const Header: React.StatelessComponent<{}> = () => (
   <header>
-    <Link to='/'>
+    <Link to="/">
       <img className="circle responsive-img" src={profile} />
     </Link>
-    <h1 style={{paddingBottom: '10px'}}>
+    <h1 style={{ paddingBottom: '10px' }}>
       @8398a7
     </h1>
     <p className="main">
@@ -24,6 +24,6 @@ const Header: React.StatelessComponent<{}> = () => (
     <p>react</p>
     <Navbar />
   </header>
-)
+);
 
 export default Header;

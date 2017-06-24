@@ -7,13 +7,13 @@ const Navbar: React.StatelessComponent<{}> = () => (
     <div className="navbar-wrapper">
       <ul>
         <li>
-          <Link to='/aboutme'>
+          <Link to="/aboutme">
             <i className="fa fa-bookmark" />
             about me
           </Link>
         </li>
         <li>
-          <Link to='/hobby'>
+          <Link to="/hobby">
             <i className="fa fa-heart" />
             hobby
           </Link>

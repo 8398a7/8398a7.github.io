@@ -25,6 +25,6 @@ const SkillSet: React.StatelessComponent<{}> = () => (
       </tbody>
     </table>
   </div>
-)
+);
 
 export default SkillSet;

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './SectionTitle.scss';
 
-type Props = {
-  icon: string,
-  title: string,
+interface Props {
+  icon: string;
+  title: string;
 }
 
 const SectionTitle: React.StatelessComponent<Props> = ({ icon, title }) => (
@@ -13,6 +13,6 @@ const SectionTitle: React.StatelessComponent<Props> = ({ icon, title }) => (
       {title}
     </span>
   </h2>
-)
+);
 
 export default SectionTitle;

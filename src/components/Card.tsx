@@ -1,16 +1,16 @@
 import * as React from 'react';
 
-type bodyRenderProps = {
-  title: string,
-  line: string,
+interface bodyRenderProps {
+  title: string;
+  line: string;
 }
 
 const bodyRender: React.StatelessComponent<bodyRenderProps> = ({ title, line }) => <p key={`${title}-${line}`}>{line}</p>;
 
-type cardProps = {
-  title: string,
-  body: string[],
-  link: string,
+interface cardProps {
+  title: string;
+  body: string[];
+  link: string;
 }
 
 const Card: React.StatelessComponent<cardProps> = ({ title, body, link }) => (

@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { actionCreators } from '../ducks/iidx12';
+import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
-import ActiveProjects from '../components/AboutMe/ActiveProjects';
+import { actionCreators } from '../ducks/iidx12';
 import { RootState } from '../ducks/index';
 const Timeline: any = require('react-twitter-widgets').Timeline;
 
-type TmapStateToProps = {
-  users: number,
+interface TmapStateToProps {
+  users: number;
 }
 
 const mapStateToProps = ($$state: RootState): TmapStateToProps => ({
   users: $$state.get('$$iidx12State').users,
 });
 
-type TdispatchToProps = {
-  fetchIidx12Users: Function,
+interface TdispatchToProps {
+  fetchIidx12Users: Function;
 }
 
 const dispatchToProps = {

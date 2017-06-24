@@ -1,9 +1,9 @@
 import * as React from 'react';
-import SectionTitle from '../SectionTitle';
 import Card from '../Card';
+import SectionTitle from '../SectionTitle';
 
-type Props = {
-  users: number,
+interface Props {
+  users: number;
 }
 
 const ActiveProjects: React.StatelessComponent<Props> = ({ users }) => (
