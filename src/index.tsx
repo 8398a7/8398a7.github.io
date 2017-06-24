@@ -18,7 +18,11 @@ history.listen((location): void => {
   ReactGA.pageview(location.pathname + location.search);
 });
 
-const render = (Component: React.StatelessComponent<IAppProps>, store: Store<{}>, history: History): void => {
+const render = (
+  Component: React.StatelessComponent<IAppProps>,
+  store: Store<{}>,
+  history: History,
+): void => {
   ReactDOM.render(
     <AppContainer>
       <Component {...{ store, history }} />

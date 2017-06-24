@@ -62,4 +62,7 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect<ImapStateToProps, IdispatchToProps, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);
+export default connect<ImapStateToProps, IdispatchToProps, React.ComponentClass<Props>>(
+  mapStateToProps,
+  dispatchToProps,
+)(AboutMe);

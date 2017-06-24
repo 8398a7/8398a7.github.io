@@ -27,7 +27,9 @@ export type Iidx12Action = IfetchIidx12UsersAction | IfetchedIidx12UsersAction |
 
 export const actionCreators = {
   fetchIidx12Users: (): IfetchIidx12UsersAction => ({ type: FETCH_IIDX12_USERS }),
-  fetchedIidx12Users: (users: number): IfetchedIidx12UsersAction => ({ type: FETCHED_IIDX12_USERS, payload: { users } }),
+  fetchedIidx12Users: (users: number): IfetchedIidx12UsersAction => (
+    { type: FETCHED_IIDX12_USERS, payload: { users } }
+  ),
   failedFetch: (payload: string): IfailedFetchAction => ({ type: FAILED_FETCH, payload }),
 };
 

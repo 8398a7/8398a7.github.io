@@ -5,7 +5,9 @@ interface IbodyRenderProps {
   line: string;
 }
 
-const bodyRender: React.StatelessComponent<IbodyRenderProps> = ({ title, line }) => <p key={`${title}-${line}`}>{line}</p>;
+const bodyRender: React.StatelessComponent<IbodyRenderProps> = ({ title, line }) => (
+  <p key={`${title}-${line}`}>{line}</p>
+);
 
 interface IcardProps {
   title: string;

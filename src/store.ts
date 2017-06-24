@@ -27,7 +27,8 @@ export default (history: History) => {
       ),
     ];
   }
-  const devtools: any = process.env.NODE_ENV !== 'production' && (window as any).devToolsExtension ? (window as any).devToolsExtension() : (f: any) => f;
+  const devtools: any = process.env.NODE_ENV !== 'production' && (window as any).devToolsExtension ?
+    (window as any).devToolsExtension() : (f: any) => f;
   const store: Store<{}> = createStore(
     combinedReducer,
     compose(
