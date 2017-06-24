@@ -8,12 +8,12 @@ import { Store } from 'redux';
 import App, { IAppProps } from './App';
 import createStore from './store';
 
-const history: History = createHistory();
-const store: Store<{}> = createStore(history);
+const initialHistory: History = createHistory();
+const initialStore: Store<{}> = createStore(initialHistory);
 
 ReactGA.initialize('UA-99954359-1');
 
-history.listen((location): void => {
+initialHistory.listen((location): void => {
   ReactGA.set({ page: location.pathname + location.search });
   ReactGA.pageview(location.pathname + location.search);
 });
@@ -31,5 +31,5 @@ const render = (
   );
 };
 
-render(App, store, history);
-if (module.hot) module.hot.accept('./App', (): void => render(App, store, history));
+render(App, initialStore, initialHistory);
+if (module.hot) module.hot.accept('./App', (): void => render(App, initialStore, initialHistory));
