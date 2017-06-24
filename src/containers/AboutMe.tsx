@@ -16,7 +16,7 @@ const mapStateToProps = ($$state: RootState): ImapStateToProps => ({
 });
 
 interface IdispatchToProps {
-  fetchIidx12Users: Function;
+  fetchIidx12Users: () => void;
 }
 
 const dispatchToProps = {
