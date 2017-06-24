@@ -32,4 +32,6 @@ const render = (
 };
 
 render(App, initialStore, initialHistory);
-if (module.hot) module.hot.accept('./App', (): void => render(App, initialStore, initialHistory));
+if (module.hot) {
+  module.hot.accept('./App', (): void => render(App, initialStore, initialHistory));
+}
