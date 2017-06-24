@@ -1,10 +1,10 @@
 import * as React from 'react';
-import './Links.scss';
 import SectionTitle from '../SectionTitle';
-const gh:       string = require('../../images/gh.png');
-const twitter:  string = require('../../images/twitter.png');
+import './Links.scss';
+const gh: string = require('../../images/gh.png');
+const twitter: string = require('../../images/twitter.png');
 const wantedly: string = require('../../images/wantedly.png');
-const qiita:    string = require( '../../images/qiita.png');
+const qiita: string = require('../../images/qiita.png');
 
 const Links = () => (
   <div>

@@ -1,15 +1,15 @@
-import { combineReducers } from 'redux-immutable';
-import { routerReducer, RouterState } from 'react-router-redux';
 import { Map } from 'immutable';
-import $$iidx12State from './iidx12';
+import { routerReducer, RouterState } from 'react-router-redux';
+import { combineReducers } from 'redux-immutable';
 import Iidx12 from '../models/iidx12';
+import $$iidx12State from './iidx12';
 
-type State = {
-  $$iidx12State: Iidx12,
-  router: RouterState,
+interface IState {
+  $$iidx12State: Iidx12;
+  router: RouterState;
 }
 
-export type RootState = State & Map<string, Iidx12>
+export type RootState = IState & Map<string, Iidx12>;
 
 export default combineReducers<RootState>({
   $$iidx12State,

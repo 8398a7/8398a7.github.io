@@ -1,19 +1,21 @@
 import * as React from 'react';
 
-type bodyRenderProps = {
-  title: string,
-  line: string,
+interface IbodyRenderProps {
+  title: string;
+  line: string;
 }
 
-const bodyRender: React.StatelessComponent<bodyRenderProps> = ({ title, line }) => <p key={`${title}-${line}`}>{line}</p>;
+const bodyRender: React.StatelessComponent<IbodyRenderProps> = ({ title, line }) => (
+  <p key={`${title}-${line}`}>{line}</p>
+);
 
-type cardProps = {
-  title: string,
-  body: string[],
-  link: string,
+interface IcardProps {
+  title: string;
+  body: string[];
+  link: string;
 }
 
-const Card: React.StatelessComponent<cardProps> = ({ title, body, link }) => (
+const Card: React.StatelessComponent<IcardProps> = ({ title, body, link }) => (
   <div className="row">
     <div className="card light-blue accent-2">
       <div className="card-content white-text">

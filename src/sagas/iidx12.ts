@@ -1,22 +1,22 @@
-import { call, put, fork, take } from 'redux-saga/effects';
-import API from '../lib/api';
+import { call, fork, put, take } from 'redux-saga/effects';
 import {
-  FETCH_IIDX12_USERS,
   actionCreators,
+  FETCH_IIDX12_USERS,
  } from '../ducks/iidx12';
+import API from '../lib/api';
 
- const {
+const {
   fetchedIidx12Users,
   failedFetch,
  } = actionCreators;
 
- type fetchIidx12UsersResponse = {
-   users: number,
- }
+interface IfetchIidx12Users {
+  users: number;
+}
 
 function* fetchIidx12Users() {
   try {
-    const { users }: fetchIidx12UsersResponse = yield call(API.fetchIidx12Users);
+    const { users }: IfetchIidx12Users = yield call(API.fetchIidx12Users);
     yield put(fetchedIidx12Users(users));
   } catch (e) {
     yield put(failedFetch(e));

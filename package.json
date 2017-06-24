@@ -8,7 +8,9 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --history-api-fallback",
     "staging:build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=staging webpack",
-    "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack"
+    "build": "rm -rf dist/* && cp development.html dist/index.html && NODE_ENV=production webpack",
+    "lint": "tslint -c tslint.json 'src/**/*.ts*'",
+    "lint:fix": "tslint --fix -c tslint.json 'src/**/*.ts*'"
   },
   "devDependencies": {
     "@types/history": "^4.5.1",
@@ -33,6 +35,9 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.1.0",
+    "tslint": "^5.4.3",
+    "tslint-config-airbnb": "^5.2.0",
+    "tslint-react": "^3.0.0",
     "typescript": "^2.3.4",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.0.0",

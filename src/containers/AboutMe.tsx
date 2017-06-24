@@ -1,37 +1,45 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { actionCreators } from '../ducks/iidx12';
+import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
-import ActiveProjects from '../components/AboutMe/ActiveProjects';
+import { actionCreators } from '../ducks/iidx12';
 import { RootState } from '../ducks/index';
 const Timeline: any = require('react-twitter-widgets').Timeline;
 
-type TmapStateToProps = {
-  users: number,
+interface ImapStateToProps {
+  users: number;
 }
 
-const mapStateToProps = ($$state: RootState): TmapStateToProps => ({
+const mapStateToProps = ($$state: RootState): ImapStateToProps => ({
   users: $$state.get('$$iidx12State').users,
 });
 
-type TdispatchToProps = {
-  fetchIidx12Users: Function,
+interface IdispatchToProps {
+  fetchIidx12Users: () => void;
 }
 
 const dispatchToProps = {
   fetchIidx12Users: actionCreators.fetchIidx12Users,
 };
 
-type Props = TmapStateToProps & TdispatchToProps;
+type Props = ImapStateToProps & IdispatchToProps;
 
 class AboutMe extends React.PureComponent<Props, {}> {
-  componentWillMount() {
+  public componentWillMount() {
     this.props.fetchIidx12Users();
   }
 
-  render() {
+  public render() {
     const { users } = this.props;
+    const dataSource = {
+      screenName: '8398a7',
+      sourceType: 'profile',
+    };
+    const options = {
+      height: '800',
+      username: '8398a7',
+    };
     return (
       <div>
         <div className="col s12">
@@ -45,16 +53,7 @@ class AboutMe extends React.PureComponent<Props, {}> {
             <ActiveProjects {...{ users }} />
           </div>
           <div className="col s6">
-            <Timeline
-              dataSource={{
-                sourceType: 'profile',
-                screenName: '8398a7',
-              }}
-              options={{
-                username: '8398a7',
-                height: '800',
-              }}
-            />
+            <Timeline {...{ dataSource, options }} />
           </div>
         </div>
       </div>
@@ -62,4 +61,7 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect<TmapStateToProps, TdispatchToProps, React.ComponentClass<Props>>(mapStateToProps, dispatchToProps)(AboutMe);
+export default connect<ImapStateToProps, IdispatchToProps, React.ComponentClass<Props>>(
+  mapStateToProps,
+  dispatchToProps,
+)(AboutMe);
