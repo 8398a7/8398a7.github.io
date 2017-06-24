@@ -32,6 +32,14 @@ class AboutMe extends React.PureComponent<Props, {}> {
 
   public render() {
     const { users } = this.props;
+    const dataSource = {
+      screenName: '8398a7',
+      sourceType: 'profile',
+    };
+    const options = {
+      height: '800',
+      username: '8398a7',
+    };
     return (
       <div>
         <div className="col s12">
@@ -45,16 +53,7 @@ class AboutMe extends React.PureComponent<Props, {}> {
             <ActiveProjects {...{ users }} />
           </div>
           <div className="col s6">
-            <Timeline
-              dataSource={{
-                sourceType: 'profile',
-                screenName: '8398a7',
-              }}
-              options={{
-                username: '8398a7',
-                height: '800',
-              }}
-            />
+            <Timeline {...{ dataSource, options }} />
           </div>
         </div>
       </div>
