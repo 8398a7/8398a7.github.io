@@ -1,14 +1,17 @@
 FROM node:8.1.2
 
-RUN npm i -g yarn
+RUN npm i -g yarn typings
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
+ENV HOME /usr/src/app
 
-COPY package.json /usr/src/app/
-COPY yarn.lock /usr/src/app/
+COPY package.json $HOME
+COPY yarn.lock $HOME
 RUN yarn install
+COPY typings.json $HOME
+RUN typings install
 
-COPY . /usr/src/app
+COPY . $HOME
+COPY .env.sample $HOME/.env
 
-EXPOSE 8080
-CMD [ "yarn", "start" ]
+CMD ["yarn", "start"]

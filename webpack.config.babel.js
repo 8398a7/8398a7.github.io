@@ -69,6 +69,8 @@ if (devBuild) {
   module.exports.devtool = 'eval';
   module.exports.devServer = {
     contentBase: './dist',
+    historyApiFallback: true,
+    host: '0.0.0.0',
     hot: true,
   };
   module.exports.entry.push(
