@@ -1,0 +1,23 @@
+ version: 2
+ jobs:
+   build:
+     working_directory: ~/8398a7.github.io
+     docker:
+       - image: circleci/node:8.1.2
+     steps:
+       - checkout
+       - run:
+           name: global yarn install
+           command: 'sudo npm install -g yarn'
+       - restore_cache:
+           key: dependency-cache-{{ checksum "package.json" }}
+       - run:
+           name: yarn install
+           command: yarn install
+       - save_cache:
+           key: dependency-cache-{{ checksum "package.json" }}
+           paths:
+             - ./node_modules
+       - run:
+           name: lint
+           command: yarn run lint
