@@ -1,0 +1,9 @@
+ version: 2
+ jobs:
+   build:
+     working_directory: ~/8398a7.github.io
+     docker:
+       - image: circleci/node:8.1.2
+     steps:
+       - checkout
+       - run: echo "hello world"
