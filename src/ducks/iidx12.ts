@@ -26,11 +26,11 @@ export interface IfailedFetchAction {
 export type Iidx12Action = IfetchIidx12UsersAction | IfetchedIidx12UsersAction | IfailedFetchAction;
 
 export const actionCreators = {
+  failedFetch: (payload: string): IfailedFetchAction => ({ payload, type: FAILED_FETCH }),
   fetchIidx12Users: (): IfetchIidx12UsersAction => ({ type: FETCH_IIDX12_USERS }),
   fetchedIidx12Users: (users: number): IfetchedIidx12UsersAction => (
     { type: FETCHED_IIDX12_USERS, payload: { users } }
   ),
-  failedFetch: (payload: string): IfailedFetchAction => ({ type: FAILED_FETCH, payload }),
 };
 
 export default function reducer($$state: Iidx12 = new Iidx12(), action: Iidx12Action): Iidx12 {
