@@ -10,5 +10,5 @@ function sendGet(url: string) {
 }
 
 export default class API {
-  static fetchIidx12Users = () => sendGet('https://api.iidx12.tk/users/count');
+  public static fetchIidx12Users = () => sendGet('https://api.iidx12.tk/users/count');
 }

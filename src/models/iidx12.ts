@@ -5,13 +5,13 @@ interface IIidx12 {
 }
 
 export default class Iidx12 extends Record({ users: 0 }) {
-  readonly users: number;
+  public readonly users: number;
 
   constructor(params?: IIidx12) {
     params ? super(params) : super();
   }
 
-  with(values: IIidx12) {
+  public with(values: IIidx12) {
     return this.merge(values) as this;
   }
 }

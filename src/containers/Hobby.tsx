@@ -7,7 +7,7 @@ const mapStateToProps = () => ({});
 const dispatchToProps = {};
 
 class Hobby extends React.PureComponent<{}, {}> {
-  render() {
+  public render() {
     return (
       <div>
         <div className="col s12">

@@ -26,11 +26,11 @@ const dispatchToProps = {
 type Props = ImapStateToProps & IdispatchToProps;
 
 class AboutMe extends React.PureComponent<Props, {}> {
-  componentWillMount() {
+  public componentWillMount() {
     this.props.fetchIidx12Users();
   }
 
-  render() {
+  public render() {
     const { users } = this.props;
     return (
       <div>
