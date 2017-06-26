@@ -1,6 +1,6 @@
-FROM node:8.1.2
+FROM node:8.1.2-alpine
 
-RUN npm i -g yarn typings
+RUN apk add --update --no-cache git && npm i -g yarn typings
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ENV HOME /usr/src/app
