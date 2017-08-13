@@ -24,7 +24,7 @@ module.exports = {
       {
         test: /\.(ts|tsx)?$/,
         exclude: /node_modules/,
-        use: ['react-hot-loader/webpack', 'ts-loader'],
+        use: ['react-hot-loader/webpack', 'awesome-typescript-loader'],
       },
       {
         test: /\.css?$/,
