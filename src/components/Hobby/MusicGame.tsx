@@ -14,11 +14,11 @@ const MusicGame: React.StatelessComponent<{}> = () => (
           <tbody>
             <tr>
               <td>bms</td>
-              <td>★7</td>
+              <td>★8</td>
             </tr>
             <tr>
               <td>recommend</td>
-              <td>★18.44</td>
+              <td>★19.94</td>
             </tr>
             <tr>
               <td>style</td>
@@ -41,12 +41,17 @@ const MusicGame: React.StatelessComponent<{}> = () => (
               <td>☆☆</td>
             </tr>
             <tr>
-              <td>author: <a href="https://iidx12.tk">iidx12.tk</a></td>
+              <td>
+                author:
+                <a href="https://iidx12.tk">iidx12.tk</a>,&nbsp;
+                <a href="https://score.iidx12.tk">IST</a>,&nbsp;
+                <a href="https://citrus-ir.tk">Citrus IR</a>
+              </td>
               <td>14/11/11</td>
             </tr>
             <tr>
               <td>remain</td>
-              <td>灼熱pt.1 & 2/ICARUS†/Mare/冥</td>
+              <td>灼熱/ICARUS†/Mare</td>
             </tr>
             <tr>
               <td>start</td>

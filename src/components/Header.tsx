@@ -18,7 +18,9 @@ const Header: React.StatelessComponent<{}> = () => (
     </p>
     <div />
     <p>aws</p>
+    <p>gcp</p>
     <p>rails</p>
+    <p>java</p>
     <p>chef</p>
     <p>docker</p>
     <p>react</p>

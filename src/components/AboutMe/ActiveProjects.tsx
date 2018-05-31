@@ -15,6 +15,16 @@ const ActiveProjects: React.StatelessComponent<IProps> = ({ users }) => (
       link="https://github.com/8398a7/abilitysheet"
     />
     <Card
+      title="Iidx Score Table(IST)"
+      body={['iidxのスコア管理ツール(SP/DP)', `登録者数: 約500名`, 'rails, react']}
+      link="https://8398a7.github.io"
+    />
+    <Card
+      title="Citrus IR"
+      body={['beatorajaのIRサーバ', `α版提供`, 'rails, java']}
+      link="https://8398a7.github.io"
+    />
+    <Card
       title="lgtm_creator"
       body={['gif動画にLGTMをつけるcli', 'ruby gem']}
       link="https://github.com/8398a7/lgtm_creator"
