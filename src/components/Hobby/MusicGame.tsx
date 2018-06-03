@@ -18,7 +18,7 @@ const MusicGame: React.StatelessComponent<{}> = () => (
             </tr>
             <tr>
               <td>recommend</td>
-              <td>★19.94</td>
+              <td>★20.00</td>
             </tr>
             <tr>
               <td>style</td>
@@ -42,12 +42,21 @@ const MusicGame: React.StatelessComponent<{}> = () => (
             </tr>
             <tr>
               <td>
-                author:
-                <a href="https://iidx12.tk">iidx12.tk</a>,&nbsp;
-                <a href="https://score.iidx12.tk">IST</a>,&nbsp;
-                <a href="https://citrus-ir.tk">Citrus IR</a>
+                author: <a href="https://iidx12.tk">iidx12.tk</a>
               </td>
               <td>14/11/11</td>
+            </tr>
+            <tr>
+              <td>
+                author: <a href="https://score.iidx12.tk">IST</a>
+              </td>
+              <td>18/01/20</td>
+            </tr>
+            <tr>
+              <td>
+                author: <a href="https://citrus-ir.tk">Citrus IR</a>
+              </td>
+              <td>18/05/27</td>
             </tr>
             <tr>
               <td>remain</td>
