@@ -16,7 +16,7 @@ const ActiveProjects: React.StatelessComponent<IProps> = ({ users }) => (
     />
     <Card
       title="Iidx Score Table(IST)"
-      body={['iidxのスコア管理ツール(SP/DP)', `登録者数: 約500名`, 'rails, react']}
+      body={['iidxのスコア管理ツール(SP/DP)', `登録者数: 約800名`, 'rails, react']}
       link="https://8398a7.github.io"
     />
     <Card
@@ -31,7 +31,7 @@ const ActiveProjects: React.StatelessComponent<IProps> = ({ users }) => (
     />
     <Card
       title="api-abilitysheet"
-      body={['abilitysheetのapiサーバ', 'crystal, docker']}
+      body={['abilitysheetのapiサーバ', 'golang, docker']}
       link="https://github.com/8398a7/api-abilitysheet"
     />
   </div>
