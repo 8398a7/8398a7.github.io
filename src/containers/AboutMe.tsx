@@ -9,7 +9,7 @@ import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
 import Meta from '../models/meta';
 
-class AboutMe extends React.PureComponent<Props, {}> {
+class AboutMe extends React.PureComponent<AboutMeProps, {}> {
   public componentWillMount() {
     this.props.dispatch(actions.fetchAbilitysheetUsers());
     this.props.dispatch(actions.fetchIstUsers());
@@ -64,9 +64,9 @@ const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => {
   }
 };
 
-type Props = IMapStateToProps & IDispatchToProps;
+export type AboutMeProps = IMapStateToProps & IDispatchToProps;
 
-export default connect<IMapStateToProps, IDispatchToProps, React.ComponentClass<Props>>(
+export default connect<IMapStateToProps, IDispatchToProps, React.ComponentClass<AboutMeProps>>(
   mapStateToProps,
   mapDispatchToProps,
 )(AboutMe);
