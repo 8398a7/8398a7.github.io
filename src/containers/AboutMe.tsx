@@ -7,14 +7,16 @@ import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
+import Meta from '../models/meta';
 
 class AboutMe extends React.PureComponent<Props, {}> {
   public componentWillMount() {
     this.props.dispatch(actions.fetchAbilitysheetUsers());
+    this.props.dispatch(actions.fetchIstUsers());
   }
 
   public render() {
-    const { abilitysheet }= this.props;
+    const { meta } = this.props;
     const dataSource = {
       screenName: '8398a7',
       sourceType: 'profile',
@@ -33,7 +35,7 @@ class AboutMe extends React.PureComponent<Props, {}> {
             <Links />
           </div>
           <div className="col s6">
-            <ActiveProjects {...{ abilitysheet }} />
+            <ActiveProjects {...{ meta }} />
           </div>
           <div className="col s6">
             <Timeline {...{ dataSource, options }} />
@@ -45,11 +47,11 @@ class AboutMe extends React.PureComponent<Props, {}> {
 }
 
 interface IMapStateToProps {
-  abilitysheet: number;
+  meta: Meta;
 }
 
 const mapStateToProps = ($$state: RootState): IMapStateToProps => ({
-  abilitysheet: $$state.get('$$meta').abilitysheet,
+  meta: $$state.get('$$meta'),
 });
 
 interface IDispatchToProps {

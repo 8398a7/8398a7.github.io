@@ -1,17 +1,19 @@
 import { Record } from 'immutable';
 
-interface IMeta {
-  abilitysheet: number;
+interface IParams {
+  abilitysheet?: number;
+  ist?: number;
 }
 
-export default class Meta extends Record({ abilitysheet: 0 }) {
+export default class Meta extends Record({ abilitysheet: 0, ist: 0 }) {
   public readonly abilitysheet: number;
+  public readonly ist: number;
 
-  constructor(params?: IMeta) {
+  constructor(params?: IParams) {
     params ? super(params) : super();
   }
 
-  public with(values: IMeta) {
-    return this.merge(values) as this;
+  public with(params: IParams) {
+    return this.merge(params) as this;
   }
 }

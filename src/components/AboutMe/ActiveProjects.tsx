@@ -1,22 +1,23 @@
 import * as React from 'react';
+import Meta from '../../models/meta';
 import Card from '../Card';
 import SectionTitle from '../SectionTitle';
 
 interface IProps {
-  abilitysheet: number;
+  meta: Meta;
 }
 
-const ActiveProjects: React.StatelessComponent<IProps> = ({ abilitysheet }) => (
+const ActiveProjects: React.StatelessComponent<IProps> = ({ meta }) => (
   <div>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card
       title="abilitysheet"
-      body={['iidxのSP12難易度参考表', `登録者数: ${abilitysheet}名`, 'rails, react']}
+      body={['iidxのSP12難易度参考表', `登録者数: ${meta.abilitysheet}名`, 'rails, react']}
       link="https://github.com/8398a7/abilitysheet"
     />
     <Card
-      title="Iidx Score Table(IST)"
-      body={['iidxのスコア管理ツール(SP/DP)', `登録者数: 約800名`, 'rails, react']}
+      title="IIDX Score Table(IST)"
+      body={['iidxのスコア管理ツール(SP/DP)', `登録者数: ${meta.ist}名`, 'rails, react']}
       link="https://8398a7.github.io"
     />
     <Card
