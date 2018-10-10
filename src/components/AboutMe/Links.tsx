@@ -4,7 +4,7 @@ import qiita from '../../images/qiita.png';
 import twitter from '../../images/twitter.png';
 import wantedly from '../../images/wantedly.png';
 import SectionTitle from '../SectionTitle';
-import './Links.scss';
+import './Links.css';
 
 const Links = () => (
   <div>
