@@ -36,7 +36,8 @@
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "publish": "react-scripts-ts build && cp -r ./build/* ."
+    "publish": "react-scripts-ts build && cp -r ./build/* .",
+    "clean": "rm -r static && rm service-worker.js"
   },
   "devDependencies": {
     "@types/jest": "^23.3.4",
