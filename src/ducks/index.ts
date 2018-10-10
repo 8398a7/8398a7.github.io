@@ -1,17 +1,18 @@
 import { Map } from 'immutable';
-import { routerReducer, RouterState } from 'react-router-redux';
 import { combineReducers } from 'redux-immutable';
-import Iidx12 from '../models/iidx12';
-import $$iidx12State from './iidx12';
+import { fork } from 'redux-saga/effects';
+import Meta from '../models/meta';
+import $$meta, { metaSaga } from './meta';
 
 interface IState {
-  $$iidx12State: Iidx12;
-  router: RouterState;
-}
+  $$meta: Meta,
+};
+export type RootState = IState & Map<string, Meta>;
 
-export type RootState = IState & Map<string, Iidx12>;
-
-export default combineReducers<RootState>({
-  $$iidx12State,
-  router: routerReducer,
+export default combineReducers<IState>({
+  $$meta,
 });
+
+export function* rootSaga() {
+  yield fork(metaSaga);
+}

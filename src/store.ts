@@ -1,38 +1,39 @@
+// @ts-ignore
+import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
 import { History } from 'history';
-import { routerMiddleware } from 'react-router-redux';
-import { applyMiddleware, compose, createStore, Store } from 'redux';
+// @ts-ignore
+import createRavenMiddleware from 'raven-for-redux';
+// @ts-ignore
+import Raven from 'raven-js';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
-import combinedReducer from './ducks';
-import rootSaga from './sagas';
-const RavenMiddleware: any  = require('redux-raven-middleware');
+import rootReducer, { rootSaga } from './ducks';
+import { googleAnalytics } from './lib/reactGAMiddleware';
 
-export default (history: History) => {
+export default (history: History, dsn: string) => {
   const sagaMiddleware: SagaMiddleware<{}> = createSagaMiddleware();
   let middlewares: any[] = [];
   if (process.env.NODE_ENV !== 'production') {
     middlewares = [
       createLogger({
-        collapsed: true,
         stateTransformer: state => state.toJS(),
       }),
-      routerMiddleware(history),
     ];
   }
-  if (process.env.NODE_ENV === 'production') {
-    middlewares = [
-      RavenMiddleware(
-        'https://f6b6f48a3202490b87056bd987375bd3@sentry.husq.tk/11',
-        { release: process.env.GIT_SHA },
-      ),
-    ];
-  }
+  Raven.config(dsn).install();
   const devtools: any = process.env.NODE_ENV !== 'production' && (window as any).devToolsExtension ?
     (window as any).devToolsExtension() : (f: any) => f;
-  const store: Store<{}> = createStore(
-    combinedReducer,
+  const store = createStore(
+    connectRouter(history)(rootReducer),
     compose(
-      applyMiddleware(sagaMiddleware, ...middlewares),
+      applyMiddleware(
+        routerMiddleware(history),
+        googleAnalytics,
+        sagaMiddleware,
+        createRavenMiddleware(Raven, {}),
+        ...middlewares,
+      ),
       devtools,
     ),
   );

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './SectionTitle.scss';
+import './SectionTitle.css';
 
 interface IProps {
   icon: string;

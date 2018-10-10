@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import './Navbar.scss';
+import './Navbar.css';
 
 const Navbar: React.StatelessComponent<{}> = () => (
   <nav className="blue lighten-4">

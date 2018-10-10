@@ -1,16 +1,10 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended",
-        "tslint-react",
-        "tslint-config-airbnb"
-    ],
-    "jsRules": {},
-    "rules": {
-      "import-name": false,
-      "no-var-requires": false,
-      "no-duplicate-super": false,
-      "variable-name": false
-    },
-    "rulesDirectory": []
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
 }

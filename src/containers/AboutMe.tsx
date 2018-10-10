@@ -1,37 +1,20 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Timeline } from 'react-twitter-widgets';
+import { Dispatch } from 'redux';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
-import { actionCreators } from '../ducks/iidx12';
 import { RootState } from '../ducks/index';
-const Timeline: any = require('react-twitter-widgets').Timeline;
-
-interface ImapStateToProps {
-  users: number;
-}
-
-const mapStateToProps = ($$state: RootState): ImapStateToProps => ({
-  users: $$state.get('$$iidx12State').users,
-});
-
-interface IdispatchToProps {
-  fetchIidx12Users: () => void;
-}
-
-const dispatchToProps = {
-  fetchIidx12Users: actionCreators.fetchIidx12Users,
-};
-
-type Props = ImapStateToProps & IdispatchToProps;
+import { actions } from '../ducks/meta';
 
 class AboutMe extends React.PureComponent<Props, {}> {
   public componentWillMount() {
-    this.props.fetchIidx12Users();
+    this.props.dispatch(actions.fetchAbilitysheetUsers());
   }
 
   public render() {
-    const { users } = this.props;
+    const { abilitysheet }= this.props;
     const dataSource = {
       screenName: '8398a7',
       sourceType: 'profile',
@@ -50,7 +33,7 @@ class AboutMe extends React.PureComponent<Props, {}> {
             <Links />
           </div>
           <div className="col s6">
-            <ActiveProjects {...{ users }} />
+            <ActiveProjects {...{ abilitysheet }} />
           </div>
           <div className="col s6">
             <Timeline {...{ dataSource, options }} />
@@ -61,7 +44,27 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-export default connect<ImapStateToProps, IdispatchToProps, React.ComponentClass<Props>>(
+interface IMapStateToProps {
+  abilitysheet: number;
+}
+
+const mapStateToProps = ($$state: RootState): IMapStateToProps => ({
+  abilitysheet: $$state.get('$$meta').abilitysheet,
+});
+
+interface IDispatchToProps {
+  dispatch: Dispatch;
+}
+
+const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => {
+  return {
+    dispatch,
+  }
+};
+
+type Props = IMapStateToProps & IDispatchToProps;
+
+export default connect<IMapStateToProps, IDispatchToProps, React.ComponentClass<Props>>(
   mapStateToProps,
-  dispatchToProps,
+  mapDispatchToProps,
 )(AboutMe);

@@ -3,15 +3,15 @@ import Card from '../Card';
 import SectionTitle from '../SectionTitle';
 
 interface IProps {
-  users: number;
+  abilitysheet: number;
 }
 
-const ActiveProjects: React.StatelessComponent<IProps> = ({ users }) => (
+const ActiveProjects: React.StatelessComponent<IProps> = ({ abilitysheet }) => (
   <div>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card
       title="abilitysheet"
-      body={['iidxのSP12難易度参考表', `登録者数: ${users}名`, 'rails, react']}
+      body={['iidxのSP12難易度参考表', `登録者数: ${abilitysheet}名`, 'rails, react']}
       link="https://github.com/8398a7/abilitysheet"
     />
     <Card

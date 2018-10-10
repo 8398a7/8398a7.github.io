@@ -1,6 +1,7 @@
 import * as React from 'react';
+// @ts-ignore
+import { Player } from 'video-react';
 import SectionTitle from '../SectionTitle';
-const Player: any = require('video-react').Player;
 
 const Gymkhana: React.StatelessComponent<{}> = () => (
   <div className="col s12">

@@ -5,10 +5,14 @@ axios.interceptors.request.use(
   error => Promise.reject(error),
 );
 
-function sendGet(url: string) {
-  return axios.get(url).then(response => response.data);
+function sendGet<T>(url: string) {
+  return axios.get<T>(url).then(response => response.data);
+}
+
+export interface IFetchAbilitysheetUsers {
+  users: number;
 }
 
 export default class API {
-  public static fetchIidx12Users = () => sendGet('https://api.iidx12.tk/users/count');
+  public static fetchAbilitysheetUsers = () => sendGet<IFetchAbilitysheetUsers>('https://api.iidx12.tk/users/count');
 }

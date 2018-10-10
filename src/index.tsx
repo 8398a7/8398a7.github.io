@@ -1,37 +1,33 @@
-import { History } from 'history';
-import createHistory from 'history/createBrowserHistory';
+import { init } from '@sentry/browser';
+// @ts-ignore
+import { ConnectedRouter } from 'connected-react-router/immutable';
+import 'font-awesome/css/font-awesome.css';
+import { createBrowserHistory } from 'history';
+import 'materialize-css/dist/css/materialize.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as ReactGA from 'react-ga';
-import { AppContainer } from 'react-hot-loader';
-import { Store } from 'redux';
-import App, { IAppProps } from './App';
+import { Provider } from 'react-redux';
+import App from './App';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
 import createStore from './store';
 
-const initialHistory: History = createHistory();
-const initialStore: Store<{}> = createStore(initialHistory);
+const development = process.env.NODE_ENV === 'development';
+const dsn = development ?
+  'https://38e6fdf890e44bee87d3f3c50e4512e8@sentry.husq.tk/22' :
+  'https://f6b6f48a3202490b87056bd987375bd3@sentry.husq.tk/11';
+init({ dsn });
+const history = createBrowserHistory();
+const store = createStore(history, dsn);
 
-ReactGA.initialize('UA-99954359-1');
-
-initialHistory.listen((location): void => {
-  ReactGA.set({ page: location.pathname + location.search });
-  ReactGA.pageview(location.pathname + location.search);
-});
-
-const render = (
-  Component: React.StatelessComponent<IAppProps>,
-  store: Store<{}>,
-  history: History,
-): void => {
-  ReactDOM.render(
-    <AppContainer>
-      <Component {...{ store, history }} />
-    </AppContainer>,
-    document.getElementById('app'),
-  );
-};
-
-render(App, initialStore, initialHistory);
-if (module.hot) {
-  module.hot.accept('./App', (): void => render(App, initialStore, initialHistory));
-}
+ReactGA.initialize('UA-99954359-1', { debug: development });
+ReactDOM.render(
+  <Provider {...{ store }}>
+    <ConnectedRouter {...{ history }}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root') as HTMLElement
+);
+registerServiceWorker();

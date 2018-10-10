@@ -3,7 +3,7 @@
    build:
      working_directory: ~/8398a7.github.io
      docker:
-       - image: circleci/node:8.1.2
+       - image: circleci/node:8.6.0
      steps:
        - checkout
        - run:
@@ -19,5 +19,5 @@
            paths:
              - ./node_modules
        - run:
-           name: lint
-           command: yarn run lint
+           name: build
+           command: yarn run build

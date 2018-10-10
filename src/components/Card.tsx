@@ -8,13 +8,11 @@ interface IbodyRenderProps {
 const bodyRender: React.StatelessComponent<IbodyRenderProps> = ({ title, line }) => (
   <p key={`${title}-${line}`}>{line}</p>
 );
-
 interface IcardProps {
   title: string;
   body: string[];
   link: string;
 }
-
 const Card: React.StatelessComponent<IcardProps> = ({ title, body, link }) => (
   <div className="row">
     <div className="card light-blue accent-2">
