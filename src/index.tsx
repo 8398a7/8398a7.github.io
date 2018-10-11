@@ -22,7 +22,7 @@ init({ dsn });
 const history = createBrowserHistory();
 const store = createStore(history, dsn);
 
-export const updateRouterReducer = (event: any) => store.dispatch(push(event.target.pathname));
+export const updateRouterReducer = (event: React.MouseEvent<HTMLAnchorElement>) => store.dispatch(push(event.currentTarget.pathname));
 
 ReactGA.initialize('UA-99954359-1', { debug: development });
 ReactDOM.render(
