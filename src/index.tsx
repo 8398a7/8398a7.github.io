@@ -1,5 +1,4 @@
 import { init } from '@sentry/browser';
-import { push } from 'connected-react-router';
 // @ts-ignore
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import 'font-awesome/css/font-awesome.css';
@@ -21,8 +20,6 @@ const dsn = development ?
 init({ dsn });
 const history = createBrowserHistory();
 const store = createStore(history, dsn);
-
-export const updateRouterReducer = (event: React.MouseEvent<HTMLAnchorElement>) => store.dispatch(push(event.currentTarget.pathname));
 
 ReactGA.initialize('UA-99954359-1', { debug: development });
 ReactDOM.render(

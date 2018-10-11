@@ -7,6 +7,7 @@ import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
+import { withRouterReducer } from '../lib/withRouterReducer';
 import Meta from '../models/meta';
 
 class AboutMe extends React.PureComponent<AboutMeProps, {}> {
@@ -66,7 +67,9 @@ const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => {
 
 export type AboutMeProps = IMapStateToProps & IDispatchToProps;
 
-export default connect<IMapStateToProps, IDispatchToProps, React.ComponentClass<AboutMeProps>>(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AboutMe);
+export default withRouterReducer(
+  connect<IMapStateToProps, IDispatchToProps, React.ComponentClass<AboutMeProps>>(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(AboutMe)
+);
