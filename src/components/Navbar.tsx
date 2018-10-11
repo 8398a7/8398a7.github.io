@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { updateRouterReducer } from '../';
 import './Navbar.css';
 
 const Navbar: React.StatelessComponent<{}> = () => (
@@ -7,13 +8,13 @@ const Navbar: React.StatelessComponent<{}> = () => (
     <div className="navbar-wrapper">
       <ul>
         <li>
-          <Link to="/aboutme">
+          <Link onClick={updateRouterReducer} to="/aboutme">
             <i className="fa fa-bookmark" />
             about me
           </Link>
         </li>
         <li>
-          <Link to="/hobby">
+          <Link onClick={updateRouterReducer} to="/hobby">
             <i className="fa fa-heart" />
             hobby
           </Link>
