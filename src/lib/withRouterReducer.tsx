@@ -19,4 +19,3 @@ export const withRouterReducer = compose(
   connect<{}, IProps>(null, mapDispatchToProps),
   withRouterReducerComponent,
 );
-
