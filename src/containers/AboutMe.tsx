@@ -1,3 +1,4 @@
+import { withRouterReducer } from 'connected-react-router-redux';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
@@ -7,7 +8,6 @@ import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
-import { withRouterReducer } from '../lib/withRouterReducer';
 import Meta from '../models/meta';
 
 class AboutMe extends React.PureComponent<AboutMeProps, {}> {
