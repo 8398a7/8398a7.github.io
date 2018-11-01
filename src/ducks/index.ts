@@ -5,8 +5,8 @@ import Meta from '../models/meta';
 import $$meta, { metaSaga } from './meta';
 
 interface IState {
-  $$meta: Meta,
-};
+  $$meta: Meta;
+}
 export type RootState = IState & Map<string, Meta>;
 
 export default combineReducers<IState>({

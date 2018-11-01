@@ -29,6 +29,7 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "lint": "tslint -c ./tslint.json --exclude **/*.d.ts --exclude ./node_modules --project .",
     "eject": "react-scripts-ts eject",
     "publish": "react-scripts-ts build && cp -r ./build/* .",
     "clean": "rm -r static && rm service-worker.js"
@@ -38,7 +39,7 @@
     "@types/node": "^10.11.5",
     "@types/raven-for-redux": "^1.1.1",
     "@types/raven-js": "^3.10.0",
-    "@types/react": "^16.4.18",
+    "@types/react": "^16.4.16",
     "@types/react-dom": "^16.0.9",
     "@types/react-redux": "^6.0.9",
     "@types/react-router-dom": "^4.3.1",

@@ -62,7 +62,7 @@ interface IDispatchToProps {
 const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => {
   return {
     dispatch,
-  }
+  };
 };
 
 export type AboutMeProps = IMapStateToProps & IDispatchToProps;
