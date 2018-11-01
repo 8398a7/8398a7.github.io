@@ -8,9 +8,10 @@ import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
+import Meta from '../models/meta';
 
 const mapStateToProps = ($$state: RootState) => ({
-  meta: $$state.get('$$meta'),
+  meta: $$state.get('$$meta', new Meta()),
 });
 type Props = ReturnType<typeof mapStateToProps>;
 

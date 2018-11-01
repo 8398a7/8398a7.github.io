@@ -5,12 +5,13 @@ import API from '../lib/api';
 import { IFetchUsers } from '../lib/api';
 import Meta from '../models/meta';
 
-const { createAction, reducer } = ActionReducer(new Meta());
+export const initialState = new Meta();
+const { createAction, reducer } = ActionReducer(initialState);
 export default reducer;
 
 export const actions = {
-  fetchAbilitysheetUsers: createAction('FETCH_ABILITYSHEET_USERS', $$state => $$state),
-  fetchIstUsers: createAction('FETCH_IST_USERS', $$state => $$state),
+  fetchAbilitysheetUsers: createAction('FETCH_ABILITYSHEET_USERS', $$state => $$state.asImmutable()),
+  fetchIstUsers: createAction('FETCH_IST_USERS', $$state => $$state.asImmutable()),
   updateAbilitysheetUsers: createAction('UPDATE_ABILITYSHEET_USERS', ($$state, abilitysheet: number) => $$state.with({ abilitysheet })),
   updateIstUsers: createAction('UPDATE_IST_USERS', ($$state, ist: number) => $$state.with({ ist })),
 };

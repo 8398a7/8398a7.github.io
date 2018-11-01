@@ -6,6 +6,6 @@ const App: React.SFC<{}> = () => (
   <div>
     <Routing />
   </div>
-)
+);
 
 export default App;
