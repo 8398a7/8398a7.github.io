@@ -6,8 +6,7 @@ import SectionTitle from '../SectionTitle';
 interface IProps {
   meta: Meta;
 }
-
-const ActiveProjects: React.StatelessComponent<IProps> = ({ meta }) => (
+const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
   <div>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card

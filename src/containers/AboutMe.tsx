@@ -2,18 +2,22 @@ import { withRouterReducer } from 'connected-react-router-redux';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
-import { Dispatch } from 'redux';
+import { dispatch } from 'src';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
-import Meta from '../models/meta';
+
+const mapStateToProps = ($$state: RootState) => ({
+  meta: $$state.get('$$meta'),
+});
+type Props = ReturnType<typeof mapStateToProps>;
 
 class AboutMe extends React.PureComponent<Props, {}> {
   public componentWillMount() {
-    this.props.dispatch(actions.fetchAbilitysheetUsers());
-    this.props.dispatch(actions.fetchIstUsers());
+    dispatch(actions.fetchAbilitysheetUsers());
+    dispatch(actions.fetchIstUsers());
   }
 
   public render() {
@@ -47,29 +51,8 @@ class AboutMe extends React.PureComponent<Props, {}> {
   }
 }
 
-interface IMapStateToProps {
-  meta: Meta;
-}
-
-const mapStateToProps = ($$state: RootState): IMapStateToProps => ({
-  meta: $$state.get('$$meta'),
-});
-
-interface IDispatchToProps {
-  dispatch: Dispatch;
-}
-
-const mapDispatchToProps = (dispatch: Dispatch): IDispatchToProps => {
-  return {
-    dispatch,
-  };
-};
-
-type Props = IMapStateToProps & IDispatchToProps;
-
 export default withRouterReducer(
-  connect<IMapStateToProps, IDispatchToProps, React.ComponentClass<Props>>(
+  connect(
     mapStateToProps,
-    mapDispatchToProps,
   )(AboutMe)
 );

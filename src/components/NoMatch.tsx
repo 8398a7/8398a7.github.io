@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 
-const NoMatch: React.StatelessComponent<{}> = () => (
+const NoMatch: React.SFC<{}> = () => (
   <div>
     404 not found
   </div>

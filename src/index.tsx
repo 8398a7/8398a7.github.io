@@ -20,6 +20,7 @@ const dsn = development ?
 init({ dsn });
 const history = createBrowserHistory();
 const store = createStore(history, dsn);
+export const { dispatch } = store;
 
 ReactGA.initialize('UA-99954359-1', { debug: development });
 ReactDOM.render(

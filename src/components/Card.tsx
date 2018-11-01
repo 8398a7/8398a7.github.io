@@ -1,19 +1,19 @@
 import * as React from 'react';
 
-interface IbodyRenderProps {
+interface IBodyRenderProps {
   title: string;
   line: string;
 }
-
-const bodyRender: React.StatelessComponent<IbodyRenderProps> = ({ title, line }) => (
+const bodyRender: React.SFC<IBodyRenderProps> = ({ title, line }) => (
   <p key={`${title}-${line}`}>{line}</p>
 );
-interface IcardProps {
+
+interface ICardProps {
   title: string;
   body: string[];
   link: string;
 }
-const Card: React.StatelessComponent<IcardProps> = ({ title, body, link }) => (
+const Card: React.SFC<ICardProps> = ({ title, body, link }) => (
   <div className="row">
     <div className="card light-blue accent-2">
       <div className="card-content white-text">

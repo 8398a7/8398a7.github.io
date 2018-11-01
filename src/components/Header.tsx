@@ -4,7 +4,7 @@ import profile from '../images/profile.jpg';
 import './Header.css';
 import Navbar from './Navbar';
 
-const Header: React.StatelessComponent<{}> = () => (
+const Header: React.SFC<{}> = () => (
   <header>
     <Link to="/">
       <img className="circle responsive-img" src={profile} />

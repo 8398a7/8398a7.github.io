@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SectionTitle from '../SectionTitle';
 
-const SkillSet: React.StatelessComponent<{}> = () => (
+const SkillSet: React.SFC<{}> = () => (
   <div>
     <SectionTitle {...{ icon: 'info', title: 'AboutMe' }} />
     <table className="striped">

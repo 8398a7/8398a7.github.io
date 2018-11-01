@@ -6,7 +6,7 @@ import wantedly from '../../images/wantedly.png';
 import SectionTitle from '../SectionTitle';
 import './Links.css';
 
-const Links = () => (
+const Links: React.SFC<{}> = () => (
   <div>
     <SectionTitle {...{ icon: 'connectdevelop', title: 'Link' }} />
     <ul className="collection">
