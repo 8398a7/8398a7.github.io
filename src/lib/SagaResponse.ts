@@ -1,4 +1,4 @@
-export type SagaResponse<T> =
-  T extends (...args: any[]) => any ?
-  (ReturnType<T> extends Promise<infer R> ? R : never)
+export type SagaResponse<S> =
+  S extends (...args: any[]) => infer T ?
+  (T extends Promise<infer U> ? U : never)
   : never;
