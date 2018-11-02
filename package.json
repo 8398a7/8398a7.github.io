@@ -27,6 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts-ts start",
+    "docker:start": "docker build . -t 8398a7.github.io && docker run -it -p 3000:3000 8398a7.github.io",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "lint": "tslint -c ./tslint.json --exclude **/*.d.ts --exclude ./node_modules --project . \"src/**/*.ts{,x}\"",

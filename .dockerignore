@@ -1,3 +1,5 @@
-typings/*
-.env
 node_modules/*
+build/*
+static/*
+service-worker.js
+.git

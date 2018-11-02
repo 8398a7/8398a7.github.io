@@ -1,17 +1,14 @@
-FROM node:8.1.2-alpine
+FROM node:11.0.0-alpine
 
-RUN apk add --update --no-cache git && npm i -g yarn typings
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
 ENV HOME /usr/src/app
+RUN mkdir -p $HOME
+WORKDIR $HOME
 
+RUN npm i -g yarn
 COPY package.json $HOME
 COPY yarn.lock $HOME
 RUN yarn install
-COPY typings.json $HOME
-RUN typings install
 
 COPY . $HOME
-COPY .env.sample $HOME/.env
 
 CMD ["yarn", "start"]
