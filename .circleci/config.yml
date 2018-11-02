@@ -23,4 +23,4 @@
            command: yarn lint
        - run:
            name: publish
-           command: yarn run publish
+           command: yarn clean && yarn run publish

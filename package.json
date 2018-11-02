@@ -31,7 +31,7 @@
     "test": "react-scripts-ts test --env=jsdom",
     "lint": "tslint -c ./tslint.json --exclude **/*.d.ts --exclude ./node_modules --project . \"src/**/*.ts{,x}\"",
     "eject": "react-scripts-ts eject",
-    "publish": "yarn run clean && react-scripts-ts build && cp -r ./build/* .",
+    "publish": "react-scripts-ts build && cp -r ./build/* .",
     "clean": "rm -r static && rm service-worker.js"
   },
   "devDependencies": {
