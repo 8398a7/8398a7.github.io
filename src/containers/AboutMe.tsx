@@ -2,7 +2,7 @@ import { withRouterReducer } from 'connected-react-router-redux';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
-import { dispatch } from 'src';
+import { dispatch } from '../';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
