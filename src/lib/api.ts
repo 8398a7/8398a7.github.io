@@ -9,7 +9,7 @@ function sendGet<T>(url: string) {
   return axios.get<T>(url).then(response => response.data);
 }
 
-export interface IFetchUsers {
+interface IFetchUsers {
   users: number;
 }
 
