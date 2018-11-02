@@ -19,5 +19,8 @@
            paths:
              - ./node_modules
        - run:
-           name: build
-           command: yarn run build
+           name: lint
+           command: yarn lint
+       - run:
+           name: publish
+           command: yarn run publish
