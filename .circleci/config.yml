@@ -3,7 +3,7 @@
    build:
      working_directory: ~/8398a7.github.io
      docker:
-       - image: circleci/node:8.6.0
+       - image: circleci/node:11.0.0-browsers
      steps:
        - checkout
        - run:
