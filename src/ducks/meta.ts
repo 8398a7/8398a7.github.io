@@ -2,7 +2,7 @@ import { captureException } from '@sentry/browser';
 import ActionReducer from 'action-reducer';
 import { call, put, takeEvery } from 'redux-saga/effects';
 import API from '../lib/api';
-import { IFetchUsers } from '../lib/api';
+import { SagaResponse } from '../lib/SagaResponse';
 import Meta from '../models/meta';
 
 export const initialState = new Meta();
@@ -18,7 +18,7 @@ export const actions = {
 
 function* fetchAbilitysheetUsers() {
   try {
-    const { users }: IFetchUsers = yield call(API.fetchAbilitysheetUsers);
+    const { users }: SagaResponse<typeof API.fetchAbilitysheetUsers> = yield call(API.fetchAbilitysheetUsers);
 
     yield put(actions.updateAbilitysheetUsers(users));
   } catch (e) {
@@ -28,8 +28,7 @@ function* fetchAbilitysheetUsers() {
 
 function* fetchIstUsers() {
   try {
-    const { users }: IFetchUsers = yield call(API.fetchIstUsers);
-
+    const { users }: SagaResponse<typeof API.fetchIstUsers> = yield call(API.fetchIstUsers);
     yield put(actions.updateIstUsers(users));
   } catch (e) {
     captureException(e);
