@@ -5,15 +5,15 @@ import { History } from 'history';
 import createRavenMiddleware from 'raven-for-redux';
 // @ts-ignore
 import Raven from 'raven-js';
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, compose, createStore, Middleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
-import rootReducer, { rootSaga } from './ducks';
+import createRootReducer, { rootSaga } from './ducks';
 import { googleAnalytics } from './lib/reactGAMiddleware';
 
 export default (history: History, dsn: string) => {
   const sagaMiddleware: SagaMiddleware<{}> = createSagaMiddleware();
-  let middlewares: any[] = [];
+  let middlewares: Middleware[] = [];
   if (process.env.NODE_ENV !== 'production') {
     middlewares = [
       createLogger({
@@ -25,7 +25,7 @@ export default (history: History, dsn: string) => {
   const devtools: any = process.env.NODE_ENV !== 'production' && (window as any).devToolsExtension ?
     (window as any).devToolsExtension() : (f: any) => f;
   const store = createStore(
-    connectRouter(history)(rootReducer),
+    createRootReducer(history),
     compose(
       applyMiddleware(
         routerMiddleware(history),
