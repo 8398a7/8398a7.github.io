@@ -4,17 +4,13 @@ import 'video-react/dist/video-react.css';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
 
-export class Hobby extends React.PureComponent<{}, {}> {
-  public render() {
-    return (
-      <div>
-        <div className="col s12">
-          <Gymkhana />
-          <MusicGame />
-        </div>
-      </div>
-    );
-  }
-}
+export const Hobby: React.SFC<{}> = () => (
+  <div>
+    <div className="col s12">
+      <Gymkhana />
+      <MusicGame />
+    </div>
+  </div>
+);
 
-export default withRouterReducer((Hobby));
+export default withRouterReducer(Hobby);
