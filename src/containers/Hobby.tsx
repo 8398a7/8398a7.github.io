@@ -4,7 +4,7 @@ import 'video-react/dist/video-react.css';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
 
-class Hobby extends React.PureComponent<{}, {}> {
+export class Hobby extends React.PureComponent<{}, {}> {
   public render() {
     return (
       <div>
