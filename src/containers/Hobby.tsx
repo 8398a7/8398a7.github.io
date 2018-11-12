@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { compose, lifecycle } from 'recompose';
-import updateLocation from 'src/lib/updateLocation';
 import 'video-react/dist/video-react.css';
 import { dispatch } from '../';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
+import updateLocation from '../lib/updateLocation';
 
 export const Hobby: React.SFC<{}> = () => (
   <div>

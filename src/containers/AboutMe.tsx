@@ -2,13 +2,13 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
 import { compose, lifecycle, pure } from 'recompose';
-import updateLocation from 'src/lib/updateLocation';
 import { dispatch } from '../';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks/index';
 import { actions } from '../ducks/meta';
+import updateLocation from '../lib/updateLocation';
 import Meta from '../models/meta';
 
 const mapStateToProps = ($$state: RootState) => ({
