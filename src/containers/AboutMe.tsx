@@ -1,8 +1,8 @@
-import { withRouterReducer } from 'connected-react-router-redux';
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
 import { compose, lifecycle, pure } from 'recompose';
+import updateLocation from 'src/lib/updateLocation';
 import { dispatch } from '../';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
@@ -49,8 +49,10 @@ export default compose(
       dispatch(actions.fetchAbilitysheetUsers());
       dispatch(actions.fetchIstUsers());
     },
+    componentDidMount() {
+      dispatch(updateLocation());
+    }
   }),
   pure,
   connect(mapStateToProps),
-  withRouterReducer,
 )(AboutMe);

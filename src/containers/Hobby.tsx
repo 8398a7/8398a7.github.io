@@ -1,7 +1,8 @@
-import { withRouterReducer } from 'connected-react-router-redux';
 import * as React from 'react';
-import { compose } from 'recompose';
+import { compose, lifecycle } from 'recompose';
+import updateLocation from 'src/lib/updateLocation';
 import 'video-react/dist/video-react.css';
+import { dispatch } from '../';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
 
@@ -15,5 +16,9 @@ export const Hobby: React.SFC<{}> = () => (
 );
 
 export default compose(
-  withRouterReducer,
+  lifecycle({
+    componentDidMount() {
+      dispatch(updateLocation());
+    }
+  }),
 )(Hobby);
