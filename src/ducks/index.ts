@@ -1,16 +1,15 @@
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
-import { Map } from 'immutable';
-import { combineReducers } from 'redux-immutable';
+import { combineReducers, Reducer } from 'redux';
 import { fork } from 'redux-saga/effects';
-import $$meta, { initialState as metaState, metaSaga } from './meta';
+import $$meta, { metaSaga } from './meta';
 
-export type RootState = Map<'$$meta', typeof metaState>;
-
-export default (history: History<any>) => combineReducers({
+const rootReducer = (history: History<any>) => combineReducers({
   $$meta,
   router: connectRouter(history),
 });
+export default rootReducer;
+export type RootState = ReturnType<typeof rootReducer> extends Reducer<infer S> ? S : never;
 
 export function* rootSaga() {
   yield fork(metaSaga);

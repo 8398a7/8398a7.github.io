@@ -6,13 +6,12 @@ import { dispatch } from '../';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
-import { RootState } from '../ducks/index';
+import { RootState } from '../ducks';
 import { actions } from '../ducks/meta';
 import updateLocation from '../lib/updateLocation';
-import Meta from '../models/meta';
 
 const mapStateToProps = ($$state: RootState) => ({
-  meta: $$state.get('$$meta', new Meta()),
+  meta: $$state.$$meta,
 });
 type Props = ReturnType<typeof mapStateToProps>;
 

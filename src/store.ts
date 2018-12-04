@@ -16,9 +16,7 @@ export default (history: History, dsn: string) => {
   let middlewares: Middleware[] = [];
   if (process.env.NODE_ENV !== 'production') {
     middlewares = [
-      createLogger({
-        stateTransformer: state => state.toJS(),
-      }),
+      createLogger(),
     ];
   }
   Raven.config(dsn).install();
