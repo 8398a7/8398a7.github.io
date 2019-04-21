@@ -1,4 +1,4 @@
-import { init } from '@sentry/browser';
+import * as Sentry from '@sentry/browser';
 // @ts-ignore
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import 'font-awesome/css/font-awesome.css';
@@ -17,7 +17,7 @@ const development = process.env.NODE_ENV === 'development';
 const dsn = development ?
   'https://38e6fdf890e44bee87d3f3c50e4512e8@sentry.husq.tk/22' :
   'https://f6b6f48a3202490b87056bd987375bd3@sentry.husq.tk/11';
-init({ dsn });
+Sentry.init({ dsn });
 const history = createBrowserHistory();
 const store = createStore(history, dsn);
 export const { dispatch } = store;
