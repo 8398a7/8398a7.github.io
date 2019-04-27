@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { SFC } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import NoMatch from './components/NoMatch';
 import AboutMe from './containers/AboutMe';
 import Hobby from './containers/Hobby';
 
-const Routing: React.StatelessComponent<{}> = () => (
+const Routing: SFC<{}> = () => (
   <Router>
     <div>
       <Header />
