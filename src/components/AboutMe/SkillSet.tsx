@@ -2,7 +2,7 @@ import React, { SFC } from 'react';
 import SectionTitle from '../SectionTitle';
 
 const SkillSet: SFC<{}> = () => (
-  <div>
+  <>
     <SectionTitle {...{ icon: 'info', title: 'AboutMe' }} />
     <table className="striped">
       <tbody>
@@ -24,7 +24,7 @@ const SkillSet: SFC<{}> = () => (
         </tr>
       </tbody>
     </table>
-  </div>
+  </>
 );
 
 export default SkillSet;

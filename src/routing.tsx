@@ -7,7 +7,7 @@ import Hobby from './containers/Hobby';
 
 const Routing: SFC<{}> = () => (
   <Router>
-    <div>
+    <>
       <Header />
       <div className="container">
         <div className="row center">
@@ -19,7 +19,7 @@ const Routing: SFC<{}> = () => (
           </Switch>
         </div>
       </div>
-    </div>
+    </>
   </Router>
 );
 

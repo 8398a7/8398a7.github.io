@@ -7,7 +7,7 @@ interface IProps {
   meta: Meta;
 }
 const ActiveProjects: SFC<IProps> = ({ meta }) => (
-  <div>
+  <>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card
       title="abilitysheet"
@@ -34,7 +34,7 @@ const ActiveProjects: SFC<IProps> = ({ meta }) => (
       body={['abilitysheetのapiサーバ', 'golang, docker']}
       link="https://github.com/8398a7/api-abilitysheet"
     />
-  </div>
+  </>
 );
 
 export default ActiveProjects;
