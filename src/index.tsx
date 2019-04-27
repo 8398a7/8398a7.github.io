@@ -1,12 +1,12 @@
-import * as Sentry from '@sentry/browser';
+import { init } from '@sentry/browser';
 // @ts-ignore
 import { ConnectedRouter } from 'connected-react-router/immutable';
 import 'font-awesome/css/font-awesome.css';
 import { createBrowserHistory } from 'history';
 import 'materialize-css/dist/css/materialize.css';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import * as ReactGA from 'react-ga';
+import React from 'react';
+import { render } from 'react-dom';
+import  { initialize } from 'react-ga';
 import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
@@ -17,13 +17,13 @@ const development = process.env.NODE_ENV === 'development';
 const dsn = development ?
   'https://38e6fdf890e44bee87d3f3c50e4512e8@sentry.husq.tk/22' :
   'https://f6b6f48a3202490b87056bd987375bd3@sentry.husq.tk/11';
-Sentry.init({ dsn });
+init({ dsn });
 const history = createBrowserHistory();
 const store = createStore(history, dsn);
 export const { dispatch } = store;
 
-ReactGA.initialize('UA-99954359-1', { debug: development });
-ReactDOM.render(
+initialize('UA-99954359-1', { debug: development });
+render(
   <Provider {...{ store }}>
     <ConnectedRouter {...{ history }}>
       <App />

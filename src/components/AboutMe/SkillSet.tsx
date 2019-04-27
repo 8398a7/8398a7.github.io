@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 import SectionTitle from '../SectionTitle';
 
-const SkillSet: React.SFC<{}> = () => (
+const SkillSet: SFC<{}> = () => (
   <div>
     <SectionTitle {...{ icon: 'info', title: 'AboutMe' }} />
     <table className="striped">

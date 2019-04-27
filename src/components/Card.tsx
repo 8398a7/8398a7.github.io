@@ -1,19 +1,10 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 
-interface IBodyRenderProps {
-  title: string;
-  line: string;
-}
-const bodyRender: React.SFC<IBodyRenderProps> = ({ title, line }) => (
+const bodyRender: SFC<{ title: string, line: string }> = ({ title, line }) => (
   <p key={`${title}-${line}`}>{line}</p>
 );
 
-interface ICardProps {
-  title: string;
-  body: string[];
-  link: string;
-}
-const Card: React.SFC<ICardProps> = ({ title, body, link }) => (
+const Card: SFC<{ title: string, body: string[], link: string }> = ({ title, body, link }) => (
   <div className="row">
     <div className="card light-blue accent-2">
       <div className="card-content white-text">

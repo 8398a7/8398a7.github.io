@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 import Meta from '../../models/meta';
 import Card from '../Card';
 import SectionTitle from '../SectionTitle';
@@ -6,7 +6,7 @@ import SectionTitle from '../SectionTitle';
 interface IProps {
   meta: Meta;
 }
-const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
+const ActiveProjects: SFC<IProps> = ({ meta }) => (
   <div>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card

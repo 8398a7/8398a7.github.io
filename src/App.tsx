@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 
 import Routing from './routing';
 
-const App: React.SFC<{}> = () => (
+const App: SFC<{}> = () => (
   <div>
     <Routing />
   </div>

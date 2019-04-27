@@ -1,13 +1,13 @@
-import * as ReactGA from 'react-ga';
+import { pageview, set } from 'react-ga';
 
 const options = {};
 
 const trackPage = (page: any) => {
-  ReactGA.set({
+  set({
     page,
     ...options
   });
-  ReactGA.pageview(page);
+  pageview(page);
 };
 
 let currentPage = '';

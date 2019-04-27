@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 // @ts-ignore
 import { Player } from 'video-react';
 import SectionTitle from '../SectionTitle';
 
-const MusicGame: React.StatelessComponent<{}> = () => (
+const MusicGame: SFC<{}> = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="flexbox-main">

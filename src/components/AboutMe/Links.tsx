@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 import gh from '../../images/gh.png';
 import qiita from '../../images/qiita.png';
 import twitter from '../../images/twitter.png';
@@ -6,8 +6,8 @@ import wantedly from '../../images/wantedly.png';
 import SectionTitle from '../SectionTitle';
 import './Links.css';
 
-const Links: React.SFC<{}> = () => (
-  <div>
+const Links: SFC<{}> = () => (
+  <>
     <SectionTitle {...{ icon: 'connectdevelop', title: 'Link' }} />
     <ul className="collection">
       <li className="collection-item avatar">
@@ -47,7 +47,7 @@ const Links: React.SFC<{}> = () => (
         </p>
       </li>
     </ul>
-  </div>
+  </>
 );
 
 export default Links;

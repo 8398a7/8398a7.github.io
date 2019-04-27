@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, { SFC } from 'react';
 import { Link } from 'react-router-dom';
 import profile from '../images/profile.jpg';
 import './Header.css';
 import Navbar from './Navbar';
 
-const Header: React.SFC<{}> = () => (
+const Header: SFC<{}> = () => (
   <header>
     <Link to="/">
       <img className="circle responsive-img" src={profile} />
