@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
-import { dispatch } from '../';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
@@ -22,6 +21,7 @@ const options = {
   username: '8398a7'
 };
 const AboutMe = (props: Props) => {
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.fetchAbilitysheetUsers());
     dispatch(actions.fetchIstUsers());
