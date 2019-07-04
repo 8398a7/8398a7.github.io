@@ -2,3 +2,4 @@ node_modules/
 *.map
 build/
 coverage/
+tmp/
