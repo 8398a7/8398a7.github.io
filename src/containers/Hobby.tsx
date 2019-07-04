@@ -1,9 +1,9 @@
-import React, { SFC } from 'react';
+import React from 'react';
 import 'video-react/dist/video-react.css';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
 
-const Hobby: SFC<{}> = () => {
+const Hobby: React.SFC = () => {
   return (
     <>
       <div className="col s12">

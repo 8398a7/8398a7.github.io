@@ -1,10 +1,5 @@
+import React from 'react';
 
-import React, { SFC } from 'react';
-
-const NoMatch: SFC<{}> = () => (
-  <>
-    404 not found
-  </>
-);
+const NoMatch: React.SFC = () => <>404 not found</>;
 
 export default NoMatch;

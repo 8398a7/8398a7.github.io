@@ -8,17 +8,17 @@ import { RootState } from '../ducks';
 import { actions } from '../ducks/meta';
 
 const mapStateToProps = ($$state: RootState) => ({
-  meta: $$state.$$meta
+  meta: $$state.$$meta,
 });
 type Props = ReturnType<typeof mapStateToProps>;
 
 const dataSource = {
   screenName: '8398a7',
-  sourceType: 'profile'
+  sourceType: 'profile',
 };
 const options = {
   height: '800',
-  username: '8398a7'
+  username: '8398a7',
 };
 const AboutMe = (props: Props) => {
   const dispatch = useDispatch();

@@ -1,14 +1,16 @@
-import React, { SFC } from 'react';
+import React from 'react';
 // @ts-ignore
 import { Player } from 'video-react';
 import SectionTitle from '../SectionTitle';
 
-const MusicGame: SFC<{}> = () => (
+const MusicGame: React.SFC = () => (
   <div className="col s12">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="flexbox-main">
       <div className="flexbox-column">
-        <Player><source src="https://husq.tk/videos/bms1.mp4" /></Player>
+        <Player>
+          <source src="https://husq.tk/videos/bms1.mp4" />
+        </Player>
       </div>
       <div className="flexbox-column">
         <table className="striped">
@@ -71,7 +73,9 @@ const MusicGame: SFC<{}> = () => (
         </table>
       </div>
       <div className="flexbox-column">
-        <Player><source src="https://husq.tk/videos/bms2.mp4" /></Player>
+        <Player>
+          <source src="https://husq.tk/videos/bms2.mp4" />
+        </Player>
       </div>
     </div>
   </div>

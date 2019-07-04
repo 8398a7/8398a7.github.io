@@ -14,6 +14,8 @@ interface IFetchUsers {
 }
 
 export default class API {
-  public static fetchAbilitysheetUsers = () => sendGet<IFetchUsers>('https://api-sp12.iidx.app/users/count');
-  public static fetchIstUsers = () => sendGet<IFetchUsers>('https://score.iidx.app/api/v1/users/count');
+  public static fetchAbilitysheetUsers = () =>
+    sendGet<IFetchUsers>('https://api-sp12.iidx.app/users/count')
+  public static fetchIstUsers = () =>
+    sendGet<IFetchUsers>('https://score.iidx.app/api/v1/users/count')
 }

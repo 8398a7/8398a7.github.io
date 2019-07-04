@@ -5,7 +5,7 @@ const options = {};
 const trackPage = (page: any) => {
   set({
     page,
-    ...options
+    ...options,
   });
   pageview(page);
 };

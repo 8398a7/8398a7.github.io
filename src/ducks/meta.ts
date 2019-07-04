@@ -9,15 +9,27 @@ const { createAction, reducer } = ActionReducer(new Meta());
 export default reducer;
 
 export const actions = {
-  fetchAbilitysheetUsers: createAction('FETCH_ABILITYSHEET_USERS', $$state => $$state.asImmutable()),
-  fetchIstUsers: createAction('FETCH_IST_USERS', $$state => $$state.asImmutable()),
+  fetchAbilitysheetUsers: createAction('FETCH_ABILITYSHEET_USERS', $$state =>
+    $$state.asImmutable(),
+  ),
+  fetchIstUsers: createAction('FETCH_IST_USERS', $$state =>
+    $$state.asImmutable(),
+  ),
 };
-const updateAbilitysheetUsers = createAction('UPDATE_ABILITYSHEET_USERS', ($$state, abilitysheet: number) => $$state.with({ abilitysheet }));
-const updateIstUsers = createAction('UPDATE_IST_USERS', ($$state, ist: number) => $$state.with({ ist }));
+const updateAbilitysheetUsers = createAction(
+  'UPDATE_ABILITYSHEET_USERS',
+  ($$state, abilitysheet: number) => $$state.with({ abilitysheet }),
+);
+const updateIstUsers = createAction(
+  'UPDATE_IST_USERS',
+  ($$state, ist: number) => $$state.with({ ist }),
+);
 
 function* fetchAbilitysheetUsers() {
   try {
-    const { users }: SagaCall<typeof API.fetchAbilitysheetUsers> = yield call(API.fetchAbilitysheetUsers);
+    const { users }: SagaCall<typeof API.fetchAbilitysheetUsers> = yield call(
+      API.fetchAbilitysheetUsers,
+    );
 
     yield put(updateAbilitysheetUsers(users));
   } catch (e) {
@@ -27,7 +39,9 @@ function* fetchAbilitysheetUsers() {
 
 function* fetchIstUsers() {
   try {
-    const { users }: SagaCall<typeof API.fetchIstUsers> = yield call(API.fetchIstUsers);
+    const { users }: SagaCall<typeof API.fetchIstUsers> = yield call(
+      API.fetchIstUsers,
+    );
     yield put(updateIstUsers(users));
   } catch (e) {
     captureException(e);

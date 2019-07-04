@@ -1,5 +1,5 @@
 // @ts-ignore
-import { connectRouter, routerMiddleware } from 'connected-react-router/immutable';
+import { routerMiddleware } from 'connected-react-router/immutable';
 import { History } from 'history';
 // @ts-ignore
 import createRavenMiddleware from 'raven-for-redux';
@@ -15,13 +15,14 @@ export default (history: History, dsn: string) => {
   const sagaMiddleware: SagaMiddleware<{}> = createSagaMiddleware();
   let middlewares: Middleware[] = [];
   if (process.env.NODE_ENV !== 'production') {
-    middlewares = [
-      createLogger(),
-    ];
+    middlewares = [createLogger()];
   }
   Raven.config(dsn).install();
-  const devtools: any = process.env.NODE_ENV !== 'production' && (window as any)._REDUX_DEVTOOLS_EXTENSION__ ?
-    (window as any)._REDUX_DEVTOOLS_EXTENSION__() : (f: any) => f;
+  const devtools: any =
+    process.env.NODE_ENV !== 'production' &&
+    (window as any)._REDUX_DEVTOOLS_EXTENSION__
+      ? (window as any)._REDUX_DEVTOOLS_EXTENSION__()
+      : (f: any) => f;
   const store = createStore(
     createRootReducer(history),
     compose(

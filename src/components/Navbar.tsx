@@ -1,8 +1,8 @@
-import React, { SFC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar: SFC<{}> = () => (
+const Navbar: React.SFC = () => (
   <nav className="blue lighten-4">
     <div className="navbar-wrapper">
       <ul>

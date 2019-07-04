@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React from 'react';
 import Meta from '../../models/meta';
 import Card from '../Card';
 import SectionTitle from '../SectionTitle';
@@ -6,17 +6,25 @@ import SectionTitle from '../SectionTitle';
 interface IProps {
   meta: Meta;
 }
-const ActiveProjects: SFC<IProps> = ({ meta }) => (
+const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
   <>
     <SectionTitle {...{ icon: 'telegram', title: 'Active Projects' }} />
     <Card
       title="abilitysheet"
-      body={['iidxのSP12難易度参考表', `登録者数: ${meta.abilitysheet}名`, 'rails, react']}
+      body={[
+        'iidxのSP12難易度参考表',
+        `登録者数: ${meta.abilitysheet}名`,
+        'rails, react',
+      ]}
       link="https://github.com/8398a7/abilitysheet"
     />
     <Card
       title="IIDX Score Table(IST)"
-      body={['iidxのスコア管理ツール(SP/DP)', `登録者数: ${meta.ist}名`, 'rails, react']}
+      body={[
+        'iidxのスコア管理ツール(SP/DP)',
+        `登録者数: ${meta.ist}名`,
+        'rails, react',
+      ]}
       link="https://8398a7.github.io"
     />
     <Card
