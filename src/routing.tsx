@@ -1,26 +1,24 @@
 import React, { SFC } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import NoMatch from './components/NoMatch';
 import AboutMe from './containers/AboutMe';
 import Hobby from './containers/Hobby';
 
 const Routing: SFC<{}> = () => (
-  <Router>
-    <>
-      <Header />
-      <div className="container">
-        <div className="row center">
-          <Switch>
-            <Route exact={true} path="/" component={AboutMe} />
-            <Route exact={true} path="/aboutme" component={AboutMe} />
-            <Route exact={true} path="/hobby" component={Hobby} />
-            <Route component={NoMatch} />
-          </Switch>
-        </div>
+  <>
+    <Header />
+    <div className="container">
+      <div className="row center">
+        <Switch>
+          <Route exact={true} path="/" component={AboutMe} />
+          <Route exact={true} path="/aboutme" component={AboutMe} />
+          <Route exact={true} path="/hobby" component={Hobby} />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
-    </>
-  </Router>
+    </div>
+  </>
 );
 
 export default Routing;

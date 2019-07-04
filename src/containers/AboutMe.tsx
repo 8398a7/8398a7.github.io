@@ -7,26 +7,24 @@ import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks';
 import { actions } from '../ducks/meta';
-import updateLocation from '../lib/updateLocation';
 
 const mapStateToProps = ($$state: RootState) => ({
-  meta: $$state.$$meta,
+  meta: $$state.$$meta
 });
 type Props = ReturnType<typeof mapStateToProps>;
 
 const dataSource = {
   screenName: '8398a7',
-  sourceType: 'profile',
+  sourceType: 'profile'
 };
 const options = {
   height: '800',
-  username: '8398a7',
+  username: '8398a7'
 };
 const AboutMe = (props: Props) => {
   useEffect(() => {
     dispatch(actions.fetchAbilitysheetUsers());
     dispatch(actions.fetchIstUsers());
-    dispatch(updateLocation());
   });
   return (
     <>
