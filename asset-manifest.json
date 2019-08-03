@@ -1,14 +1,15 @@
 {
   "main.css": "static/css/main.8c51d7da.css",
   "main.css.map": "static/css/main.8c51d7da.css.map",
-  "main.js": "static/js/main.fb2d4cac.js",
-  "main.js.map": "static/js/main.fb2d4cac.js.map",
+  "main.js": "static/js/main.5a2cac1f.js",
+  "main.js.map": "static/js/main.5a2cac1f.js.map",
   "static/media/fontawesome-webfont.eot": "static/media/fontawesome-webfont.674f50d2.eot",
   "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
   "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
   "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
   "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff",
   "static/media/gh.png": "static/media/gh.7b355fcc.png",
+  "static/media/hateblo.png": "static/media/hateblo.5873d0ac.png",
   "static/media/profile.jpg": "static/media/profile.9016f3f3.jpg",
   "static/media/wantedly.png": "static/media/wantedly.8450058d.png"
 }
