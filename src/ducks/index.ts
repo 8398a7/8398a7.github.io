@@ -2,11 +2,11 @@ import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 import { combineReducers, Reducer } from 'redux';
 import { fork } from 'redux-saga/effects';
-import $$meta, { metaSaga } from './meta';
+import meta, { metaSaga } from './meta';
 
 const rootReducer = (history: History<any>) =>
   combineReducers({
-    $$meta,
+    meta,
     router: connectRouter(history),
   });
 export default rootReducer;

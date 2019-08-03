@@ -1,10 +1,11 @@
 import React from 'react';
-import Meta from '../../models/meta';
+
+import { RootState } from '../../ducks';
 import Card from '../Card';
 import SectionTitle from '../SectionTitle';
 
 interface IProps {
-  meta: Meta;
+  meta: RootState['meta'];
 }
 const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
   <>

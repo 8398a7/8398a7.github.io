@@ -7,8 +7,8 @@ import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks';
 import { actions } from '../ducks/meta';
 
-const mapStateToProps = ($$state: RootState) => ({
-  meta: $$state.$$meta,
+const mapStateToProps = (state: RootState) => ({
+  meta: state.meta,
 });
 type Props = ReturnType<typeof mapStateToProps>;
 
