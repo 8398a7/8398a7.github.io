@@ -1,16 +1,11 @@
 import React, { useEffect } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
 import ActiveProjects from '../components/AboutMe/ActiveProjects';
 import Links from '../components/AboutMe/Links';
 import SkillSet from '../components/AboutMe/SkillSet';
 import { RootState } from '../ducks';
 import { actions } from '../ducks/meta';
-
-const mapStateToProps = (state: RootState) => ({
-  meta: state.meta,
-});
-type Props = ReturnType<typeof mapStateToProps>;
 
 const dataSource = {
   screenName: '8398a7',
@@ -20,12 +15,14 @@ const options = {
   height: '800',
   username: '8398a7',
 };
-const AboutMe = (props: Props) => {
+export const AboutMe: React.SFC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.fetchAbilitysheetUsers());
     dispatch(actions.fetchIstUsers());
   });
+  const meta = useSelector((state: RootState) => state.meta);
+
   return (
     <>
       <div className="col s12">
@@ -36,7 +33,7 @@ const AboutMe = (props: Props) => {
           <Links />
         </div>
         <div className="col s6">
-          <ActiveProjects {...{ meta: props.meta }} />
+          <ActiveProjects {...{ meta }} />
         </div>
         <div className="col s6">
           <Timeline {...{ dataSource, options }} />
@@ -45,5 +42,3 @@ const AboutMe = (props: Props) => {
     </>
   );
 };
-
-export default connect(mapStateToProps)(AboutMe);

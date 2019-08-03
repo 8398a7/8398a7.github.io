@@ -2,7 +2,7 @@ import React, { SFC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import NoMatch from './components/NoMatch';
-import AboutMe from './containers/AboutMe';
+import { AboutMe } from './containers/AboutMe';
 import Hobby from './containers/Hobby';
 
 const Routing: SFC<{}> = () => (
