@@ -18,9 +18,12 @@ const Header: React.SFC = () => (
     <p>aws</p>
     <p>gcp</p>
     <p>rails</p>
+    <p>golang</p>
+    <p>typescript</p>
     <p>java</p>
-    <p>chef</p>
+    <p>k8s</p>
     <p>docker</p>
+    <p>chef</p>
     <p>react</p>
     <Navbar />
   </header>

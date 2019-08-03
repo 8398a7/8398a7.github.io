@@ -21,7 +21,7 @@ const MusicGame: React.SFC = () => (
             </tr>
             <tr>
               <td>recommend</td>
-              <td>★20.00</td>
+              <td>★20.10</td>
             </tr>
             <tr>
               <td>style</td>
@@ -45,25 +45,25 @@ const MusicGame: React.SFC = () => (
             </tr>
             <tr>
               <td>
-                author: <a href="https://iidx12.tk">iidx12.tk</a>
+                author: <a href="https://sp12.iidx.app">sp12.iidx.app</a>
               </td>
               <td>14/11/11</td>
             </tr>
             <tr>
               <td>
-                author: <a href="https://score.iidx12.tk">IST</a>
+                author: <a href="https://score.iidx.app">IST</a>
               </td>
               <td>18/01/20</td>
             </tr>
             <tr>
               <td>
-                author: <a href="https://citrus-ir.tk">Citrus IR</a>
+                author: <a href="https://citrus-ir.iidx.app">Citrus IR</a>
               </td>
               <td>18/05/27</td>
             </tr>
             <tr>
               <td>remain</td>
-              <td>灼熱/ICARUS†/Mare</td>
+              <td>灼熱/ICARUS†/Mare/X-DEN</td>
             </tr>
             <tr>
               <td>start</td>

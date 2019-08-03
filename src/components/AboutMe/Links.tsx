@@ -1,5 +1,6 @@
 import React from 'react';
 import gh from '../../images/gh.png';
+import hateblo from '../../images/hateblo.png';
 import qiita from '../../images/qiita.png';
 import twitter from '../../images/twitter.png';
 import wantedly from '../../images/wantedly.png';
@@ -47,6 +48,15 @@ const Links: React.SFC = () => (
         <p>
           <a target="_blank" rel="noopener" href="http://qiita.com/8398a7">
             http://qiita.com/8398a7
+          </a>
+        </p>
+      </li>
+      <li className="collection-item avatar">
+        <img src={hateblo} alt="" className="circle" />
+        <span className="title">Hateblo</span>
+        <p>
+          <a target="_blank" rel="noopener" href="https://839.hateblo.jp/">
+            https://839.hateblo.jp/
           </a>
         </p>
       </li>

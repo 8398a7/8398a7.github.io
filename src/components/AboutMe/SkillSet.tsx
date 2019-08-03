@@ -8,19 +8,28 @@ const SkillSet: React.SFC = () => (
       <tbody>
         <tr>
           <th>Editor</th>
-          <td>vscode, vim</td>
+          <td>intellij idea, vscode, vim</td>
         </tr>
         <tr>
           <th>Environment</th>
-          <td>OSX, Ubuntu Desktop</td>
-        </tr>
-        <tr>
-          <th>Recently</th>
-          <td>AWS, Rails, Chef, Docker, TypeScript, Redux, Spring Boot</td>
+          <td>macOS, Windows10</td>
         </tr>
         <tr>
           <th>Incumbent</th>
           <td>Server side engineer in Kyoto</td>
+        </tr>
+        <tr>
+          <th>Certified</th>
+          <td>
+            <a
+              href="https://portal.linuxfoundation.org/certification/verify-certifications/"
+              target="_blank"
+            >
+              Certified Kubernetes Administrator(2019/06-2022/06)
+            </a>
+            <br />
+            CKA-1900-002255-0100/Tanaka
+          </td>
         </tr>
       </tbody>
     </table>
