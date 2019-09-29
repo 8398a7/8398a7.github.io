@@ -14,10 +14,8 @@ import registerServiceWorker from './registerServiceWorker';
 import createStore from './store';
 
 const development = process.env.NODE_ENV === 'development';
-const dsn = development
-  ? 'https://38e6fdf890e44bee87d3f3c50e4512e8@sentry.husq.tk/22'
-  : 'https://f6b6f48a3202490b87056bd987375bd3@sentry.husq.tk/11';
-init({ dsn });
+const dsn = 'https://3f1e703eea4f457eba7d830e0abb8e09@sentry.iidx.app/3';
+init({ dsn, environment: process.env.NODE_ENV });
 const history = createBrowserHistory();
 const store = createStore(history, dsn);
 
