@@ -1,5 +1,4 @@
 import React from 'react';
-import 'video-react/dist/video-react.css';
 import Gymkhana from '../components/Hobby/Gymkhana';
 import MusicGame from '../components/Hobby/MusicGame';
 
