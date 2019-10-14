@@ -1,6 +1,4 @@
 import React from 'react';
-// @ts-ignore
-import { Player } from 'video-react';
 import SectionTitle from '../SectionTitle';
 
 const Gymkhana: React.SFC = () => (
@@ -8,9 +6,12 @@ const Gymkhana: React.SFC = () => (
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
     <div className="flexbox-main">
       <div className="flexbox-column">
-        <Player>
-          <source src="https://husq.tk/videos/gymkhana1.mp4" />
-        </Player>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/6_EtxOKU63U"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        />
       </div>
       <div className="flexbox-column">
         <table className="striped" style={{ marginBottom: '5px' }}>
@@ -84,9 +85,12 @@ const Gymkhana: React.SFC = () => (
         </table>
       </div>
       <div className="flexbox-column">
-        <Player>
-          <source src="https://husq.tk/videos/gymkhana2.mp4" />
-        </Player>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/9y5YaNRyl_4"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        />
       </div>
     </div>
   </div>

@@ -1,6 +1,4 @@
 import React from 'react';
-// @ts-ignore
-import { Player } from 'video-react';
 import SectionTitle from '../SectionTitle';
 
 const MusicGame: React.SFC = () => (
@@ -8,9 +6,12 @@ const MusicGame: React.SFC = () => (
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="flexbox-main">
       <div className="flexbox-column">
-        <Player>
-          <source src="https://husq.tk/videos/bms1.mp4" />
-        </Player>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/t4FFqzzdYfw"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        />
       </div>
       <div className="flexbox-column">
         <table className="striped">
@@ -73,9 +74,12 @@ const MusicGame: React.SFC = () => (
         </table>
       </div>
       <div className="flexbox-column">
-        <Player>
-          <source src="https://husq.tk/videos/bms2.mp4" />
-        </Player>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/LYMssmrdz0Y"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        />
       </div>
     </div>
   </div>
