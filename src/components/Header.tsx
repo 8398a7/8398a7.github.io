@@ -84,10 +84,16 @@ const Header: React.SFC = () => (
           <div className="container">
             <ul>
               <li>
-                <Link to="/overview">Overview</Link>
+                <Link to="/overview">
+                  <i className="fas fa-cogs" />
+                  Overview
+                </Link>
               </li>
               <li>
-                <Link to="/hobby">Hobby</Link>
+                <Link to="/hobby">
+                  <i className="fas fa-star" />
+                  Hobby
+                </Link>
               </li>
             </ul>
           </div>
