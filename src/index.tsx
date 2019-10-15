@@ -1,6 +1,5 @@
 import { init } from '@sentry/browser';
-// @ts-ignore
-import { ConnectedRouter } from 'connected-react-router/immutable';
+import { ConnectedRouter } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 
 import 'bulma/css/bulma.css';
