@@ -2,20 +2,25 @@ import React from 'react';
 import SectionTitle from '../SectionTitle';
 
 const Gymkhana: React.SFC = () => (
-  <div className="col s12">
+  <div>
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
-    <div className="flexbox-main">
-      <div className="flexbox-column">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/6_EtxOKU63U"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          title="どら5787"
-        />
-      </div>
-      <div className="flexbox-column">
-        <table className="striped" style={{ marginBottom: '5px' }}>
+    <div className="columns">
+      <div className="column">
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/6_EtxOKU63U"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            title="どら5787"
+            allowFullScreen={true}
+            frameBorder="0"
+          />
+        </div>
+        <table
+          className="table is-striped is-hoverable is-fullwidth"
+          style={{ marginBottom: '5px' }}
+        >
           <tbody>
             <tr>
               <td>2010 愛媛DUNLOP杯#スペシャルN</td>
@@ -55,10 +60,8 @@ const Gymkhana: React.SFC = () => (
           </tbody>
         </table>
       </div>
-    </div>
-    <div className="flexbox-main">
-      <div className="flexbox-column">
-        <table className="striped">
+      <div className="column">
+        <table className="table is-striped is-hoverable is-fullwidth">
           <thead>
             <tr>
               <th>Group</th>
@@ -84,15 +87,17 @@ const Gymkhana: React.SFC = () => (
             </tr>
           </tbody>
         </table>
-      </div>
-      <div className="flexbox-column">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/9y5YaNRyl_4"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          title="20120520MSGC"
-        />
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/9y5YaNRyl_4"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            title="20120520MSGC"
+            allowFullScreen={true}
+            frameBorder="0"
+          />
+        </div>
       </div>
     </div>
   </div>

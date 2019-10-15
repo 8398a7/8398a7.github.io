@@ -3,12 +3,12 @@ import SectionTitle from '../SectionTitle';
 
 const SkillSet: React.SFC = () => (
   <>
-    <SectionTitle {...{ icon: 'info', title: 'AboutMe' }} />
-    <table className="striped">
+    <SectionTitle {...{ icon: 'trophy', title: 'Skill Set' }} />
+    <table className="table is-striped is-hoverable is-fullwidth">
       <tbody>
         <tr>
           <th>Editor</th>
-          <td>intellij idea, vscode, vim</td>
+          <td>Goland, VSCode, Vim</td>
         </tr>
         <tr>
           <th>Environment</th>

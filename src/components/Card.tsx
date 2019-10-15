@@ -1,32 +1,42 @@
 import React from 'react';
 
-const bodyRender: React.SFC<{ title: string; line: string }> = ({
-  title,
-  line,
-}) => <p key={`${title}-${line}`}>{line}</p>;
-
-const Card: React.SFC<{ title: string; body: string[]; link: string }> = ({
-  title,
-  body,
-  link,
-}) => (
-  <div className="row">
-    <div className="card light-blue accent-2">
-      <div className="card-content white-text">
-        <span className="card-title">{title}</span>
-        {body.map(line => bodyRender({ title, line }))}
+const Card: React.SFC<{
+  title: string;
+  hrefText: string;
+  href: string;
+  icon: string;
+  tags?: string[];
+  children?: JSX.Element;
+}> = ({ title, hrefText, href, icon, tags, children }) => (
+  <div className="card">
+    <div className="card-content">
+      <div className="media">
+        <div className="media-left">
+          <figure className="image is-48x48">
+            <img src={icon} alt={`${title} icon`} className="is-rounded" />
+          </figure>
+        </div>
+        <div className="media-content">
+          <p className="title is-4">{title}</p>
+          <p className="subtitle is-6">
+            <a target="_blank" rel="noopener noreferrer" href={href}>
+              {hrefText}
+            </a>
+          </p>
+        </div>
       </div>
-      <div className="card-action">
-        <a
-          style={{ color: 'white' }}
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fa fa-github" />
-          GitHub
-        </a>
-      </div>
+      {children ? (
+        <div className="content has-text-left">
+          {children}
+          {tags
+            ? tags.map(tag => (
+                <span style={{ marginLeft: '3px' }} className="tag is-info">
+                  {tag}
+                </span>
+              ))
+            : null}
+        </div>
+      ) : null}
     </div>
   </div>
 );

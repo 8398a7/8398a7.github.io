@@ -2,20 +2,22 @@ import React from 'react';
 import SectionTitle from '../SectionTitle';
 
 const MusicGame: React.SFC = () => (
-  <div className="col s12">
+  <div>
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
-    <div className="flexbox-main">
-      <div className="flexbox-column">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/t4FFqzzdYfw"
-          title="恋の2-4-11(BMS Edit)"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        />
-      </div>
-      <div className="flexbox-column">
-        <table className="striped">
+    <div className="columns">
+      <div className="column">
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/t4FFqzzdYfw"
+            title="恋の2-4-11(BMS Edit)"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen={true}
+            frameBorder="0"
+          />
+        </div>
+        <table className="table is-striped is-hoverable is-fullwidth">
           <tbody>
             <tr>
               <td>bms</td>
@@ -23,7 +25,7 @@ const MusicGame: React.SFC = () => (
             </tr>
             <tr>
               <td>recommend</td>
-              <td>★20.10</td>
+              <td>★20.16</td>
             </tr>
             <tr>
               <td>style</td>
@@ -36,10 +38,8 @@ const MusicGame: React.SFC = () => (
           </tbody>
         </table>
       </div>
-    </div>
-    <div className="flexbox-main">
-      <div className="flexbox-column">
-        <table className="striped">
+      <div className="column">
+        <table className="table is-striped is-hoverable is-fullwidth">
           <tbody>
             <tr>
               <td>iidx</td>
@@ -73,15 +73,17 @@ const MusicGame: React.SFC = () => (
             </tr>
           </tbody>
         </table>
-      </div>
-      <div className="flexbox-column">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/LYMssmrdz0Y"
-          title="Poppin' Shower"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        />
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/LYMssmrdz0Y"
+            title="Poppin' Shower"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen={true}
+            frameBorder="0"
+          />
+        </div>
       </div>
     </div>
   </div>

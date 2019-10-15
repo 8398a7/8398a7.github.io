@@ -5,10 +5,8 @@ import MusicGame from '../components/Hobby/MusicGame';
 const Hobby: React.SFC = () => {
   return (
     <>
-      <div className="col s12">
-        <Gymkhana />
-        <MusicGame />
-      </div>
+      <Gymkhana />
+      <MusicGame />
     </>
   );
 };
