@@ -36,8 +36,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "CI=true react-scripts test --coverage --color",
     "eject": "react-scripts eject",
+    "docker:start": "docker build . -t 8398a7.github.io && docker run -it -p 3000:3000 8398a7.github.io",
     "lint": "eslint \"src/**/*.ts{,x}\"",
     "publish": "react-scripts build && cp -r ./build/* ."
   },
