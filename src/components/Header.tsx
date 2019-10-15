@@ -68,6 +68,7 @@ const Header: React.SFC = () => (
             ].map(elem => {
               return (
                 <span
+                  key={`tag-${elem}`}
                   style={{ marginTop: '5px', marginLeft: '5px' }}
                   className="tag is-success is-medium"
                 >
