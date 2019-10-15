@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
-import ActiveProjects from '../components/AboutMe/ActiveProjects';
-import Links from '../components/AboutMe/Links';
-import SkillSet from '../components/AboutMe/SkillSet';
+import ActiveProjects from '../components/Overview/ActiveProjects';
+import Links from '../components/Overview/Links';
+import SkillSet from '../components/Overview/SkillSet';
 import { RootState } from '../ducks';
 import { actions } from '../ducks/meta';
 
@@ -15,7 +15,7 @@ const options = {
   height: '800',
   username: '8398a7',
 };
-export const AboutMe: React.SFC = () => {
+export const Overview: React.SFC = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.fetchAbilitysheetUsers());
@@ -25,17 +25,13 @@ export const AboutMe: React.SFC = () => {
 
   return (
     <>
-      <div className="col s12">
-        <div className="col s6">
+      <div className="columns">
+        <div className="column">
           <SkillSet />
-        </div>
-        <div className="col s6">
-          <Links />
-        </div>
-        <div className="col s6">
           <ActiveProjects {...{ meta }} />
         </div>
-        <div className="col s6">
+        <div className="column">
+          <Links />
           <Timeline {...{ dataSource, options }} />
         </div>
       </div>

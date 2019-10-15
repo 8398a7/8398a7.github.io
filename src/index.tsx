@@ -1,16 +1,17 @@
 import { init } from '@sentry/browser';
 // @ts-ignore
 import { ConnectedRouter } from 'connected-react-router/immutable';
-import 'font-awesome/css/font-awesome.css';
 import { createBrowserHistory } from 'history';
-import 'materialize-css/dist/css/materialize.css';
+
+import 'bulma/css/bulma.css';
+
 import React from 'react';
 import { render } from 'react-dom';
 import { initialize } from 'react-ga';
 import { Provider } from 'react-redux';
 import App from './App';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './serviceWorker';
 import createStore from './store';
 
 const development = process.env.NODE_ENV === 'development';
@@ -28,4 +29,5 @@ render(
   </Provider>,
   document.getElementById('root') as HTMLElement,
 );
-registerServiceWorker();
+
+serviceWorker.unregister();
