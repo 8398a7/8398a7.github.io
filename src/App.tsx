@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
 
-import Routing from './routing';
+import Routing from './Routing';
 
 const App: SFC<{}> = () => (
   <>
