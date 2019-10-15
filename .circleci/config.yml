@@ -26,4 +26,4 @@ jobs:
           command: yarn test
       - run:
           name: publish
-          command: yarn clean && yarn run publish
+          command: yarn run publish
