@@ -1,5 +1,4 @@
-// @ts-ignore
-import { routerMiddleware } from 'connected-react-router/immutable';
+import { routerMiddleware } from 'connected-react-router';
 import { History } from 'history';
 // @ts-ignore
 import createRavenMiddleware from 'raven-for-redux';
