@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 const Header: React.SFC = () => (
   <header>
     <Link to="/">
-      <img className="circle responsive-img" src={profile} />
+      <img className="circle responsive-img" alt="profile" src={profile} />
     </Link>
     <h1 style={{ paddingBottom: '10px' }}>@8398a7</h1>
     <p className="main">

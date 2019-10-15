@@ -11,6 +11,7 @@ const Gymkhana: React.SFC = () => (
           height="315"
           src="https://www.youtube.com/embed/6_EtxOKU63U"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          title="どら5787"
         />
       </div>
       <div className="flexbox-column">
@@ -90,6 +91,7 @@ const Gymkhana: React.SFC = () => (
           height="315"
           src="https://www.youtube.com/embed/9y5YaNRyl_4"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          title="20120520MSGC"
         />
       </div>
     </div>

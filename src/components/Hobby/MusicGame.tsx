@@ -10,6 +10,7 @@ const MusicGame: React.SFC = () => (
           width="560"
           height="315"
           src="https://www.youtube.com/embed/t4FFqzzdYfw"
+          title="恋の2-4-11(BMS Edit)"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         />
       </div>
@@ -78,6 +79,7 @@ const MusicGame: React.SFC = () => (
           width="560"
           height="315"
           src="https://www.youtube.com/embed/LYMssmrdz0Y"
+          title="Poppin' Shower"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         />
       </div>

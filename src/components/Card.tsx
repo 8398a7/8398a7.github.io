@@ -21,7 +21,7 @@ const Card: React.SFC<{ title: string; body: string[]; link: string }> = ({
           style={{ color: 'white' }}
           href={link}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           <i className="fa fa-github" />
           GitHub

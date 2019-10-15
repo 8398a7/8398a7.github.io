@@ -24,6 +24,7 @@ const SkillSet: React.SFC = () => (
             <a
               href="https://portal.linuxfoundation.org/certification/verify-certifications/"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Certified Kubernetes Administrator(2019/06-2022/06)
             </a>
