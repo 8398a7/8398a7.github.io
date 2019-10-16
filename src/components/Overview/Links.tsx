@@ -4,7 +4,6 @@ import hateblo from '../../images/hateblo.png';
 import qiita from '../../images/qiita.png';
 import twitter from '../../images/twitter.png';
 import wantedly from '../../images/wantedly.png';
-import linkedin from '../../images/linkedin.png';
 import SectionTitle from '../SectionTitle';
 import Card from '../Card';
 
@@ -28,12 +27,6 @@ const Links: React.SFC = () => (
       href="https://twitter.com/8398a7"
       hrefText="@8398a7"
       icon={twitter}
-    />
-    <Card
-      title="Linkedin"
-      href="https://www.linkedin.com/in/shoya-tanaka-9a692b116/"
-      hrefText="Link"
-      icon={linkedin}
     />
     <Card
       title="Wantedly"
