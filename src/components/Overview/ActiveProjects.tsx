@@ -45,7 +45,7 @@ const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
       tags={['Rails', 'React', 'Java']}
     >
       <>
-        <div>beatorajaのIRサーバ α番提供</div>
+        <div>beatorajaのIRサーバ α版提供</div>
       </>
     </Card>
     <Card
