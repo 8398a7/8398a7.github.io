@@ -5,7 +5,7 @@ import ActiveProjects from '../components/Overview/ActiveProjects';
 import Links from '../components/Overview/Links';
 import SkillSet from '../components/Overview/SkillSet';
 import { RootState } from '../ducks';
-import { actions } from '../ducks/meta';
+import { actions } from '../ducks/Meta';
 
 const dataSource = {
   screenName: '8398a7',

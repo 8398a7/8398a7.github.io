@@ -2,7 +2,7 @@ import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 import { combineReducers, Reducer } from 'redux';
 import { fork } from 'redux-saga/effects';
-import meta, { metaSaga } from './meta';
+import meta, { metaSaga } from './Meta';
 
 const rootReducer = (history: History<any>) =>
   combineReducers({
