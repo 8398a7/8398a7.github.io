@@ -26,10 +26,20 @@ const SkillSet: React.SFC = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              Certified Kubernetes Administrator(2019/06-2022/06)
+              Certified Kubernetes Administrator (2019/06-2022/06)
             </a>
             <br />
             CKA-1900-002255-0100/Tanaka
+            <br />
+            <a
+              href="https://portal.linuxfoundation.org/certification/verify-certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Certified Kubernetes Application Developer (2019/12-2022/12)
+            </a>
+            <br />
+            CKAD-1900-002204-0100/Tanaka
           </td>
         </tr>
       </tbody>
