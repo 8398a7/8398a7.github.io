@@ -22,7 +22,7 @@ const SkillSet: React.SFC = () => (
           <th>Certified</th>
           <td>
             <a
-              href="https://portal.linuxfoundation.org/certification/verify-certifications/"
+              href="https://training.linuxfoundation.org/certification/verify/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -32,7 +32,7 @@ const SkillSet: React.SFC = () => (
             CKA-1900-002255-0100/Tanaka
             <br />
             <a
-              href="https://portal.linuxfoundation.org/certification/verify-certifications/"
+              href="https://training.linuxfoundation.org/certification/verify/"
               target="_blank"
               rel="noopener noreferrer"
             >
