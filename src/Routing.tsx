@@ -1,6 +1,7 @@
 import React, { SFC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
 import { Overview } from './containers/Overview';
 import Hobby from './containers/Hobby';
@@ -17,6 +18,7 @@ const Routing: SFC<{}> = () => (
           <Route component={NoMatch} />
         </Switch>
       </div>
+      <Footer />
     </section>
   </>
 );

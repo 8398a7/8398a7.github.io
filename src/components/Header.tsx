@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import profile from '../images/profile.jpg';
-import { RootState } from '../ducks/index';
+import { RootState } from '../ducks';
 import { actions } from '../ducks/UI';
 
 const Header: React.SFC = () => {
@@ -81,7 +81,7 @@ const Header: React.SFC = () => {
                 'Docker',
                 'Chef',
                 'React',
-              ].map(elem => {
+              ].map((elem) => {
                 return (
                   <span
                     key={`tag-${elem}`}
