@@ -38,17 +38,6 @@ const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
       </>
     </Card>
     <Card
-      title="Citrus IR"
-      href="https://citrus-ir.iidx.app"
-      icon="https://citrus-ir.iidx.app/assets/logo-ba4df90b17eb96142fa2e33c0e5fb48975fb3e8c1f3bd0771d1380cfac265b4e.png"
-      hrefText="Link"
-      tags={['Rails', 'React', 'Java']}
-    >
-      <>
-        <div>beatorajaのIRサーバ α版提供</div>
-      </>
-    </Card>
-    <Card
       title="lgtm_creator"
       href="https://github.com/8398a7/lgtm_creator"
       icon={gh}

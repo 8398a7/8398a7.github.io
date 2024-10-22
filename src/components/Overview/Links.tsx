@@ -34,12 +34,6 @@ const Links: React.SFC = () => (
       hrefText="Link"
       icon={wantedly}
     />
-    <Card
-      title="Qiita"
-      href="https://qiita.com/8398a7"
-      hrefText="@8398a7"
-      icon={qiita}
-    />
   </>
 );
 
