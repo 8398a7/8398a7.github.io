@@ -6,8 +6,8 @@
 ```shell
 git clone git@github.com:8398a7/8398a7.github.io.git
 cd 8398a7.github.io
-yarn install
-yarn start # http://localhost:3000
+npm install
+npm start # http://localhost:3000
 ```
 
 ## Optional
@@ -15,6 +15,6 @@ yarn start # http://localhost:3000
 - docker
 
 ```shell
-yarn run docker:start
+npm run docker:start
 # run webpack-dev-server => localhost:3000
 ```
