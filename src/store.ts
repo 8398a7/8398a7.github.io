@@ -22,14 +22,14 @@ export default (history: History, dsn: string) => {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares: Middleware[] = [];
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (import.meta.env.MODE !== 'production') {
     middlewares.push(createLogger());
   }
 
   Raven.config(dsn).install();
 
   const devtoolsExtension = (window as ExtendedWindow).__REDUX_DEVTOOLS_EXTENSION__;
-  const devtools = process.env.NODE_ENV !== 'production' && devtoolsExtension ? devtoolsExtension() : identityEnhancer;
+  const devtools = import.meta.env.MODE !== 'production' && devtoolsExtension ? devtoolsExtension() : identityEnhancer;
 
   const store = createStore(
     createRootReducer(history),

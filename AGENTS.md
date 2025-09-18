@@ -11,8 +11,8 @@
 ## ビルド・テスト・ローカル開発
 
 - 依存取得: `yarn install`
-- 開発サーバ: `make start` もしくは `yarn start`（`REACT_APP_LAST_MODIFIED` を自動付与）。
-- テスト実行: `make test` または `yarn test`（Jest、カバレッジ有効）。
+- 開発サーバ: `make start` もしくは `yarn start`（`VITE_LAST_MODIFIED` を自動付与）。
+- テスト実行: `make test` または `yarn test`（Vitest）。
 - Lint: `yarn lint`（Biome）。
 - ビルド: `make build` または `yarn build`。
 - 公開用コピー: `make publish`（`build/` の内容をリポジトリ直下へ配置; GitHub Pages 用）。
@@ -20,14 +20,14 @@
 
 ## コーディング規約 & 命名
 
-- 言語/設定: TypeScript 厳密モード。React 関連は `react-scripts`。
+- 言語/設定: TypeScript 厳密モード。React ビルドは Vite + `@vitejs/plugin-react`（classic JSX）。
 - フォーマット: Biome（2スペース、`singleQuote: true`、`;`あり、`trailingComma: all` 設定は `biome.jsonc` 参照）。例: `npx biome format --write .`。
 - Lint: `yarn lint`。自動修正例: `npx biome check --write src`。
 - 命名: コンポーネントは `PascalCase`（例 `Header.tsx`）、関数/変数は `camelCase`。Redux は `ducks/Feature.ts` 形式で Action/Reducer/Saga を内包。
 
 ## テスト方針
 
-- フレームワーク: Jest（`react-scripts`）。
+- フレームワーク: Vitest。
 - 配置/命名: 実装と同階層に `*.test.ts` / `*.test.tsx`。
 - 実行例: `yarn test src/components/Header.test.tsx -t "renders"`。
 - 期待: UI はレンダリング可否と状態遷移、`lib/` は入出力と型の健全性を検証。新規/修正コードにはテストを追加。
@@ -40,8 +40,8 @@
 ## セキュリティ & 設定メモ（重要）
 
 - 秘密情報はコミットしない（Sentry DSN/GA は公開前提。他のトークンは環境変数管理）。
-- `REACT_APP_LAST_MODIFIED` はフッター表示に使用（`Makefile` が自動設定）。
-- Node は Docker と同等（v12 系）か互換環境を推奨。Node 17+ ではスクリプトが `--openssl-legacy-provider` を付与。
+- `VITE_LAST_MODIFIED` はフッター表示に使用（`Makefile` が自動設定）。
+- Node は Docker と同等（v18 系）か互換環境を推奨。
 
 ## Agent 向け補足
 
@@ -53,8 +53,8 @@
 ## 本リポジトリ実態メモ（2025-09-13 点検）
 
 - ランタイム/ツールチェーン
-  - Node 12.11.1（Docker/CircleCI）
-  - CRA: `react-scripts@3.4.1` / React: `16.13.1` / TypeScript: `3.8.3`
+  - Node 18 系（Docker/CircleCI）
+  - Vite: `vite@5` + `@vitejs/plugin-react` / React: `16.13.1` / TypeScript: `3.8.3`
   - 状態管理: Redux + Redux-Saga、UI: Bulma
 - ディレクトリ構成（実在確認済み）
   - `src/` 配下: `components/`, `containers/`, `ducks/`, `lib/`, `types/`, `images/`
@@ -68,8 +68,8 @@
   - Lint: `yarn lint`（`biome lint`）。環境によっては Biome CLI の解決に差が出るため、必要なら `npx biome lint` も可。
   - Biome 設定は `biome.jsonc` に定義。例: `npx biome format --write .`。
 - テスト
-  - Jest（CRA 同梱）を使用。現状 `src` に `*.test.ts(x)` は未配置。新規/修正時は同階層にテストを追加。
+  - Vitest を使用。現状 `src` に `*.test.ts(x)` は未配置。新規/修正時は同階層にテストを追加。
 - 環境変数
-  - `REACT_APP_LAST_MODIFIED` は `make start`/`make build` で自動付与し、フッターに表示。
+  - `VITE_LAST_MODIFIED` は `make start`/`make build` で自動付与し、フッターに表示。
 - セキュリティ
   - Sentry DSN / Google Analytics ID は公開前提。他の機密はコミットしない（環境変数で管理）。

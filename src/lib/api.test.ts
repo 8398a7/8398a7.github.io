@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { vi } from 'vitest';
 import API from './api';
 
-jest.mock('axios');
+vi.mock('axios');
 
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockedAxios = vi.mocked(axios, true);
 
 beforeEach(() => {
   mockedAxios.get.mockReset();
