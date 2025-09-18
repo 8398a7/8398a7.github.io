@@ -1,7 +1,8 @@
 import React from 'react';
+import type { FC } from 'react';
 import SectionTitle from '../SectionTitle';
 
-const Gymkhana: React.SFC = () => (
+const Gymkhana: FC = () => (
   <div>
     <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
     <div className="columns">

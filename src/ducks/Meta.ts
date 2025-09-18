@@ -4,7 +4,7 @@ import produce from 'immer';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import API from '../lib/api';
-import { SagaCall } from '../types/redux-saga';
+import type { SagaCall } from '../types/redux-saga';
 
 const initialState = {
   abilitysheet: 0,

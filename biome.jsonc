@@ -12,6 +12,26 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single"
+    },
+    "jsxRuntime": "reactClassic"
+  },
+  "linter": {
+    "rules": {
+      "a11y": {
+        "noStaticElementInteractions": { "level": "warn" },
+        "useKeyWithClickEvents": { "level": "warn" }
+      },
+      "correctness": {
+        "noUnusedImports": { "level": "warn" },
+        "useUniqueElementIds": { "level": "warn" }
+      },
+      "style": {
+        "useImportType": { "level": "warn" }
+      },
+      "complexity": {
+        "noBannedTypes": { "level": "warn" },
+        "noUselessFragments": { "level": "warn" }
+      }
     }
   }
 }

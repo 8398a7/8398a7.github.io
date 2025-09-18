@@ -1,8 +1,9 @@
-import React, { SFC } from 'react';
+import React from 'react';
+import type { FC } from 'react';
 
 import Routing from './Routing';
 
-const App: SFC<{}> = () => (
+const App: FC = () => (
   <>
     <Routing />
   </>

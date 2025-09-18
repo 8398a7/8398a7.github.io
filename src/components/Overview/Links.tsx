@@ -1,13 +1,13 @@
 import React from 'react';
+import type { FC } from 'react';
 import gh from '../../images/gh.png';
 import hateblo from '../../images/hateblo.png';
-import qiita from '../../images/qiita.png';
 import twitter from '../../images/twitter.png';
 import wantedly from '../../images/wantedly.png';
 import SectionTitle from '../SectionTitle';
 import Card from '../Card';
 
-const Links: React.SFC = () => (
+const Links: FC = () => (
   <>
     <SectionTitle {...{ icon: 'link', title: 'Link' }} />
     <Card title="GitHub" href="https://github.com/8398a7" hrefText="@8398a7" icon={gh} />

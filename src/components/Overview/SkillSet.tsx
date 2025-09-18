@@ -1,7 +1,8 @@
 import React from 'react';
+import type { FC } from 'react';
 import SectionTitle from '../SectionTitle';
 
-const SkillSet: React.SFC = () => (
+const SkillSet: FC = () => (
   <>
     <SectionTitle {...{ icon: 'trophy', title: 'Skill Set' }} />
     <table className="table is-striped is-hoverable is-fullwidth">

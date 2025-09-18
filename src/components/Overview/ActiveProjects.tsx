@@ -1,16 +1,17 @@
 import React from 'react';
+import type { FC } from 'react';
 
 import gh from '../../images/gh.png';
 import gin from '../../images/gin.png';
 import ist from '../../images/ist.png';
-import { RootState } from '../../ducks';
+import type { RootState } from '../../ducks';
 import Card from '../Card';
 import SectionTitle from '../SectionTitle';
 
 interface IProps {
   meta: RootState['meta'];
 }
-const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
+const ActiveProjects: FC<IProps> = ({ meta }) => (
   <>
     <SectionTitle {...{ icon: 'rocket', title: 'Active Projects' }} />
     <Card
@@ -20,16 +21,12 @@ const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
       hrefText="GitHub"
       tags={['Rails', 'React']}
     >
-      <>
-        <div>beatmania IIDXのSP☆12難易度参考表</div>
-        <div>登録者数: {meta.abilitysheet}名</div>
-      </>
+      <div>beatmania IIDXのSP☆12難易度参考表</div>
+      <div>登録者数: {meta.abilitysheet}名</div>
     </Card>
     <Card title="IIDX Score Table" href="https://score.iidx.app" icon={ist} hrefText="Link" tags={['Rails', 'React']}>
-      <>
-        <div>iidxのスコア管理ツール(SP/DP)</div>
-        <div>登録者数: {meta.ist}名</div>
-      </>
+      <div>iidxのスコア管理ツール(SP/DP)</div>
+      <div>登録者数: {meta.ist}名</div>
     </Card>
     <Card
       title="lgtm_creator"
@@ -38,9 +35,7 @@ const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
       hrefText="GitHub"
       tags={['Ruby', 'Gem']}
     >
-      <>
-        <div>gif動画にLGTMをつけるcli</div>
-      </>
+      <div>gif動画にLGTMをつけるcli</div>
     </Card>
     <Card
       title="api-abilitysheet"
@@ -49,9 +44,7 @@ const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
       hrefText="GitHub"
       tags={['Golang', 'Docker']}
     >
-      <>
-        <div>abilitysheetのapiサーバ</div>
-      </>
+      <div>abilitysheetのapiサーバ</div>
     </Card>
   </>
 );

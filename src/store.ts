@@ -1,26 +1,36 @@
 import { routerMiddleware } from 'connected-react-router';
-import { History } from 'history';
-// @ts-ignore
+import type { History } from 'history';
 import createRavenMiddleware from 'raven-for-redux';
-// @ts-ignore
 import Raven from 'raven-js';
-import { applyMiddleware, compose, createStore, Middleware } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
+import type { Middleware, StoreEnhancer } from 'redux';
 import { createLogger } from 'redux-logger';
-import createSagaMiddleware, { SagaMiddleware } from 'redux-saga';
+import createSagaMiddleware from 'redux-saga';
 import createRootReducer, { rootSaga } from './ducks';
 import { googleAnalytics } from './lib/reactGAMiddleware';
 
+type ReduxDevToolsExtension = () => StoreEnhancer;
+
+type ExtendedWindow = Window &
+  typeof globalThis & {
+    __REDUX_DEVTOOLS_EXTENSION__?: ReduxDevToolsExtension;
+  };
+
+const identityEnhancer: StoreEnhancer = (next) => next;
+
 export default (history: History, dsn: string) => {
-  const sagaMiddleware: SagaMiddleware<{}> = createSagaMiddleware();
-  let middlewares: Middleware[] = [];
+  const sagaMiddleware = createSagaMiddleware();
+  const middlewares: Middleware[] = [];
+
   if (process.env.NODE_ENV !== 'production') {
-    middlewares = [createLogger()];
+    middlewares.push(createLogger());
   }
+
   Raven.config(dsn).install();
-  const devtools: any =
-    process.env.NODE_ENV !== 'production' && (window as any).__REDUX_DEVTOOLS_EXTENSION__
-      ? (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-      : (f: any) => f;
+
+  const devtoolsExtension = (window as ExtendedWindow).__REDUX_DEVTOOLS_EXTENSION__;
+  const devtools = process.env.NODE_ENV !== 'production' && devtoolsExtension ? devtoolsExtension() : identityEnhancer;
+
   const store = createStore(
     createRootReducer(history),
     compose(
@@ -34,6 +44,8 @@ export default (history: History, dsn: string) => {
       devtools,
     ),
   );
+
   sagaMiddleware.run(rootSaga);
+
   return store;
 };

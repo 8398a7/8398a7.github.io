@@ -1,12 +1,13 @@
 import React from 'react';
+import type { FC, ReactNode } from 'react';
 
-const Card: React.SFC<{
+const Card: FC<{
   title: string;
   hrefText: string;
   href: string;
   icon: string;
   tags?: string[];
-  children?: JSX.Element;
+  children?: ReactNode;
 }> = ({ title, hrefText, href, icon, tags, children }) => (
   <div className="card">
     <div className="card-content">

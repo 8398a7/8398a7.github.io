@@ -13,7 +13,13 @@ interface IFetchUsers {
   users: number;
 }
 
-export default class API {
-  public static fetchAbilitysheetUsers = () => sendGet<IFetchUsers>('https://api-sp12.iidx.app/users/count');
-  public static fetchIstUsers = () => sendGet<IFetchUsers>('https://score.iidx.app/api/v1/users/count');
-}
+const fetchAbilitysheetUsers = () => sendGet<IFetchUsers>('https://api-sp12.iidx.app/users/count');
+const fetchIstUsers = () => sendGet<IFetchUsers>('https://score.iidx.app/api/v1/users/count');
+
+const API = {
+  fetchAbilitysheetUsers,
+  fetchIstUsers,
+};
+
+export { fetchAbilitysheetUsers, fetchIstUsers };
+export default API;

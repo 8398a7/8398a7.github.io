@@ -1,7 +1,8 @@
 import React from 'react';
+import type { FC } from 'react';
 import SectionTitle from '../SectionTitle';
 
-const MusicGame: React.SFC = () => (
+const MusicGame: FC = () => (
   <div>
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
     <div className="columns">

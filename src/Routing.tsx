@@ -1,4 +1,5 @@
-import React, { SFC } from 'react';
+import React from 'react';
+import type { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,7 +7,7 @@ import NoMatch from './components/NoMatch';
 import { Overview } from './containers/Overview';
 import Hobby from './containers/Hobby';
 
-const Routing: SFC<{}> = () => (
+const Routing: FC = () => (
   <>
     <Header />
     <section className="section">
