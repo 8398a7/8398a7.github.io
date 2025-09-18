@@ -1,4 +1,4 @@
-FROM node:18.20-alpine
+FROM node:20.19-alpine
 
 ENV HOME /usr/src/app
 RUN mkdir -p $HOME

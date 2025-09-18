@@ -6,7 +6,7 @@
 - `public/` 静的テンプレート（`index.html`, `manifest.json`, `favicon.ico`）。
 - `build/` ビルド成果物（自動生成）。
 - `static/` デプロイ後の配布資産（自動生成。直接編集しない）。
-- ルートには `Makefile`, `Dockerfile`, `package.json`, `biome.jsonc`, `tsconfig.json`, `.circleci/` など。
+- ルートには `Makefile`, `Dockerfile`, `package.json`, `biome.jsonc`, `tsconfig.json`, `.github/workflows/` など。
 
 ## ビルド・テスト・ローカル開発
 
@@ -41,7 +41,7 @@
 
 - 秘密情報はコミットしない（Sentry DSN/GA は公開前提。他のトークンは環境変数管理）。
 - `VITE_LAST_MODIFIED` はフッター表示に使用（`Makefile` が自動設定）。
-- Node は Docker と同等（v18 系）か互換環境を推奨。
+- Node は Docker と同等（v20.19 系）か互換環境を推奨。
 
 ## Agent 向け補足
 
@@ -53,7 +53,7 @@
 ## 本リポジトリ実態メモ（2025-09-13 点検）
 
 - ランタイム/ツールチェーン
-  - Node 18 系（Docker/CircleCI）
+  - Node 20.19 系（Docker/GitHub Actions）
   - Vite: `vite@5` + `@vitejs/plugin-react` / React: `16.13.1` / TypeScript: `3.8.3`
   - 状態管理: Redux + Redux-Saga、UI: Bulma
 - ディレクトリ構成（実在確認済み）
