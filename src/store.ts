@@ -18,8 +18,7 @@ export default (history: History, dsn: string) => {
   }
   Raven.config(dsn).install();
   const devtools: any =
-    process.env.NODE_ENV !== 'production' &&
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__
+    process.env.NODE_ENV !== 'production' && (window as any).__REDUX_DEVTOOLS_EXTENSION__
       ? (window as any).__REDUX_DEVTOOLS_EXTENSION__()
       : (f: any) => f;
   const store = createStore(

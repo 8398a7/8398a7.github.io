@@ -9,7 +9,7 @@ it('renders without crashing', () => {
     <MemoryRouter initialEntries={['/']}>
       <Header />
     </MemoryRouter>,
-    div
+    div,
   );
   unmountComponentAtNode(div);
 });

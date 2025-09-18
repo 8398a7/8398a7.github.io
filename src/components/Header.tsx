@@ -11,9 +11,7 @@ const Header: React.SFC = () => {
   const openNavbarClass = openNavbar ? 'is-active' : '';
 
   const dispatch = useDispatch();
-  const handleClick = useCallback(() => dispatch(actions.toggleNavbar()), [
-    dispatch,
-  ]);
+  const handleClick = useCallback(() => dispatch(actions.toggleNavbar()), [dispatch]);
   return (
     <>
       <section className="hero is-info is-bold">
@@ -34,10 +32,7 @@ const Header: React.SFC = () => {
                   <span />
                 </span>
               </div>
-              <div
-                id="navbarMenuHeroA"
-                className={`navbar-menu ${openNavbarClass}`}
-              >
+              <div id="navbarMenuHeroA" className={`navbar-menu ${openNavbarClass}`}>
                 <div className="navbar-end">
                   <span className="navbar-item">
                     <a
@@ -71,17 +66,7 @@ const Header: React.SFC = () => {
               Web Developer
             </span>
             <div style={{ marginTop: '5px' }}>
-              {[
-                'AWS',
-                'GCP',
-                'Rails',
-                'Golang',
-                'TypeScript',
-                'Kubernetes',
-                'Docker',
-                'Chef',
-                'React',
-              ].map((elem) => {
+              {['AWS', 'GCP', 'Rails', 'Golang', 'TypeScript', 'Kubernetes', 'Docker', 'Chef', 'React'].map((elem) => {
                 return (
                   <span
                     key={`tag-${elem}`}

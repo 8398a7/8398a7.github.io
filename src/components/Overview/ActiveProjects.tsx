@@ -25,13 +25,7 @@ const ActiveProjects: React.SFC<IProps> = ({ meta }) => (
         <div>登録者数: {meta.abilitysheet}名</div>
       </>
     </Card>
-    <Card
-      title="IIDX Score Table"
-      href="https://score.iidx.app"
-      icon={ist}
-      hrefText="Link"
-      tags={['Rails', 'React']}
-    >
+    <Card title="IIDX Score Table" href="https://score.iidx.app" icon={ist} hrefText="Link" tags={['Rails', 'React']}>
       <>
         <div>iidxのスコア管理ツール(SP/DP)</div>
         <div>登録者数: {meta.ist}名</div>

@@ -12,9 +12,7 @@ const rootReducer = (history: History<any>) =>
     router: connectRouter(history),
   });
 export default rootReducer;
-export type RootState = ReturnType<typeof rootReducer> extends Reducer<infer S>
-  ? S
-  : never;
+export type RootState = ReturnType<typeof rootReducer> extends Reducer<infer S> ? S : never;
 
 export function* rootSaga() {
   yield fork(metaSaga);

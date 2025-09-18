@@ -6,7 +6,7 @@
 - `public/` 静的テンプレート（`index.html`, `manifest.json`, `favicon.ico`）。
 - `build/` ビルド成果物（自動生成）。
 - `static/` デプロイ後の配布資産（自動生成。直接編集しない）。
-- ルートには `Makefile`, `Dockerfile`, `package.json`, `prettier.config.js`, `tsconfig.json`, `.circleci/` など。
+- ルートには `Makefile`, `Dockerfile`, `package.json`, `biome.jsonc`, `tsconfig.json`, `.circleci/` など。
 
 ## ビルド・テスト・ローカル開発
 
@@ -21,7 +21,7 @@
 ## コーディング規約 & 命名
 
 - 言語/設定: TypeScript 厳密モード。React 関連は `react-scripts`。
-- フォーマット: Prettier（2スペース、`singleQuote: true`、`;`あり、`trailingComma: all`）。例: `npx prettier "src/**/*.{ts,tsx}" --write`。
+- フォーマット: Biome（2スペース、`singleQuote: true`、`;`あり、`trailingComma: all` 設定は `biome.jsonc` 参照）。例: `npx biome format --write .`。
 - Lint: `yarn lint`。自動修正例: `npx eslint src --ext .ts,.tsx --fix`。
 - 命名: コンポーネントは `PascalCase`（例 `Header.tsx`）、関数/変数は `camelCase`。Redux は `ducks/Feature.ts` 形式で Action/Reducer/Saga を内包。
 
@@ -66,7 +66,7 @@
   - ルート直下の `index.html`（公開用コピー）、`asset-manifest.json`, `service-worker.js`, `precache-manifest.*.js`
 - Lint/Format
   - Lint: `yarn lint`（`eslint "src/**/*.ts{,x}"`）。環境によっては ESLint の解決に差が出るため、必要なら `npx eslint …` も可。
-  - Prettier 設定は `prettier.config.js` に定義。例: `npx prettier "src/**/*.{ts,tsx}" --write`。
+  - Biome 設定は `biome.jsonc` に定義。例: `npx biome format --write .`。
 - テスト
   - Jest（CRA 同梱）を使用。現状 `src` に `*.test.ts(x)` は未配置。新規/修正時は同階層にテストを追加。
 - 環境変数

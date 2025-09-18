@@ -29,12 +29,8 @@ const Card: React.SFC<{
         <div className="content has-text-left">
           {children}
           {tags
-            ? tags.map(tag => (
-                <span
-                  key={`card-${tag}`}
-                  style={{ marginLeft: '3px' }}
-                  className="tag is-info"
-                >
+            ? tags.map((tag) => (
+                <span key={`card-${tag}`} style={{ marginLeft: '3px' }} className="tag is-info">
                   {tag}
                 </span>
               ))

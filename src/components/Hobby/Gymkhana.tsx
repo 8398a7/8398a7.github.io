@@ -17,10 +17,7 @@ const Gymkhana: React.SFC = () => (
             frameBorder="0"
           />
         </div>
-        <table
-          className="table is-striped is-hoverable is-fullwidth"
-          style={{ marginBottom: '5px' }}
-        >
+        <table className="table is-striped is-hoverable is-fullwidth" style={{ marginBottom: '5px' }}>
           <tbody>
             <tr>
               <td>2010 愛媛DUNLOP杯#スペシャルN</td>
