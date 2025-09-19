@@ -12,6 +12,7 @@
 
 - 依存取得: `pnpm install`
 - 開発サーバ: `make start` もしくは `pnpm run start`（`VITE_LAST_MODIFIED` を自動付与）。
+- コードを編集したら `pnpm run fmt` でフォーマッターを実行。
 - テスト実行: `make test` または `pnpm run test`（Vitest）。
 - Lint: `pnpm run lint`（Biome）。
 - ビルド: `make build` または `pnpm run build`。
