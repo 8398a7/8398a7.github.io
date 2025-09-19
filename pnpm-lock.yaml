@@ -100,8 +100,8 @@ importers:
         specifier: ^27.0.0
         version: 27.0.0(postcss@8.5.6)
       typescript:
-        specifier: 3.8.3
-        version: 3.8.3
+        specifier: 5.9.2
+        version: 5.9.2
       vite:
         specifier: ^5.0.0
         version: 5.4.20(@types/node@13.13.52)
@@ -1285,9 +1285,9 @@ packages:
   typescript-tuple@2.2.1:
     resolution: {integrity: sha512-Zcr0lbt8z5ZdEzERHAMAniTiIKerFCMgd7yjq1fPnDJ43et/k9twIFQMUYff9k5oXcsQ0WpvFcgzK2ZKASoW6Q==}
 
-  typescript@3.8.3:
-    resolution: {integrity: sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   ufo@1.6.1:
@@ -2584,7 +2584,7 @@ snapshots:
     dependencies:
       typescript-compare: 0.0.2
 
-  typescript@3.8.3: {}
+  typescript@5.9.2: {}
 
   ufo@1.6.1: {}
 
