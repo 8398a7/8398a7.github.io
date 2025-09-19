@@ -1,9 +1,7 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import ActiveProjects from './ActiveProjects';
+import renderWithRoot from '../../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<ActiveProjects meta={{ abilitysheet: 0, ist: 0 }} />, div);
-  unmountComponentAtNode(div);
+  const { unmount } = renderWithRoot(<ActiveProjects meta={{ abilitysheet: 0, ist: 0 }} />);
+  unmount();
 });

@@ -1,5 +1,5 @@
 import ActionReducer from 'action-reducer';
-import produce from 'immer';
+import { produce } from 'immer';
 
 const initialState = {
   openNavbar: false,

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { FC } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
@@ -12,12 +12,12 @@ const Routing: FC = () => (
     <Header />
     <section className="section">
       <div className="container">
-        <Switch>
-          <Route exact={true} path="/" component={Overview} />
-          <Route exact={true} path="/overview" component={Overview} />
-          <Route exact={true} path="/hobby" component={Hobby} />
-          <Route component={NoMatch} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Overview />} />
+          <Route path="/overview" element={<Overview />} />
+          <Route path="/hobby" element={<Hobby />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
       </div>
       <Footer />
     </section>

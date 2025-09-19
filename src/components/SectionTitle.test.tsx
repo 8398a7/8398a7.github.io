@@ -1,9 +1,7 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import SectionTitle from './SectionTitle';
+import renderWithRoot from '../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<SectionTitle icon="info" title="AboutMe" />, div);
-  unmountComponentAtNode(div);
+  const { unmount } = renderWithRoot(<SectionTitle icon="info" title="AboutMe" />);
+  unmount();
 });

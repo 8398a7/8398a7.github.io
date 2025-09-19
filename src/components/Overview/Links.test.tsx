@@ -1,9 +1,7 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import Links from './Links';
+import renderWithRoot from '../../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<Links />, div);
-  unmountComponentAtNode(div);
+  const { unmount } = renderWithRoot(<Links />);
+  unmount();
 });
