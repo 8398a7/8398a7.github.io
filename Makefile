@@ -1,13 +1,13 @@
 LAST_MODIFIED ?= $(shell git log --oneline --pretty=format:'%cd' --date=format:'%Y-%m-%d %H:%M:%S %z' | head -n1)
 
 start:
-	VITE_LAST_MODIFIED="$(LAST_MODIFIED)" yarn start
+	VITE_LAST_MODIFIED="$(LAST_MODIFIED)" pnpm run start
 test:
-	CI=true yarn test
+	CI=true pnpm run test
 clean:
 	rm -rf static && rm -f service-worker.js precache-*.js
 build: clean
-	VITE_LAST_MODIFIED="$(LAST_MODIFIED)" yarn build
+	VITE_LAST_MODIFIED="$(LAST_MODIFIED)" pnpm run build
 publish: build
 	cp -r ./build/* .
 docker-start:

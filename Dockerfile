@@ -4,11 +4,10 @@ ENV HOME /usr/src/app
 RUN mkdir -p $HOME
 WORKDIR $HOME
 
-RUN npm i -g yarn
-COPY package.json $HOME
-COPY yarn.lock $HOME
-RUN yarn install
+RUN corepack enable
+COPY package.json pnpm-lock.yaml $HOME/
+RUN pnpm install --frozen-lockfile
 
 COPY . $HOME
 
-CMD ["yarn", "start"]
+CMD ["pnpm", "run", "start"]

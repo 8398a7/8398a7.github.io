@@ -3,8 +3,8 @@
 ```sh
 git clone git@github.com:8398a7/8398a7.github.io.git
 cd 8398a7.github.io
-yarn install
-yarn start # http://localhost:3000
+pnpm install
+pnpm run start # http://localhost:3000
 ```
 
 ## Optional
@@ -12,6 +12,6 @@ yarn start # http://localhost:3000
 - docker
 
 ```sh
-yarn run docker:start
-# run webpack-dev-server => localhost:3000
+make docker-start
+# run vite dev server => localhost:3000
 ```

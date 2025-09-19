@@ -10,11 +10,11 @@
 
 ## ビルド・テスト・ローカル開発
 
-- 依存取得: `yarn install`
-- 開発サーバ: `make start` もしくは `yarn start`（`VITE_LAST_MODIFIED` を自動付与）。
-- テスト実行: `make test` または `yarn test`（Vitest）。
-- Lint: `yarn lint`（Biome）。
-- ビルド: `make build` または `yarn build`。
+- 依存取得: `pnpm install`
+- 開発サーバ: `make start` もしくは `pnpm run start`（`VITE_LAST_MODIFIED` を自動付与）。
+- テスト実行: `make test` または `pnpm run test`（Vitest）。
+- Lint: `pnpm run lint`（Biome）。
+- ビルド: `make build` または `pnpm run build`。
 - 公開用コピー: `make publish`（`build/` の内容をリポジトリ直下へ配置; GitHub Pages 用）。
 - Docker 開発: `make docker-start`（`localhost:3000`）。
 
@@ -22,20 +22,20 @@
 
 - 言語/設定: TypeScript 厳密モード。React ビルドは Vite + `@vitejs/plugin-react`（classic JSX）。
 - フォーマット: Biome（2スペース、`singleQuote: true`、`;`あり、`trailingComma: all` 設定は `biome.jsonc` 参照）。例: `npx biome format --write .`。
-- Lint: `yarn lint`。自動修正例: `npx biome check --write src`。
+- Lint: `pnpm run lint`。自動修正例: `npx biome check --write src`。
 - 命名: コンポーネントは `PascalCase`（例 `Header.tsx`）、関数/変数は `camelCase`。Redux は `ducks/Feature.ts` 形式で Action/Reducer/Saga を内包。
 
 ## テスト方針
 
 - フレームワーク: Vitest。
 - 配置/命名: 実装と同階層に `*.test.ts` / `*.test.tsx`。
-- 実行例: `yarn test src/components/Header.test.tsx -t "renders"`。
+- 実行例: `pnpm run test -- src/components/Header.test.tsx -t "renders"`。
 - 期待: UI はレンダリング可否と状態遷移、`lib/` は入出力と型の健全性を検証。新規/修正コードにはテストを追加。
 
 ## コミット & PR ガイドライン
 
 - コミット: 先頭にカテゴリを角括弧で任意付与（例: `[command]`, `[fix]`, `[#54]`）+ 簡潔な要約（現在形/命令形、72字以内目安）。
-- PR: 変更概要/動機/影響範囲、UI 変更はスクショ、関連 Issue（`Closes #123`）、`yarn lint` と `yarn test` の通過を記載。
+- PR: 変更概要/動機/影響範囲、UI 変更はスクショ、関連 Issue（`Closes #123`）、`pnpm run lint` と `pnpm run test` の通過を記載。
 
 ## セキュリティ & 設定メモ（重要）
 
@@ -65,7 +65,7 @@
 - 自動生成物の具体例（編集禁止）
   - ルート直下の `index.html`（公開用コピー）、`asset-manifest.json`, `service-worker.js`, `precache-manifest.*.js`
 - Lint/Format
-  - Lint: `yarn lint`（`biome lint`）。環境によっては Biome CLI の解決に差が出るため、必要なら `npx biome lint` も可。
+  - Lint: `pnpm run lint`（`biome lint`）。環境によっては Biome CLI の解決に差が出るため、必要なら `npx biome lint` も可。
   - Biome 設定は `biome.jsonc` に定義。例: `npx biome format --write .`。
 - テスト
   - Vitest を使用。現状 `src` に `*.test.ts(x)` は未配置。新規/修正時は同階層にテストを追加。
