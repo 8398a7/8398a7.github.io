@@ -1,9 +1,7 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import NoMatch from './NoMatch';
+import renderWithRoot from '../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<NoMatch />, div);
-  unmountComponentAtNode(div);
+  const { unmount } = renderWithRoot(<NoMatch />);
+  unmount();
 });

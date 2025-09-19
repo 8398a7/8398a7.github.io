@@ -1,9 +1,7 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import Gymkhana from './Gymkhana';
+import renderWithRoot from '../../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<Gymkhana />, div);
-  unmountComponentAtNode(div);
+  const { unmount } = renderWithRoot(<Gymkhana />);
+  unmount();
 });

@@ -21,7 +21,7 @@ export const Overview: FC = () => {
   useEffect(() => {
     dispatch(actions.fetchAbilitysheetUsers());
     dispatch(actions.fetchIstUsers());
-  });
+  }, [dispatch]);
   const meta = useSelector((state: RootState) => state.meta);
 
   return (

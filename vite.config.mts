@@ -22,9 +22,7 @@ export default defineConfig({
   base: './',
   plugins: [
     resolveSrcPlugin,
-    react({
-      jsxRuntime: 'classic',
-    }),
+    react(),
   ],
   server: {
     port: 3000,

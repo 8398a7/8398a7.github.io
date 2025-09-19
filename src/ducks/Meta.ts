@@ -1,6 +1,6 @@
 import { captureException } from '@sentry/browser';
 import ActionReducer from 'action-reducer';
-import produce from 'immer';
+import { produce } from 'immer';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import API from '../lib/api';

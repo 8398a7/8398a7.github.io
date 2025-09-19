@@ -1,25 +1,24 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import { Provider } from 'react-redux';
-import { combineReducers, createStore } from 'redux';
-import { MemoryRouter } from 'react-router';
+import { combineReducers, legacy_createStore as createStore } from 'redux';
+import { MemoryRouter } from 'react-router-dom';
 import Header from './Header';
 import ui from '../ducks/UI';
+import renderWithRoot from '../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
   const store = createStore(
     combineReducers({
       ui,
     }),
   );
-  render(
+  const { unmount } = renderWithRoot(
     <Provider store={store}>
       <MemoryRouter initialEntries={['/']}>
         <Header />
       </MemoryRouter>
     </Provider>,
-    div,
   );
-  unmountComponentAtNode(div);
+
+  unmount();
 });

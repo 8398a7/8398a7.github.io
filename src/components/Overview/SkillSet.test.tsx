@@ -1,9 +1,7 @@
-import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
 import SkillSet from './SkillSet';
+import renderWithRoot from '../../test/render';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  render(<SkillSet />, div);
-  unmountComponentAtNode(div);
+  const { unmount } = renderWithRoot(<SkillSet />);
+  unmount();
 });
