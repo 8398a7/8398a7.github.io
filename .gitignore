@@ -1,5 +1,14 @@
 node_modules/
 *.map
 build/
+assets/
+index.html
+404.html
+page-200.html
+asset-manifest.json
+manifest.json
+favicon.ico
+service-worker.js
+precache-*.js
 coverage/
 tmp/
