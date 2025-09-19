@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-24.04
     env:
       CI: true
     steps:
@@ -35,5 +35,5 @@ jobs:
       - name: Test
         run: yarn test
 
-      - name: Publish
-        run: make publish
+      - name: Build
+        run: make build
