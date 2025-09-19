@@ -42,11 +42,11 @@
   },
   "scripts": {
     "start": "vite --config vite.config.mts",
-    "dev": "vite --config vite.config.mts",
     "build": "vite build --config vite.config.mts",
     "preview": "vite preview --config vite.config.mts",
     "test": "vitest --run",
-    "lint": "biome lint"
+    "lint": "biome lint",
+    "fmt": "biome format --write"
   },
   "browserslist": {
     "production": [

@@ -15,9 +15,7 @@ it('.fetchAbilitysheetUsers', async () => {
 
   const res = await API.fetchAbilitysheetUsers();
 
-  expect(mockedAxios.get).toHaveBeenCalledWith(
-    'https://api-sp12.iidx.app/users/count',
-  );
+  expect(mockedAxios.get).toHaveBeenCalledWith('https://api-sp12.iidx.app/users/count');
   expect(res).toEqual({ users: 42 });
 });
 
@@ -26,8 +24,6 @@ it('.fetchIstUsers', async () => {
 
   const res = await API.fetchIstUsers();
 
-  expect(mockedAxios.get).toHaveBeenCalledWith(
-    'https://score.iidx.app/api/v1/users/count',
-  );
+  expect(mockedAxios.get).toHaveBeenCalledWith('https://score.iidx.app/api/v1/users/count');
   expect(res).toEqual({ users: 7 });
 });
