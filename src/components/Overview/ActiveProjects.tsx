@@ -42,7 +42,13 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
       <div>beatmania IIDXのSP☆12難易度参考表</div>
       <div>登録者数: {formatMetric(abilitysheet)}</div>
     </Card>
-    <Card title="IIDX Score Table" href="https://score.iidx.app" icon={istIcon} hrefText="Link" tags={['Rails', 'React']}>
+    <Card
+      title="IIDX Score Table"
+      href="https://score.iidx.app"
+      icon={istIcon}
+      hrefText="Link"
+      tags={['Rails', 'React']}
+    >
       <div>iidxのスコア管理ツール(SP/DP)</div>
       <div>登録者数: {formatMetric(ist)}</div>
     </Card>

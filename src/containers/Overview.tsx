@@ -1,20 +1,12 @@
 import React, { useEffect } from 'react';
 import type { FC } from 'react';
-import { Timeline } from 'react-twitter-widgets';
 import ActiveProjects from '../components/Overview/ActiveProjects';
+import BlueskyTimeline from '../components/Overview/BlueskyTimeline';
 import Links from '../components/Overview/Links';
 import SkillSet from '../components/Overview/SkillSet';
 import { fetchAbilitysheetUsers, fetchIstUsers } from '../features/meta';
 import { useAppDispatch, useAppSelector } from '../hooks';
 
-const dataSource = {
-  screenName: '8398a7',
-  sourceType: 'profile',
-};
-const options = {
-  height: '800',
-  username: '8398a7',
-};
 export const Overview: FC = () => {
   const dispatch = useAppDispatch();
   const abilitysheetStatus = useAppSelector((state) => state.meta.abilitysheet.status);
@@ -41,7 +33,7 @@ export const Overview: FC = () => {
       </div>
       <div className="column">
         <Links />
-        <Timeline {...{ dataSource, options }} />
+        <BlueskyTimeline />
       </div>
     </div>
   );
