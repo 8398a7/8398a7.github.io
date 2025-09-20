@@ -10,8 +10,8 @@ import Hobby from './containers/Hobby';
 const Routing: FC = () => (
   <>
     <Header />
-    <section className="section">
-      <div className="container">
+    <main className="app-main">
+      <div className="app-container">
         <Routes>
           <Route path="/" element={<Overview />} />
           <Route path="/overview" element={<Overview />} />
@@ -19,8 +19,8 @@ const Routing: FC = () => (
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </div>
-      <Footer />
-    </section>
+    </main>
+    <Footer />
   </>
 );
 

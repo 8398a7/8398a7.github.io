@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import type { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Timeline } from 'react-twitter-widgets';
 import ActiveProjects from '../components/Overview/ActiveProjects';
 import Links from '../components/Overview/Links';
 import SkillSet from '../components/Overview/SkillSet';
-import type { RootState } from '../ducks';
-import { actions } from '../ducks/Meta';
+import { fetchAbilitysheetUsers, fetchIstUsers } from '../features/meta';
+import { useAppDispatch, useAppSelector } from '../hooks';
 
 const dataSource = {
   screenName: '8398a7',
@@ -17,18 +16,28 @@ const options = {
   username: '8398a7',
 };
 export const Overview: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const abilitysheetStatus = useAppSelector((state) => state.meta.abilitysheet.status);
+  const istStatus = useAppSelector((state) => state.meta.ist.status);
+  const meta = useAppSelector((state) => state.meta);
+
   useEffect(() => {
-    dispatch(actions.fetchAbilitysheetUsers());
-    dispatch(actions.fetchIstUsers());
-  }, [dispatch]);
-  const meta = useSelector((state: RootState) => state.meta);
+    if (abilitysheetStatus === 'idle') {
+      dispatch(fetchAbilitysheetUsers());
+    }
+  }, [abilitysheetStatus, dispatch]);
+
+  useEffect(() => {
+    if (istStatus === 'idle') {
+      dispatch(fetchIstUsers());
+    }
+  }, [dispatch, istStatus]);
 
   return (
     <div className="columns">
       <div className="column">
         <SkillSet />
-        <ActiveProjects {...{ meta }} />
+        <ActiveProjects abilitysheet={meta.abilitysheet} ist={meta.ist} />
       </div>
       <div className="column">
         <Links />

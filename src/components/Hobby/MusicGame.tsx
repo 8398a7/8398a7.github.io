@@ -18,7 +18,7 @@ const MusicGame: FC = () => (
             frameBorder="0"
           />
         </div>
-        <table className="table is-striped is-hoverable is-fullwidth">
+        <table className="table is-striped is-hoverable is-fullwidth table-modern">
           <tbody>
             <tr>
               <td>bms</td>
@@ -40,7 +40,7 @@ const MusicGame: FC = () => (
         </table>
       </div>
       <div className="column">
-        <table className="table is-striped is-hoverable is-fullwidth">
+        <table className="table is-striped is-hoverable is-fullwidth table-modern">
           <tbody>
             <tr>
               <td>iidx</td>

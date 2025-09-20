@@ -1,40 +1,27 @@
-import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux';
-import type { Middleware, StoreEnhancer } from 'redux';
-import { createLogger } from 'redux-logger';
-import createSagaMiddleware from 'redux-saga';
-import createRootReducer, { rootSaga } from './ducks';
+import { configureStore } from '@reduxjs/toolkit';
 
-type ReduxDevToolsExtension = () => StoreEnhancer;
+import { metaReducer, type MetaState } from './features/meta';
+import { uiReducer, type UIState } from './features/ui';
 
-type ExtendedWindow = Window &
-  typeof globalThis & {
-    __REDUX_DEVTOOLS_EXTENSION__?: ReduxDevToolsExtension;
-  };
-
-const identityEnhancer: StoreEnhancer = (next) => next;
-
-const configureStore = () => {
-  const sagaMiddleware = createSagaMiddleware();
-  const middlewares: Middleware[] = [sagaMiddleware];
-
-  if (import.meta.env.MODE !== 'production') {
-    middlewares.push(createLogger());
-  }
-
-  const devtoolsExtension = (window as ExtendedWindow).__REDUX_DEVTOOLS_EXTENSION__;
-  const devtools = import.meta.env.MODE !== 'production' && devtoolsExtension ? devtoolsExtension() : identityEnhancer;
-
-  const store = createStore(
-    createRootReducer(),
-    compose(
-      applyMiddleware(...middlewares),
-      devtools,
-    ),
-  );
-
-  sagaMiddleware.run(rootSaga);
-
-  return store;
+const reducer = {
+  meta: metaReducer,
+  ui: uiReducer,
 };
 
-export default configureStore;
+export type PreloadedState = {
+  meta?: MetaState;
+  ui?: UIState;
+};
+
+export const createAppStore = (preloadedState?: PreloadedState) =>
+  configureStore({
+    reducer,
+    preloadedState,
+    devTools: import.meta.env.MODE !== 'production',
+  });
+
+export const store = createAppStore();
+
+export type AppStore = typeof store;
+export type AppDispatch = AppStore['dispatch'];
+export type RootState = ReturnType<AppStore['getState']>;

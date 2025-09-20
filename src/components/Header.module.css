@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.95) 0%, rgba(99, 102, 241, 0.92) 55%, rgba(139, 92, 246, 0.9) 100%);
+  border-bottom-left-radius: clamp(24px, 6vw, 68px);
+  border-bottom-right-radius: clamp(24px, 6vw, 68px);
+  box-shadow: 0 36px 60px rgba(15, 23, 42, 0.32);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.28) 0%, transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 75%, rgba(56, 189, 248, 0.18) 0%, transparent 55%);
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+}
+
+.tagCluster {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: clamp(0.75rem, 1.5vh, 1.5rem);
+}
+
+.skillTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.4rem 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: clamp(0.72rem, 0.4vw + 0.7rem, 0.9rem);
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  .skillTag {
+    color: #e2e8f0;
+    background: rgba(2, 6, 23, 0.45);
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 0 14px 24px rgba(8, 47, 73, 0.45);
+  }
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.8rem;
+  padding: 0.45rem 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid rgba(254, 240, 138, 0.65);
+  background: rgba(254, 240, 138, 0.2);
+  color: #fef08a;
+  backdrop-filter: blur(4px);
+}
+
+.heroBadge i {
+  margin-right: 0.2rem;
+}
+
+.profileImage {
+  border: 4px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.28);
+}
+
+.navTabs {
+  display: flex;
+  gap: clamp(0.6rem, 2vw, 1rem);
+  padding-bottom: clamp(0.75rem, 2vw, 1.5rem);
+  justify-content: center;
+  list-style: none;
+  border-bottom: none;
+}
+
+.navTabs li {
+  margin: 0;
+}
+
+.navTabs :global(a) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  color: rgba(15, 23, 42, 0.85);
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.navTabs :global(a:hover),
+.navTabs :global(a:focus-visible) {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+@media (prefers-color-scheme: dark) {
+  .navTabs :global(a) {
+    color: rgba(248, 250, 252, 0.86);
+    background: rgba(2, 6, 23, 0.4);
+  }
+
+  .navTabs :global(a:hover),
+  .navTabs :global(a:focus-visible) {
+    background: rgba(2, 6, 23, 0.55);
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { FC, ReactNode } from 'react';
+import styles from './Card.module.css';
 
 const Card: FC<{
   title: string;
@@ -9,9 +10,9 @@ const Card: FC<{
   tags?: string[];
   children?: ReactNode;
 }> = ({ title, hrefText, href, icon, tags, children }) => (
-  <div className="card">
-    <div className="card-content">
-      <div className="media">
+  <div className={`card ${styles.cardShell}`}>
+    <div className={`card-content ${styles.cardContent}`}>
+      <div className={`media ${styles.media}`}>
         <div className="media-left">
           <figure className="image is-48x48">
             <img src={icon} alt={`${title} icon`} className="is-rounded" />
@@ -20,22 +21,24 @@ const Card: FC<{
         <div className="media-content">
           <p className="title is-4">{title}</p>
           <p className="subtitle is-6">
-            <a target="_blank" rel="noopener noreferrer" href={href}>
+            <a className={styles.cardLink} target="_blank" rel="noopener noreferrer" href={href}>
               {hrefText}
             </a>
           </p>
         </div>
       </div>
       {children ? (
-        <div className="content has-text-left">
+        <div className={`content has-text-left ${styles.cardBody}`}>
           {children}
-          {tags
-            ? tags.map((tag) => (
-                <span key={`card-${tag}`} style={{ marginLeft: '3px' }} className="tag is-info">
+          {tags ? (
+            <div className={styles.tagList}>
+              {tags.map((tag) => (
+                <span key={`card-${tag}`} className={styles.tag}>
                   {tag}
                 </span>
-              ))
-            : null}
+              ))}
+            </div>
+          ) : null}
         </div>
       ) : null}
     </div>

@@ -5,7 +5,7 @@ import SectionTitle from '../SectionTitle';
 const SkillSet: FC = () => (
   <>
     <SectionTitle {...{ icon: 'trophy', title: 'Skill Set' }} />
-    <table className="table is-striped is-hoverable is-fullwidth">
+    <table className="table is-striped is-hoverable is-fullwidth table-modern">
       <tbody>
         <tr>
           <th>Editor</th>

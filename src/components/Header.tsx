@@ -1,23 +1,22 @@
 import React, { useCallback } from 'react';
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-
 import profile from '../images/profile.jpg';
-import type { RootState } from '../ducks';
-import { actions } from '../ducks/UI';
+import { toggleNavbar } from '../features/ui';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import styles from './Header.module.css';
 
 const MENU_ID = 'header-navbar-menu';
 
 const Header: FC = () => {
-  const openNavbar = useSelector((state: RootState) => state.ui.openNavbar);
+  const openNavbar = useAppSelector((state) => state.ui.openNavbar);
   const openNavbarClass = openNavbar ? 'is-active' : '';
 
-  const dispatch = useDispatch();
-  const handleClick = useCallback(() => dispatch(actions.toggleNavbar()), [dispatch]);
+  const dispatch = useAppDispatch();
+  const handleClick = useCallback(() => dispatch(toggleNavbar()), [dispatch]);
   return (
-    <section className="hero is-info is-bold">
-      <div className="hero-head">
+    <section className={`hero is-info is-bold ${styles.hero}`}>
+      <div className={`hero-head ${styles.heroInner}`}>
         <nav className="navbar">
           <div className="container">
             <div className="navbar-brand">
@@ -58,26 +57,22 @@ const Header: FC = () => {
         </nav>
       </div>
 
-      <div className="hero-body">
+      <div className={`hero-body ${styles.heroInner}`}>
         <div className="container has-text-centered">
           <h1 className="title">
             <figure className="image container is-128x128">
-              <img className="is-rounded" alt="profile" src={profile} />
+              <img className={`is-rounded ${styles.profileImage}`} alt="profile" src={profile} />
             </figure>
           </h1>
           <h2 className="subtitle">@8398a7</h2>
-          <span className="tag is-warning is-large">
+          <span className={styles.heroBadge}>
             <i className="fa fa-beer" />
             Web Developer
           </span>
-          <div style={{ marginTop: '5px' }}>
+          <div className={styles.tagCluster}>
             {['AWS', 'GCP', 'Rails', 'Golang', 'TypeScript', 'Kubernetes', 'Docker', 'Chef', 'React'].map((elem) => {
               return (
-                <span
-                  key={`tag-${elem}`}
-                  style={{ marginTop: '5px', marginLeft: '5px' }}
-                  className="tag is-success is-medium"
-                >
+                <span key={`tag-${elem}`} className={styles.skillTag}>
                   {elem}
                 </span>
               );
@@ -86,10 +81,10 @@ const Header: FC = () => {
         </div>
       </div>
 
-      <div className="hero-foot">
+      <div className={`hero-foot ${styles.heroInner}`}>
         <nav className="tabs">
           <div className="container">
-            <ul>
+            <ul className={styles.navTabs}>
               <li>
                 <Link to="/overview">
                   <i className="fas fa-cogs" />

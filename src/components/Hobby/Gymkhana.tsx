@@ -18,7 +18,7 @@ const Gymkhana: FC = () => (
             frameBorder="0"
           />
         </div>
-        <table className="table is-striped is-hoverable is-fullwidth" style={{ marginBottom: '5px' }}>
+        <table className="table is-striped is-hoverable is-fullwidth table-modern">
           <tbody>
             <tr>
               <td>2010 愛媛DUNLOP杯#スペシャルN</td>
@@ -59,7 +59,7 @@ const Gymkhana: FC = () => (
         </table>
       </div>
       <div className="column">
-        <table className="table is-striped is-hoverable is-fullwidth">
+        <table className="table is-striped is-hoverable is-fullwidth table-modern">
           <thead>
             <tr>
               <th>Group</th>
