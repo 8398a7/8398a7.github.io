@@ -13,7 +13,7 @@ const SkillSet: FC = () => (
         </tr>
         <tr>
           <th>Environment</th>
-          <td>macOS, Windows10</td>
+          <td>macOS, Ubuntu</td>
         </tr>
         <tr>
           <th>Incumbent</th>

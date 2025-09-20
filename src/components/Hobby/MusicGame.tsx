@@ -59,13 +59,7 @@ const MusicGame: FC = () => (
               <td>18/01/20</td>
             </tr>
             <tr>
-              <td>
-                author: <a href="https://citrus-ir.iidx.app">Citrus IR</a>
-              </td>
-              <td>18/05/27</td>
-            </tr>
-            <tr>
-              <td>remain</td>
+              <td>remain (2018)</td>
               <td>灼熱/ICARUS†/Mare/X-DEN</td>
             </tr>
             <tr>

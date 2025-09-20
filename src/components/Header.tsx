@@ -70,7 +70,7 @@ const Header: FC = () => {
             Web Developer
           </span>
           <div className={styles.tagCluster}>
-            {['AWS', 'GCP', 'Rails', 'Golang', 'TypeScript', 'Kubernetes', 'Docker', 'Chef', 'React'].map((elem) => {
+            {['Ruby', 'Golang', 'TypeScript', 'AWS', 'GCP'].map((elem) => {
               return (
                 <span key={`tag-${elem}`} className={styles.skillTag}>
                   {elem}
