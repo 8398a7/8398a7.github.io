@@ -11,11 +11,12 @@ const Gymkhana: FC = () => (
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/6_EtxOKU63U"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            title="どら5787"
-            allowFullScreen={true}
-            frameBorder="0"
+            src="https://www.youtube.com/embed/wmwIFR_nJbE?si=Kq6OXi1Yuzkh7xtn"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen={true}
           />
         </div>
         <table className="table is-striped is-hoverable is-fullwidth table-modern">
@@ -31,19 +32,9 @@ const Gymkhana: FC = () => (
               <td>1/26 (100.0%)</td>
             </tr>
             <tr>
-              <td>2011 中国大会#2</td>
-              <td>2011/09/11</td>
-              <td>10/29 (105.21%)</td>
-            </tr>
-            <tr>
               <td>2011 DUNLOP杯#JAPAN</td>
               <td>2011/10/09</td>
               <td>65/190 (108.91%)</td>
-            </tr>
-            <tr>
-              <td>2011 愛媛DUNLOP杯#3</td>
-              <td>2011/11/20</td>
-              <td>8/44 (107.81%)</td>
             </tr>
             <tr>
               <td>2011 近畿DUNLOP杯#2</td>
@@ -51,9 +42,9 @@ const Gymkhana: FC = () => (
               <td>4/42 (102.53%)</td>
             </tr>
             <tr>
-              <td>2012 近畿DUNLOP杯#1</td>
-              <td>2012/04/30</td>
-              <td>3/40 (104.48%)</td>
+              <td>2025 JAGE杯#4</td>
+              <td>2025/11/09</td>
+              <td>34/143 (106.87%)</td>
             </tr>
           </tbody>
         </table>
@@ -89,11 +80,12 @@ const Gymkhana: FC = () => (
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/9y5YaNRyl_4"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            title="20120520MSGC"
-            allowFullScreen={true}
-            frameBorder="0"
+            src="https://www.youtube.com/embed/fPdtiItuGok?si=6J8q41A8nQz31fcf"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen={true}
           />
         </div>
       </div>
