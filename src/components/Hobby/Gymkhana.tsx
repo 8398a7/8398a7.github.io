@@ -4,7 +4,7 @@ import SectionTitle from '../SectionTitle';
 
 const Gymkhana: FC = () => (
   <div>
-    <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012)' }} />
+    <SectionTitle {...{ icon: 'motorcycle', title: 'Gymkhana(2010 - 2012, 2023-)' }} />
     <div className="columns">
       <div className="column">
         <div className="video-container">
