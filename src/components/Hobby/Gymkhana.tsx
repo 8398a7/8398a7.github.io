@@ -59,18 +59,6 @@ const Gymkhana: FC = () => (
           </thead>
           <tbody>
             <tr>
-              <td>四国</td>
-              <td>B</td>
-            </tr>
-            <tr>
-              <td>中国</td>
-              <td>B</td>
-            </tr>
-            <tr>
-              <td>近畿</td>
-              <td>B</td>
-            </tr>
-            <tr>
               <td>JAGE</td>
               <td>C1</td>
             </tr>
