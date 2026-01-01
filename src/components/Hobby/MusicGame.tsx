@@ -72,9 +72,10 @@ const MusicGame: FC = () => (
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/LYMssmrdz0Y"
-            title="Poppin' Shower"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            src="https://www.youtube.com/embed/UCnxzozbTPg?si=a4tRrxMrJsGft353"
+            title="★19 conflict 難"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowFullScreen={true}
             frameBorder="0"
           />
