@@ -3,8 +3,8 @@
 ```sh
 git clone git@github.com:8398a7/8398a7.github.io.git
 cd 8398a7.github.io
-pnpm install
-pnpm run start # http://localhost:3000
+bun install
+bun run start # http://localhost:3000
 ```
 
 ## Architecture
