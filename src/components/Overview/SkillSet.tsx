@@ -5,24 +5,33 @@ import SectionTitle from '../SectionTitle';
 const SkillSet: FC = () => (
   <>
     <SectionTitle {...{ icon: 'trophy', title: 'Skill Set' }} />
-    <table className="table is-striped is-hoverable is-fullwidth table-modern">
+    <table className="table-modern w-full overflow-hidden text-left text-sm leading-7 text-slate-700 dark:text-slate-200">
       <tbody>
         <tr>
-          <th>Editor</th>
-          <td>Goland, VSCode, Vim</td>
+          <th className="w-40 bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
+            Editor
+          </th>
+          <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">Goland, VSCode, Vim</td>
         </tr>
         <tr>
-          <th>Environment</th>
-          <td>macOS, Ubuntu</td>
+          <th className="w-40 bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
+            Environment
+          </th>
+          <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">macOS, Ubuntu</td>
         </tr>
         <tr>
-          <th>Incumbent</th>
-          <td>Server side engineer in Kyoto</td>
+          <th className="w-40 bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
+            Incumbent
+          </th>
+          <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">Server side engineer in Kyoto</td>
         </tr>
         <tr>
-          <th>Certified</th>
-          <td>
+          <th className="w-40 bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
+            Certified
+          </th>
+          <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">
             <a
+              className="prose-link"
               href="https://training.linuxfoundation.org/certification/verify/"
               target="_blank"
               rel="noopener noreferrer"
@@ -33,6 +42,7 @@ const SkillSet: FC = () => (
             CKA-1900-002255-0100/Tanaka
             <br />
             <a
+              className="prose-link"
               href="https://training.linuxfoundation.org/certification/verify/"
               target="_blank"
               rel="noopener noreferrer"

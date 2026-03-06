@@ -8,13 +8,13 @@ import SectionTitle from '../SectionTitle';
 import Card from '../Card';
 
 const Links: FC = () => (
-  <>
+  <section className="grid gap-4">
     <SectionTitle {...{ icon: 'link', title: 'Link' }} />
     <Card title="GitHub" href="https://github.com/8398a7" hrefText="@8398a7" icon={gh} />
     <Card title="Hateblo" href="https://839.hateblo.jp/" hrefText="Link" icon={hateblo} />
     <Card title="Twitter" href="https://twitter.com/8398a7" hrefText="@8398a7" icon={twitter} />
     <Card title="Wantedly" href="https://www.wantedly.com/users/2796548" hrefText="Link" icon={wantedly} />
-  </>
+  </section>
 );
 
 export default Links;

@@ -26,12 +26,12 @@ export const Overview: FC = () => {
   }, [dispatch, istStatus]);
 
   return (
-    <div className="columns">
-      <div className="column">
+    <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+      <div className="grid gap-6">
         <SkillSet />
         <ActiveProjects abilitysheet={meta.abilitysheet} ist={meta.ist} />
       </div>
-      <div className="column">
+      <div className="grid gap-6">
         <Links />
         <BlueskyTimeline />
       </div>

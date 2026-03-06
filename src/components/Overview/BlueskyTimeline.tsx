@@ -10,8 +10,8 @@ const BlueskyTimeline: FC = () => {
   return (
     <>
       <SectionTitle icon="feather-alt" title="Bluesky Timeline" />
-      <div className="card">
-        <div className="card-content">
+      <div className="overflow-hidden rounded-[clamp(18px,1.5vw+12px,30px)] border border-[var(--surface-border)] bg-[var(--surface)] shadow-[var(--card-shadow)] backdrop-blur-xl">
+        <div className="p-6 sm:p-7">
           <bsky-embed
             username="839.bsky.social"
             limit="5"

@@ -30,7 +30,7 @@ const formatMetric = (metric: MetricState) => {
 };
 
 const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
-  <>
+  <section className="grid gap-4">
     <SectionTitle {...{ icon: 'rocket', title: 'Active Projects' }} />
     <Card
       title="abilitysheet"
@@ -70,7 +70,7 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
     >
       <div>abilitysheetのapiサーバ</div>
     </Card>
-  </>
+  </section>
 );
 
 export default ActiveProjects;

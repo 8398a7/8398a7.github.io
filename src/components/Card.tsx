@@ -10,17 +10,17 @@ const Card: FC<{
   tags?: string[];
   children?: ReactNode;
 }> = ({ title, hrefText, href, icon, tags, children }) => (
-  <div className={`card ${styles.cardShell}`}>
-    <div className={`card-content ${styles.cardContent}`}>
-      <div className={`media ${styles.media}`}>
-        <div className="media-left">
-          <figure className="image is-48x48">
-            <img src={icon} alt={`${title} icon`} className="is-rounded" />
+  <div className={styles.cardShell}>
+    <div className={`p-6 sm:p-7 ${styles.cardContent}`}>
+      <div className={`flex items-center gap-4 ${styles.media}`}>
+        <div className="shrink-0">
+          <figure className="h-12 w-12 overflow-hidden rounded-full">
+            <img src={icon} alt={`${title} icon`} className="h-full w-full rounded-full object-cover" />
           </figure>
         </div>
-        <div className="media-content">
-          <p className="title is-4">{title}</p>
-          <p className="subtitle is-6">
+        <div className="min-w-0 flex-1">
+          <p className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">{title}</p>
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             <a className={styles.cardLink} target="_blank" rel="noopener noreferrer" href={href}>
               {hrefText}
             </a>
@@ -28,7 +28,7 @@ const Card: FC<{
         </div>
       </div>
       {children ? (
-        <div className={`content has-text-left ${styles.cardBody}`}>
+        <div className={`text-left text-sm leading-7 text-slate-600 dark:text-slate-300 ${styles.cardBody}`}>
           {children}
           {tags ? (
             <div className={styles.tagList}>

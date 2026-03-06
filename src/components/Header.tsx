@@ -10,61 +10,64 @@ const MENU_ID = 'header-navbar-menu';
 
 const Header: FC = () => {
   const openNavbar = useAppSelector((state) => state.ui.openNavbar);
-  const openNavbarClass = openNavbar ? 'is-active' : '';
 
   const dispatch = useAppDispatch();
   const handleClick = useCallback(() => dispatch(toggleNavbar()), [dispatch]);
   return (
-    <section className={`hero is-info is-bold ${styles.hero}`}>
-      <div className={`hero-head ${styles.heroInner}`}>
-        <nav className="navbar">
-          <div className="container">
-            <div className="navbar-brand">
-              <Link className="navbar-item" to="/">
+    <section className={styles.hero}>
+      <div className={styles.heroInner}>
+        <nav className="mx-auto flex w-[min(1100px,calc(100%-clamp(2.5rem,8vw,7rem)))] flex-col gap-4 px-0 py-5 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <Link className="text-base font-semibold tracking-[0.18em] text-white no-underline" to="/">
                 8398a7.github.io
               </Link>
-              <button
-                type="button"
-                className={`navbar-burger burger ${openNavbarClass}`}
-                aria-label="Toggle navigation"
-                aria-controls={MENU_ID}
-                aria-expanded={openNavbar}
-                onClick={handleClick}
-              >
-                <span />
-                <span />
-                <span />
-              </button>
             </div>
-            <div id={MENU_ID} className={`navbar-menu ${openNavbarClass}`}>
-              <div className="navbar-end">
-                <span className="navbar-item">
-                  <a
-                    className="button is-info is-inverted"
-                    href="https://github.com/8398a7/8398a7.github.io"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="icon">
-                      <i className="fab fa-github"></i>
-                    </span>
-                    <span>Source</span>
-                  </a>
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-slate-950/15 text-white shadow-lg backdrop-blur md:hidden"
+              aria-label="Toggle navigation"
+              aria-controls={MENU_ID}
+              aria-expanded={openNavbar}
+              onClick={handleClick}
+            >
+              <span className="flex flex-col gap-1.5">
+                <span className="h-0.5 w-5 rounded-full bg-current" />
+                <span className="h-0.5 w-5 rounded-full bg-current" />
+                <span className="h-0.5 w-5 rounded-full bg-current" />
+              </span>
+            </button>
+          </div>
+          <div id={MENU_ID} className={`${openNavbar ? 'flex' : 'hidden'} md:flex`}>
+            <div className="flex flex-col items-stretch gap-3 md:flex-row md:items-center">
+              <a
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/90 px-5 py-2.5 text-sm font-semibold text-sky-900 no-underline shadow-lg transition hover:-translate-y-0.5 hover:bg-white"
+                href="https://github.com/8398a7/8398a7.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="inline-flex items-center">
+                  <i className="fab fa-github"></i>
                 </span>
-              </div>
+                <span>Source</span>
+              </a>
             </div>
           </div>
         </nav>
       </div>
 
-      <div className={`hero-body ${styles.heroInner}`}>
-        <div className="container has-text-centered">
-          <h1 className="title">
-            <figure className="image container is-128x128">
-              <img className={`is-rounded ${styles.profileImage}`} alt="profile" src={profile} />
+      <div className={styles.heroInner}>
+        <div className="mx-auto flex w-[min(1100px,calc(100%-clamp(2.5rem,8vw,7rem)))] flex-col items-center px-0 pb-10 pt-4 text-center sm:pb-14 sm:pt-6">
+          <h1>
+            <figure className="mx-auto h-32 w-32 overflow-hidden rounded-full">
+              <img
+                className={`h-full w-full rounded-full object-cover ${styles.profileImage}`}
+                alt="profile"
+                src={profile}
+              />
             </figure>
           </h1>
-          <h2 className="subtitle">@8398a7</h2>
+          <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">@8398a7</h2>
           <span className={styles.heroBadge}>
             <i className="fa fa-beer" />
             Web Developer
@@ -81,24 +84,22 @@ const Header: FC = () => {
         </div>
       </div>
 
-      <div className={`hero-foot ${styles.heroInner}`}>
-        <nav className="tabs">
-          <div className="container">
-            <ul className={styles.navTabs}>
-              <li>
-                <Link to="/overview">
-                  <i className="fas fa-cogs" />
-                  Overview
-                </Link>
-              </li>
-              <li>
-                <Link to="/hobby">
-                  <i className="fas fa-star" />
-                  Hobby
-                </Link>
-              </li>
-            </ul>
-          </div>
+      <div className={styles.heroInner}>
+        <nav className="mx-auto w-[min(1100px,calc(100%-clamp(2.5rem,8vw,7rem)))] px-0">
+          <ul className={styles.navTabs}>
+            <li>
+              <Link to="/overview">
+                <i className="fas fa-cogs" />
+                Overview
+              </Link>
+            </li>
+            <li>
+              <Link to="/hobby">
+                <i className="fas fa-star" />
+                Hobby
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </section>
