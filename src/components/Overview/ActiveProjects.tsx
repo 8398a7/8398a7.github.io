@@ -2,7 +2,6 @@ import React from 'react';
 import type { FC } from 'react';
 
 import gh from '../../images/gh.png';
-import gin from '../../images/gin.png';
 import istIcon from '../../images/ist.png';
 import type { MetricState } from '../../features/meta';
 import Card from '../Card';
@@ -61,22 +60,13 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
       </div>
     </Card>
     <Card
-      title="lgtm_creator"
-      href="https://github.com/8398a7/lgtm_creator"
+      title="mg-tools"
+      href="https://8398a7.github.io/mg-tools/"
       icon={gh}
-      hrefText="GitHub"
-      tags={['Ruby', 'Gem']}
+      hrefText="Link"
+      tags={['React', 'Vite']}
     >
-      <p>gif動画にLGTMをつけるcli</p>
-    </Card>
-    <Card
-      title="api-abilitysheet"
-      href="https://github.com/8398a7/api-abilitysheet"
-      icon={gin}
-      hrefText="GitHub"
-      tags={['Golang', 'Docker']}
-    >
-      <p>abilitysheetのapiサーバ</p>
+      <p>モトジムカーナ向けの補助ツール集</p>
     </Card>
   </section>
 );
