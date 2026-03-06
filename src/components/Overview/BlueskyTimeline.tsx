@@ -8,9 +8,9 @@ const BlueskyTimeline: FC = () => {
   }, []);
 
   return (
-    <>
+    <section className="grid gap-5">
       <SectionTitle icon="feather-alt" title="Bluesky Timeline" />
-      <div className="overflow-hidden rounded-[clamp(18px,1.5vw+12px,30px)] border border-[var(--surface-border)] bg-[var(--surface)] shadow-[var(--card-shadow)] backdrop-blur-xl">
+      <div className="overflow-hidden rounded-[32px] border border-white/60 bg-white/74 shadow-[0_24px_58px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/72">
         <div className="p-6 sm:p-7">
           <bsky-embed
             username="839.bsky.social"
@@ -21,7 +21,7 @@ const BlueskyTimeline: FC = () => {
           />
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

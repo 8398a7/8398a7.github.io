@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import NoMatch from './components/NoMatch';
+import SectionTabs from './components/SectionTabs';
 import { Overview } from './containers/Overview';
 import Hobby from './containers/Hobby';
 
@@ -12,6 +13,7 @@ const Routing: FC = () => (
     <Header />
     <main className="app-main">
       <div className="app-container">
+        <SectionTabs />
         <Routes>
           <Route path="/" element={<Overview />} />
           <Route path="/overview" element={<Overview />} />

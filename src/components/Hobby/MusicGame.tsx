@@ -2,10 +2,25 @@ import React from 'react';
 import type { FC } from 'react';
 import SectionTitle from '../SectionTitle';
 
+const bmsStats = [
+  { label: 'bms', value: '★8' },
+  { label: 'recommend', value: '★20.16' },
+  { label: 'style', value: 'SP/2P/対象固定+3:5' },
+  { label: 'start', value: '13/06/01' },
+];
+
+const iidxStats = [
+  { label: 'iidx', value: '☆☆' },
+  { label: 'author: sp12.iidx.app', value: '14/11/11', href: 'https://sp12.iidx.app', linkLabel: 'sp12.iidx.app' },
+  { label: 'author: IST', value: '18/01/20', href: 'https://score.iidx.app', linkLabel: 'IST' },
+  { label: 'remain (2018)', value: '灼熱/ICARUS†/Mare/X-DEN' },
+  { label: 'start', value: 'Lincle' },
+];
+
 const MusicGame: FC = () => (
   <section className="grid gap-6">
     <SectionTitle {...{ icon: 'gamepad', title: 'Music Game(2013 - )' }} />
-    <div className="grid gap-6 lg:grid-cols-2">
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.95fr)]">
       <div className="grid gap-6">
         <div className="video-container">
           <iframe
@@ -18,70 +33,53 @@ const MusicGame: FC = () => (
             frameBorder="0"
           />
         </div>
-        <table className="table-modern w-full text-left text-sm leading-7 text-slate-700 dark:text-slate-200">
-          <tbody>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                bms
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">★8</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                recommend
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">★20.16</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                style
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">SP/2P/対象固定+3:5</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                start
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">13/06/01</td>
-            </tr>
-          </tbody>
-        </table>
+        <article className="rounded-[32px] border border-white/60 bg-white/74 p-6 shadow-[0_24px_58px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/72">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">
+            BMS Snapshot
+          </p>
+          <dl className="mt-4 grid gap-3">
+            {bmsStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="grid gap-1 rounded-2xl bg-slate-950/4 px-4 py-3 dark:bg-white/5 sm:grid-cols-[140px_minmax(0,1fr)] sm:items-center"
+              >
+                <dt className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                  {stat.label}
+                </dt>
+                <dd className="text-sm font-medium text-slate-900 dark:text-slate-100">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
       </div>
       <div className="grid gap-6">
-        <table className="table-modern w-full text-left text-sm leading-7 text-slate-700 dark:text-slate-200">
-          <tbody>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                iidx
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">☆☆</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                author: <a href="https://sp12.iidx.app">sp12.iidx.app</a>
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">14/11/11</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                author: <a href="https://score.iidx.app">IST</a>
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">18/01/20</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                remain (2018)
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">灼熱/ICARUS†/Mare/X-DEN</td>
-            </tr>
-            <tr>
-              <td className="bg-slate-100/80 px-4 py-3 font-semibold text-slate-900 dark:bg-slate-900/60 dark:text-slate-100">
-                start
-              </td>
-              <td className="bg-white/75 px-4 py-3 dark:bg-slate-950/40">Lincle</td>
-            </tr>
-          </tbody>
-        </table>
+        <article className="rounded-[32px] border border-white/60 bg-white/74 p-6 shadow-[0_24px_58px_rgba(15,23,42,0.1)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/72">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.26em] text-slate-500 dark:text-slate-400">
+            IIDX Snapshot
+          </p>
+          <dl className="mt-4 grid gap-3">
+            {iidxStats.map((stat) => (
+              <div
+                key={`${stat.label}-${stat.value}`}
+                className="grid gap-1 rounded-2xl bg-slate-950/4 px-4 py-3 dark:bg-white/5 sm:grid-cols-[190px_minmax(0,1fr)] sm:items-center"
+              >
+                <dt className="text-[0.72rem] font-semibold uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400">
+                  {stat.href && stat.linkLabel ? (
+                    <>
+                      {stat.label.split(':')[0]}:{' '}
+                      <a className="prose-link" href={stat.href}>
+                        {stat.linkLabel}
+                      </a>
+                    </>
+                  ) : (
+                    stat.label
+                  )}
+                </dt>
+                <dd className="text-sm font-medium text-slate-900 dark:text-slate-100">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
         <div className="video-container">
           <iframe
             width="560"

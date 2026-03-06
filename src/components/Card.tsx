@@ -10,19 +10,21 @@ const Card: FC<{
   tags?: string[];
   children?: ReactNode;
 }> = ({ title, hrefText, href, icon, tags, children }) => (
-  <div className={styles.cardShell}>
-    <div className={`p-6 sm:p-7 ${styles.cardContent}`}>
-      <div className={`flex items-center gap-4 ${styles.media}`}>
+  <article className={`group ${styles.cardShell}`}>
+    <div className={styles.cardGlow} />
+    <div className={`relative flex h-full flex-col gap-5 p-6 sm:p-7 ${styles.cardContent}`}>
+      <div className={`flex items-start gap-4 ${styles.media}`}>
         <div className="shrink-0">
-          <figure className="h-12 w-12 overflow-hidden rounded-full">
-            <img src={icon} alt={`${title} icon`} className="h-full w-full rounded-full object-cover" />
+          <figure className="grid h-14 w-14 place-items-center overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.7)] dark:bg-slate-900 dark:ring-slate-700/80">
+            <img src={icon} alt={`${title} icon`} className="h-11 w-11 object-contain" />
           </figure>
         </div>
         <div className="min-w-0 flex-1">
-          <p className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">{title}</p>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-xl font-semibold tracking-tight text-slate-950 dark:text-slate-50">{title}</p>
+          <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
             <a className={styles.cardLink} target="_blank" rel="noopener noreferrer" href={href}>
               {hrefText}
+              <i className="fas fa-external-link-alt text-[0.72rem]" />
             </a>
           </p>
         </div>
@@ -42,7 +44,7 @@ const Card: FC<{
         </div>
       ) : null}
     </div>
-  </div>
+  </article>
 );
 
 export default Card;

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 const Footer: FC = () => (
   <footer className="footer">
-    <div className="content has-text-centered text-sm font-medium">
+    <div className="content has-text-centered text-sm font-medium tracking-[0.08em]">
       <strong>Last Modified</strong>: {import.meta.env.VITE_LAST_MODIFIED ?? ''}
     </div>
   </footer>

@@ -26,7 +26,7 @@ export const Overview: FC = () => {
   }, [dispatch, istStatus]);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1.04fr)_minmax(320px,0.96fr)] lg:items-start">
       <div className="grid gap-6">
         <SkillSet />
         <ActiveProjects abilitysheet={meta.abilitysheet} ist={meta.ist} />

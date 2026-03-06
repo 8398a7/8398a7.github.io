@@ -30,7 +30,7 @@ const formatMetric = (metric: MetricState) => {
 };
 
 const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
-  <section className="grid gap-4">
+  <section className="grid gap-5">
     <SectionTitle {...{ icon: 'rocket', title: 'Active Projects' }} />
     <Card
       title="abilitysheet"
@@ -39,8 +39,12 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
       hrefText="GitHub"
       tags={['Rails', 'React']}
     >
-      <div>beatmania IIDXのSP☆12難易度参考表</div>
-      <div>登録者数: {formatMetric(abilitysheet)}</div>
+      <div className="grid gap-3">
+        <p>beatmania IIDXのSP☆12難易度参考表</p>
+        <div className="rounded-2xl bg-slate-950/4 px-4 py-3 text-slate-700 dark:bg-white/5 dark:text-slate-200">
+          登録者数: {formatMetric(abilitysheet)}
+        </div>
+      </div>
     </Card>
     <Card
       title="IIDX Score Table"
@@ -49,8 +53,12 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
       hrefText="Link"
       tags={['Rails', 'React']}
     >
-      <div>iidxのスコア管理ツール(SP/DP)</div>
-      <div>登録者数: {formatMetric(ist)}</div>
+      <div className="grid gap-3">
+        <p>beatmania IIDXのスコア管理ツール(SP/DP)</p>
+        <div className="rounded-2xl bg-slate-950/4 px-4 py-3 text-slate-700 dark:bg-white/5 dark:text-slate-200">
+          登録者数: {formatMetric(ist)}
+        </div>
+      </div>
     </Card>
     <Card
       title="lgtm_creator"
@@ -59,7 +67,7 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
       hrefText="GitHub"
       tags={['Ruby', 'Gem']}
     >
-      <div>gif動画にLGTMをつけるcli</div>
+      <p>gif動画にLGTMをつけるcli</p>
     </Card>
     <Card
       title="api-abilitysheet"
@@ -68,7 +76,7 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
       hrefText="GitHub"
       tags={['Golang', 'Docker']}
     >
-      <div>abilitysheetのapiサーバ</div>
+      <p>abilitysheetのapiサーバ</p>
     </Card>
   </section>
 );
