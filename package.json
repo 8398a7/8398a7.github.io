@@ -7,7 +7,7 @@
     "@biomejs/biome": "^2.4.6",
     "@reduxjs/toolkit": "^2.11.2",
     "@sentry/browser": "^10.43.0",
-    "@sentry/react": "^10.43.0",
+    "@sentry/react": "^10.45.0",
     "axios": "^1.13.6",
     "bsky-embed": "^0.2.7",
     "bulma": "^1.0.4",
