@@ -7,7 +7,7 @@ const gymkhanaResults = [
   { title: '2011 愛媛DUNLOP杯#スペシャルN', date: '2011/04/24', result: '1/26 (100.0%)' },
   { title: '2011 DUNLOP杯#JAPAN', date: '2011/10/09', result: '65/190 (108.91%)' },
   { title: '2011 近畿DUNLOP杯#2', date: '2011/12/11', result: '4/42 (102.53%)' },
-  { title: '2025 JAGE杯#4', date: '2025/11/09', result: '34/143 (106.87%)' },
+  { title: '2026 DUNLOP杯#1', date: '2026/03/26', result: '25/110 (106.17%)' },
 ];
 
 const Gymkhana: FC = () => (
@@ -19,7 +19,7 @@ const Gymkhana: FC = () => (
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/wmwIFR_nJbE?si=Kq6OXi1Yuzkh7xtn"
+            src="https://www.youtube.com/embed/f75cPI370hM?si=_KKSJFzbRgoGwIcQ"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
