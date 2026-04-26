@@ -7,7 +7,8 @@ const gymkhanaResults = [
   { title: '2011 愛媛DUNLOP杯#スペシャルN', date: '2011/04/24', result: '1/26 (100.0%)' },
   { title: '2011 DUNLOP杯#JAPAN', date: '2011/10/09', result: '65/190 (108.91%)' },
   { title: '2011 近畿DUNLOP杯#2', date: '2011/12/11', result: '4/42 (102.53%)' },
-  { title: '2026 DUNLOP杯#1', date: '2026/03/26', result: '25/110 (106.17%)' },
+  { title: '2026 DUNLOP杯#1', date: '2026/03/22', result: '25/110 (106.17%)' },
+  { title: '2026 DUNLOP杯#2', date: '2026/04/26', result: '17/97 (104.59%)' },
 ];
 
 const Gymkhana: FC = () => (
@@ -19,7 +20,7 @@ const Gymkhana: FC = () => (
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/f75cPI370hM?si=_KKSJFzbRgoGwIcQ"
+            src="https://www.youtube.com/embed/dYRt51uSK-8?si=JQDBR7iWPnPPyw79"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -61,7 +62,7 @@ const Gymkhana: FC = () => (
             </div>
             <div className="rounded-[22px] bg-slate-950/4 px-4 py-4 dark:bg-white/5">
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">License</p>
-              <p className="mt-2 text-xl font-semibold text-slate-900 dark:text-slate-100">C1</p>
+              <p className="mt-2 text-xl font-semibold text-slate-900 dark:text-slate-100">B</p>
             </div>
           </div>
         </article>
