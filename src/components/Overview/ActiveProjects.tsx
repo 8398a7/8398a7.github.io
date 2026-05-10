@@ -59,13 +59,7 @@ const ActiveProjects: FC<IProps> = ({ abilitysheet, ist }) => (
         </div>
       </div>
     </Card>
-    <Card
-      title="mg-tools"
-      href="https://8398a7.github.io/mg-tools/"
-      icon={gh}
-      hrefText="Link"
-      tags={['React', 'Vite']}
-    >
+    <Card title="mg-tools" href="https://8398a7.github.io/mg-tools/" icon={gh} hrefText="Link" tags={['React', 'Vite']}>
       <p>モトジムカーナ向けの補助ツール集</p>
     </Card>
   </section>
